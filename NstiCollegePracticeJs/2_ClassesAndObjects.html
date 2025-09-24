@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2- Classes And Objects</title>
+</head>
+
+<body>
+    <h1>2- Classes And Objects</h1>
+    <script>
+        const student={
+            fullname:"Gulshan",
+            branch:"CSA",
+            rollNo:894,
+            state:"UP",
+        };
+        console.log(`Name= ${student.fullname}`);
+        console.log(`Branch= ${student.branch}`);
+        console.log(`Roll no= ${student.rollNo}`);
+        console.log(`State= ${student.state}`);
+        console.log(student); // givve object
+
+        const employee = {
+            name: "Gulshan",
+            branch: "CSA",
+            calctax() {
+                console.log("Tax is 18%");
+            }
+        }
+        console.log(employee.name);
+        console.log(employee.branch);
+        console.log((employee.calctax()));
+    </script>
+</body>
+
+</html>
