@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Get Elements By Class</title>
+  <style>
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .color {
+
+      height: 30px;
+      width: 300px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button onclick="red()" id="color1">click me for Red</button>
+    <button onclick="blue()" id="color2">click me for Blue</button>
+    <button onclick="yellow()" id="color3">click me for Yellow</button>
+    <button onclick="pink()" id="color4">click me for Pink</button>
+    <button onclick="black()" id="color5">click me for Black</button>
+
+  </div>
+  <script>
+    function red() {
+      document.getElementById("color1").style.backgroundColor = "red";
+    }
+    function blue() {
+      document.getElementById("color2").style.backgroundColor = "blue";
+    }
+    function yellow() {
+      document.getElementById("color3").style.backgroundColor = "yellow";
+    }
+    function pink() {
+      document.getElementById("color4").style.backgroundColor = "pink";
+    }
+    function black() {
+      document.getElementById("color5").style.backgroundColor = "black";
+      document.getElementById("color5").style.color = "white";
+
+    }
+  </script>
+</body>
+
+</html>

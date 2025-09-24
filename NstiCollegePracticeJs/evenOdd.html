@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even odd</title>
+</head>
+<body>
+    <h1>Check Even & odd-</h1>
+    <p id="output"></p>
+    <script>
+        let no= prompt("Enter any Number to check Even & Odd-");
+        if(no%2==0){
+            alert("This Number is Even and Number is = "+ no);
+            document.querySelector("#output").innerText=("This  Number is Even and Number is = "+ no)           
+        } else{
+            alert("This Number is Odd and Number is = "+ no);            
+            document.querySelector("#output").innerText=("This  Number is Odd and Number is = "+ no)           
+        }
+        
+    </script>
+</body>
+</html>
