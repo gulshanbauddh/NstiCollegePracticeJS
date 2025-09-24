@@ -1,20 +1,14 @@
-/* * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-} */
-
-.calculater {
+}
+.box{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+}
+.calculater{
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    height: 90%;
-    width: 60%;
-}
-
-.box {
-    border: 2px solid black;
-    height: 5rem;
-    width: 5rem;
 }
