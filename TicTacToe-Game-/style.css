@@ -3,9 +3,11 @@
   padding: 0;
   padding-top: 1vmin;
 }
+
 body {
   background-color: #69a197;
 }
+
 h1 b {
   font-size: larger;
 }
@@ -54,6 +56,7 @@ h1 b {
   border: none;
   color: white;
 }
+
 #newGame {
   padding: 1rem;
   font-size: 1.25rem;
@@ -68,6 +71,7 @@ h1 b {
   color: white;
   font-size: 50px;
 }
+
 @media only screen and (max-width: 1135px) {
   .container {
     margin-top: 2vmin;
@@ -86,6 +90,7 @@ h1 b {
     width: 15vmin;
   }
 }
+
 @media only screen and (max-width: 376px) {
   .container {
     height: 50vh;
@@ -98,6 +103,6 @@ h1 b {
   }
 }
 
-.hide{
+.hide {
   display: none;
 }
