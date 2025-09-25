@@ -59,14 +59,14 @@ input {
 
 @media only screen and (min-width: 1500px) {
 
-        input {
-      height: 6rem;
-      width: 20rem;
-    }
+  input {
+    height: 6rem;
+    width: 20rem;
+  }
 
-    .box {
-      height: 5rem;
-      width: 5rem;
-    }
-  
+  .box {
+    height: 5rem;
+    width: 5rem;
+  }
+
 }
