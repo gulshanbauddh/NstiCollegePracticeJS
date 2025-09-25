@@ -5,8 +5,7 @@ function cal(no) {
   operator = true;
 }
 function calFun(no) {
-  if (displayOut.length - 1 != "+") {
-    console.log(String(displayOut.length - 1));
+  if (displayOut.length != "") {
     if (operator) {
       keyInp.value += no;
       operator = false;
