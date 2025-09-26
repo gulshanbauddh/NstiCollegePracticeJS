@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1(i)Using console.log Inner HTML</title>
+</head>
+
+<body>
+    <h1>Java Script</h1>
+    <p id="output"></p>
+    <script>
+        let name = "Ravi";
+        const age = 21;
+        var city = "Pune";
+        console.log("Name: " + name);
+        console.log("Age: " + age);
+        console.log("City: " + city);
+        document.getElementById("output").innerHTML = ("Name: " + name + "<br>Age: " + age + "<br>City: " + city);
+    </script>
+</body>
+
+</html>
