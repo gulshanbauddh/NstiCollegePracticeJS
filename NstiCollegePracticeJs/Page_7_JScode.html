@@ -9,10 +9,14 @@
 
 <body>
     <h1>Q1. Product of Two No-</h1>
+    <button onclick="result()">Click me for Result</button>
     <script>
         alert("Q1. Product of Two No-");
         let no1 = parseInt(prompt("Enter 1st Number-"));
         let no2 = parseInt(prompt("Enter 2st Number-"));
+        function result(){
+        document.write("Product of Two no is= " + (no1 * no2));
+    }
         alert("Product of Two no is= " + (no1 * no2));
     </script>
 
@@ -21,6 +25,7 @@
     <script>
         alert("Q2. Area and Perimeter of Square-")
         let side = parseInt(prompt("Enter side of Square-"));
+        document.write("Area of Square is= " + (side * side) + "\nPerimeter of Square= " + (4 * side))
         alert("Area of Square is= " + (side * side) + "\nPerimeter of Square= " + (4 * side));
     </script>
 
@@ -30,6 +35,7 @@
         alert("Q3. Area and Perimeter of Rectangle-")
         let length = parseInt(prompt("Enter Length-"));
         let width = parseInt(prompt("Enter Width-"));
+        document.write(`Area of Rectangle is= ${length * width} \n Perimeter of Rectangle is= ${2(length + width)}`);
         alert(`Area of Rectangle is= ${length * width} \n Perimeter of Rectangle is= ${2(length + width)}`);
     </script>
 
@@ -39,10 +45,11 @@
         alert("Q4. Area and Circumfrence of Circle-");
         const pi = 3.14;
         let radius = parseInt(prompt("Enter Radius of Circle-"));
+        document.write(`Area of Circle= ${pi * radius * radius} \n Circumfrance of Circle= ${2 * pi * radius}`);
         alert(`Area of Circle= ${pi * (radius * radius)} \n Circumfrance of Circle= ${2 * pi * radius}`);
     </script>
 
-    
+
     <h1>Q5. Use Input of Two number and Perform Simple arthmatic opration-</h1>
     <p>a,b<br>sum=a+b</p>
     <script>
@@ -51,7 +58,8 @@
         a = parseInt(prompt("Enter value of a-"));
         b = parseInt(prompt("Enter Value of b-"));
         sum = a + b;
-        alert("sum of (a+b=) " + (sum=a+b));
+        document.write("sum of (a+b=) " + (sum = a + b));
+        alert("sum of (a+b=) " + (sum = a + b));
     </script>
 </body>
 
