@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    <p>Enter your Weight and Height</p>
+    <main>
+        <div class="container">
+            <div>BMI Calculator</div>
+            <p>Enter your Height in Meter</p>
+            <input id="height" type="number"><br>
+            <p>Enter your Weight in Kg</p>
+            <input type="number"><br>
+            <button onclick="click()">Calculate</button>
+            <p id="output"></p>
+        </div>
+    </main>
+    <script>
+        function click() {
+            alert("Run");
+            const height = document.getElementById("height").value;
+            let out = document.getElementById("output");
+            out.innerHTML = "Gulshan";
+        }
+    </script>
+</body>
+
+</html>
