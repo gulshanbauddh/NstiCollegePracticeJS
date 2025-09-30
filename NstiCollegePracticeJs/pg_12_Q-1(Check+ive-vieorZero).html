@@ -9,14 +9,15 @@
     <h1>Check +ive -ive or Zero</h1>
     <script>
         let no = parseInt(prompt("Enter Number-"));
-        if (no != 0) {
+        if (no == 0) {
+            document.write("Number is Zero= " + no);
+
+        } else {
             if (no > 0) {
                 document.write("Number is Postive (+ ive)= " + no);
             } else {
                 document.write("Number is Negative (- ive)= " + no);
             }
-        } else {
-            document.write("Number is Zero= " + no);
         }
     </script>
 </body>

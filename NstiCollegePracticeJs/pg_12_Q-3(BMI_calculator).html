@@ -10,9 +10,9 @@
   <script>
     const w = parseInt(prompt("Enter your Weight in Kg-"));
     const h = parseFloat(prompt("Enter your height in Meter-"));
-    let bmi = (w / (h * h)).toFixed(2);
+    const  bmi = (w / (h * h)).toFixed(2);
     document.write("BMI is= " + bmi + "<br>");
-    if (bmi <= 5 && bmi > 18.5) {
+    if (bmi < 18.5) {
       document.write("You are Under Weight");
     } else if (bmi >= 18.5 && bmi < 25) {
       document.write("You are Normal Weight");
