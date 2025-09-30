@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In Line JS</title>
 </head>
+
 <body>
-    <button onclick="alert('Hello from Inline Script')">
+
+    <button onclick="PalG()">
         Click me I am "In Line JS"
     </button>
+    <p id="gul"></p>
+    <script>
+        let a;
+        function PalG() {
+            if (a == 5) {
+                document.getElementById("gul").innerText = "Everything is Right";
+            } else {
+                document.getElementById("gul").innerText = "Somthing Wrong!";
+            }
+        }
+    </script>
 </body>
+
 </html>
