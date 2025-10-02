@@ -1,0 +1,5 @@
+.carousel-item img {
+  height: 50%;
+  height: 60vh !important;
+  object-fit: cover;
+}
