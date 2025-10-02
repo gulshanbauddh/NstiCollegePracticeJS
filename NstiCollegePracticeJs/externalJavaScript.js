@@ -1,5 +1,5 @@
 function greet(){
-    alert("Hello from External JS");
+  alert("Hello from External JS");
 }
 
 // // Variables Practice
