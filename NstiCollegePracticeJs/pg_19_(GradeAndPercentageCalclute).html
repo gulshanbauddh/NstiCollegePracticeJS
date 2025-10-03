@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Grade And Percentage Calclute</title>
+</head>
+
+<body>
+    <h1>Result sheet of a trainee</h1>
+    <script>
+        let net, js, php, python, mySql, totalMark, percentage;
+        net = parseInt(prompt("1. Enter mark of Networking:"));
+        js = parseInt(prompt("2. Enter mark of JS:"));
+        php = parseInt(prompt("3. Enter mark of PHP:"));
+        python = parseInt(prompt("4. Enter mark of Pythno:"));
+        mySql = parseInt(prompt("5. Enter mark of MySql:"));
+
+        totalMark = (net + js + php + python + mySql);
+        percentage = (totalMark / 5).toFixed(2) + "%";
+        document.write("Networking: " + net + "<br>Java Script: " + js + "<br>PHP: " + php + "<br>Python: " + python + "<br>My Sql: " + mySql + "<hr>");
+        document.write("Total Marks: " + totalMark);
+        document.write("<br>Percentage: " + percentage);
+        // +++++++++++++ Grade Calcluter++++++++++
+        let grade;
+        if (percentage >= 90 && percentage <= 100) {
+            grade = "A+";
+        } else if (percentage >= 80 && percentage < 90) {
+            grade = "A";
+        } else if (percentage >= 70 && percentage < 80) {
+            grade = "B+";
+        } else if (percentage >= 60 && percentage < 70) {
+            grade = "B";
+        } else if (percentage >= 50 && percentage < 60) {
+            grade = "C+";
+        } else if (percentage >= 40 && percentage < 50) {
+            grade = "C";
+        } else if (percentage >= 30 && percentage < 40) {
+            grade = "D";
+        } else (percentage < 30) {
+            grade = "E";
+        }
+
+    </script>
+</body>
+
+</html>
