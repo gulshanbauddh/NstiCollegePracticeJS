@@ -2,50 +2,43 @@
 <html lang="en">
   <head>
     <title>Grade And Percentage Calclute</title>
-    <style>
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        padding: 10px;
-        text-align: center;
-      }
-    </style>
   </head>
 
   <body>
     <h1>Result sheet of a trainee</h1>
-    <table>
+    <table border="1">
       <thead>
         <tr>
           <th>Subject</th>
           <th>Mark obtain</th>
+          <th>Grade</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr id="net">
           <td>Networking</td>
           <td class="mark"></td>
+          <td class="grad"></td>
         </tr>
-        <tr>
+        <tr id="js">
           <td>Java Script</td>
           <td class="mark"></td>
+          <td class="grad"></td>
         </tr>
         <tr>
-          <td>PHP</td>
+          <td id="php">PHP</td>
           <td class="mark"></td>
+          <td class="grad"></td>
         </tr>
         <tr>
-          <td>Pythno</td>
+          <td id="python">Pythno</td>
           <td class="mark"></td>
+          <td class="grad"></td>
         </tr>
         <tr>
-          <td>MySQL</td>
+          <td id="mySql">My Sql</td>
           <td class="mark"></td>
+          <td class="grad"></td>
         </tr>
       </tbody>
     </table>
@@ -57,24 +50,28 @@
       python = parseInt(prompt("4. Enter mark of Pythno:"));
       mySql = parseInt(prompt("5. Enter mark of MySql:"));
 
-      marks = document.getElementsByClassName("mark");
-      marks[0].innerText = net;
-      marks[1].innerText = js;
-      marks[2].innerText = php;
-      marks[3].innerText = python;
-      marks[4].innerText = mySql;
-
-      // +++++++++++++ Percentage Calcluter++++++++++
       totalMark = net + js + php + python + mySql;
       percentage = Number((totalMark / 5).toFixed(2));
-
+      document.write(
+        "Networking: " +
+          net +
+          "<br>Java Script: " +
+          js +
+          "<br>PHP: " +
+          php +
+          "<br>Python: " +
+          python +
+          "<br>My Sql: " +
+          mySql +
+          "<hr>"
+      );
       document.write("Total Marks: " + totalMark);
       document.write("<br>Percentage: " + percentage + "%");
       // +++++++++++++ Grade Calcluter++++++++++
       let grade;
       if (percentage >= 90 && percentage <= 100) {
         grade = "A+";
-
+        
         document.write("<br>Grade: " + grade);
       } else if (percentage >= 80 && percentage < 90) {
         grade = "A";

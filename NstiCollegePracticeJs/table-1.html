@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS से डेटा इन्सर्ट करें</title>
+  </head>
+  <body>
+    <h1>JavaScript से टेबल में डेटा इन्सर्ट करना</h1>
+
+    <table id="myTable" border="1">
+      <thead>
+        <tr>
+          <th>नाम (Name)</th>
+          <th>उम्र (Age)</th>
+          <th>शहर (City)</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+
+    <script>
+      // आपका डेटा
+      const newUserData = [
+        { name: "अंजलि", age: 25, city: "मुंबई" },
+        { name: "राहुल", age: 30, city: "दिल्ली" },
+        { name: "प्रिया", age: 22, city: "बेंगलुरु" },
+      ];
+
+      // फ़ंक्शन जो टेबल में डेटा जोड़ता है
+      function insertDataIntoTable(dataArray) {
+        // 1. टेबल का संदर्भ (Reference) प्राप्त करें
+        // हम <tbody> को टारगेट कर रहे हैं, जो सीधे <table> के अंदर होता है
+        const tableBody = document.querySelector("#myTable tbody");
+
+        // 2. डेटा एरे पर लूप चलाएँ
+        dataArray.forEach((dataObject) => {
+          // 3. नई रो (<tr>) बनाएँ
+          const newRow = tableBody.insertRow(); // या document.createElement('tr')
+
+          // 4. रो में सेल्स (<td>) बनाएँ और डेटा इन्सर्ट करें
+
+          // नाम के लिए सेल
+          let nameCell = newRow.insertCell(); // या document.createElement('td')
+          nameCell.textContent = dataObject.name; // या nameCell.innerHTML = dataObject.name;
+
+          // उम्र के लिए सेल
+          let ageCell = newRow.insertCell();
+          ageCell.textContent = dataObject.age;
+
+          // शहर के लिए सेल
+          let cityCell = newRow.insertCell();
+          cityCell.textContent = dataObject.city;
+
+          // एक साथ भी किया जा सकता है:
+          // Object.values(dataObject).forEach(value => {
+          //     let cell = newRow.insertCell();
+          //     cell.textContent = value;
+          // });
+        });
+      }
+
+      // फ़ंक्शन को कॉल करें
+      insertDataIntoTable(newUserData);
+    </script>
+  </body>
+</html>

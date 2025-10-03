@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="myTable" border="1">
+      <thead></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    
+    <script>
+      // आपका डेटा
+      const newUserData = [
+        { name: "विकास", age: 35, city: "हैदराबाद" },
+        { name: "स्नेहा", age: 28, city: "पुणे" },
+        { name: "आर्यन", age: 40, city: "जयपुर" },
+      ];
+
+      function insertDataEasily(dataArray) {
+        // 1. <tbody> एलिमेंट को टारगेट करें
+        const tableBody = document.getElementById("tableBody");
+
+        // एक एरे बनाएं जहाँ हर आइटम एक <tr> स्ट्रिंग होगी
+        const rowsHTML = dataArray
+          .map((dataObject) => {
+            // 2. टेंपलेट लिटरल (``) का उपयोग करके HTML रो स्ट्रिंग बनाएं
+            // यह बहुत सीधा और स्पष्ट है
+            return `
+            <tr>
+                <td>${dataObject.name}</td>
+                <td>${dataObject.age}</td>
+                <td>${dataObject.city}</td>
+            </tr>
+        `;
+          })
+          .join(""); // 3. सारी रो स्ट्रिंग्स को एक बड़ी स्ट्रिंग में जोड़ दें
+
+        // 4. एक ही बार में <tbody> के अंदर HTML इन्सर्ट करें
+        tableBody.innerHTML = rowsHTML;
+      }
+
+      insertDataEasily(newUserData);
+    </script>
+  </body>
+</html>
