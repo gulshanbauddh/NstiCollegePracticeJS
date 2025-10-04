@@ -60,7 +60,7 @@
       function addMark(){
         let data=document.getElementsByTagName(input).value;
         console.log(document.getElementsByTagName(input).value);
-        document.write(data);
+        document.write("dffd"+data);
         console.log(data);
       }
       // Decelaration & Initialization & Input-
@@ -68,12 +68,12 @@
       let i = 0,
         gradeChek = true,
         totalMark = 0,
-      //   mark = [];
-      // mark[0] = parseInt(prompt("1. Enter mark of Networking:"));
-      // mark[1] = parseInt(prompt("2. Enter mark of JS:"));
-      // mark[2] = parseInt(prompt("3. Enter mark of PHP:"));
-      // mark[3] = parseInt(prompt("4. Enter mark of Pythno:"));
-      // mark[4] = parseInt(prompt("5. Enter mark of MySql:"));
+        mark = [];
+      mark[0] = parseInt(prompt("1. Enter mark of Networking:"));
+      mark[1] = parseInt(prompt("2. Enter mark of JS:"));
+      mark[2] = parseInt(prompt("3. Enter mark of PHP:"));
+      mark[3] = parseInt(prompt("4. Enter mark of Pythno:"));
+      mark[4] = parseInt(prompt("5. Enter mark of MySql:"));
       // Change inner Text & calculate total mark's-
       mark.forEach((element) => {
         marksTable[i].innerText = element;
