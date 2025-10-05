@@ -11,67 +11,54 @@
         <tr>
           <th>Subject</th>
           <th>Mark obtain</th>
-          <th>Grade</th>
         </tr>
       </thead>
       <tbody>
-        <tr id="net">
+        <tr>
           <td>Networking</td>
-          <td class="mark"></td>
-          <td class="grad"></td>
+          <td id="net"></td>
         </tr>
-        <tr id="js">
+        <tr>
           <td>Java Script</td>
-          <td class="mark"></td>
-          <td class="grad"></td>
+          <td id="js"></td>
         </tr>
         <tr>
-          <td id="php">PHP</td>
-          <td class="mark"></td>
-          <td class="grad"></td>
+          <td>PHP</td>
+          <td id="php"></td>
         </tr>
         <tr>
-          <td id="python">Pythno</td>
-          <td class="mark"></td>
-          <td class="grad"></td>
+          <td>Pythno</td>
+          <td id="python"></td>
         </tr>
         <tr>
-          <td id="mySql">My Sql</td>
-          <td class="mark"></td>
-          <td class="grad"></td>
+          <td>My SQL</td>
+          <td id="mySql"></td>
         </tr>
       </tbody>
     </table>
     <script>
+      // Input & Insilation
       let net, js, php, python, mySql, totalMark, percentage;
-      net = parseInt(prompt("1. Enter mark of Networking:"));
-      js = parseInt(prompt("2. Enter mark of JS:"));
-      php = parseInt(prompt("3. Enter mark of PHP:"));
-      python = parseInt(prompt("4. Enter mark of Pythno:"));
-      mySql = parseInt(prompt("5. Enter mark of MySql:"));
-
+      net = parseFloat(prompt("1. Enter mark of Networking:"));
+      js = parseFloat(prompt("2. Enter mark of JS:"));
+      php = parseFloat(prompt("3. Enter mark of PHP:"));
+      python = parseFloat(prompt("4. Enter mark of Pythno:"));
+      mySql = parseFloat(prompt("5. Enter mark of MySql:"));
+      // Insert into Table
+      document.getElementById("net").innerText = net;
+      document.getElementById("js").innerText = js;
+      document.getElementById("php").innerText = php;
+      document.getElementById("python").innerText = python;
+      document.getElementById("mySql").innerText = mySql;
+      // Total Mark
       totalMark = net + js + php + python + mySql;
-      percentage = Number((totalMark / 5).toFixed(2));
-      document.write(
-        "Networking: " +
-          net +
-          "<br>Java Script: " +
-          js +
-          "<br>PHP: " +
-          php +
-          "<br>Python: " +
-          python +
-          "<br>My Sql: " +
-          mySql +
-          "<hr>"
-      );
-      document.write("Total Marks: " + totalMark);
-      document.write("<br>Percentage: " + percentage + "%");
+      // percentage
+      percentage = (totalMark / 5).toFixed(2);
       // +++++++++++++ Grade Calcluter++++++++++
       let grade;
       if (percentage >= 90 && percentage <= 100) {
         grade = "A+";
-        
+
         document.write("<br>Grade: " + grade);
       } else if (percentage >= 80 && percentage < 90) {
         grade = "A";
@@ -95,6 +82,9 @@
         grade = "E";
         document.write("<br>Grade: " + grade);
       }
+      // Display 
+      document.write("<br>Total Marks: " + totalMark);
+      document.write("<br>Percentage: " + percentage + "%");
       // +++++++++++++ Pass or fald ++++++++++
       if (net < 30 || js < 30 || php < 30 || python < 30 || mySql < 30) {
         document.write("<br>Faild !");
