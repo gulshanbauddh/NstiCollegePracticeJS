@@ -61,9 +61,19 @@
   </table>
   <script>
     let arrMark = document.getElementsByClassName('mark');
-    
-    
+    let inputBox = document.getElementById('inputBox');
     function getData() {
+      inputBox = Number(inputBox.value);
+
+      console.log(inputBox);
+      console.log(typeof (inputBox));
+
+      for (let i = 0; i <= 4; i++) {
+        let mark = Number(arrMark[i].innerText);
+        
+        // console.log(mark);
+        // console.log(typeof (mark));
+      }
     }
 
 
@@ -80,7 +90,7 @@
     //   if (element < 30) gradeChek = false;
     // });
     // +++++++++++++ Percentage Calcluter++++++++++
-    let totalMark=1, gradeChek=1;
+    let totalMark = 1, gradeChek = 1;
     percentage = Number((totalMark / 5).toFixed(2));
     // +++++++++++++ Grade Calcluter++++++++++
     if (percentage >= 90 && percentage <= 100)

@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Grade And Percentage Calclute</title>
-  </head>
 
-  <body>
-    <h1>Result sheet of a trainee</h1>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Mark obtain</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Networking</td>
-          <td id="net"></td>
-        </tr>
-        <tr>
-          <td>Java Script</td>
-          <td id="js"></td>
-        </tr>
-        <tr>
-          <td>PHP</td>
-          <td id="php"></td>
-        </tr>
-        <tr>
-          <td>Pythno</td>
-          <td id="python"></td>
-        </tr>
-        <tr>
-          <td>My SQL</td>
-          <td id="mySql"></td>
-        </tr>
-      </tbody>
-    </table>
-    <script>
-      // Input & Insilation
-      let net, js, php, python, mySql, totalMark, percentage;
-      net = parseFloat(prompt("1. Enter mark of Networking:"));
-      js = parseFloat(prompt("2. Enter mark of JS:"));
-      php = parseFloat(prompt("3. Enter mark of PHP:"));
-      python = parseFloat(prompt("4. Enter mark of Pythno:"));
-      mySql = parseFloat(prompt("5. Enter mark of MySql:"));
-      // Insert into Table
-      document.getElementById("net").innerText = net;
-      document.getElementById("js").innerText = js;
-      document.getElementById("php").innerText = php;
-      document.getElementById("python").innerText = python;
-      document.getElementById("mySql").innerText = mySql;
-      // Total Mark
-      totalMark = net + js + php + python + mySql;
-      // percentage
-      percentage = (totalMark / 5).toFixed(2);
-      // +++++++++++++ Grade Calcluter++++++++++
-      let grade;
-      if (percentage >= 90 && percentage <= 100) {
-        grade = "A+";
+<head>
+  <title>Grade And Percentage Calclute</title>
+</head>
 
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 80 && percentage < 90) {
-        grade = "A";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 70 && percentage < 80) {
-        grade = "B+";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 60 && percentage < 70) {
-        grade = "B";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 50 && percentage < 60) {
-        grade = "C+";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 40 && percentage < 50) {
-        grade = "C";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage >= 30 && percentage < 40) {
-        grade = "D";
-        document.write("<br>Grade: " + grade);
-      } else if (percentage < 30) {
-        grade = "E";
-        document.write("<br>Grade: " + grade);
-      }
-      // Display 
-      document.write("<br>Total Marks: " + totalMark);
-      document.write("<br>Percentage: " + percentage + "%");
-      // +++++++++++++ Pass or fald ++++++++++
-      if (net < 30 || js < 30 || php < 30 || python < 30 || mySql < 30) {
-        document.write("<br>Faild !");
-      } else {
-        document.write("<br>Passed");
-      }
-    </script>
-  </body>
+<body>
+  <h1>Result sheet of a trainee</h1>
+  <table border='1' cellpadding='6' cellspacing='0'>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Mark obtain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Networking</td>
+        <td id="net"></td>
+      </tr>
+      <tr>
+        <td>Java Script</td>
+        <td id="js"></td>
+      </tr>
+      <tr>
+        <td>PHP</td>
+        <td id="php"></td>
+      </tr>
+      <tr>
+        <td>Pythno</td>
+        <td id="python"></td>
+      </tr>
+      <tr>
+        <td>My SQL</td>
+        <td id="mySql"></td>
+      </tr>
+      <tr>
+        <td>Total Mark</td>
+        <td id="totalMark"></td>
+      </tr>
+      <tr>
+        <td>Percentage</td>
+        <td id="percentage"></td>
+      </tr>
+      <tr>
+        <td>Grade</td>
+        <td id="grade"></td>
+      </tr>
+      <tr>
+        <td>Result</td>
+        <td id="resultFinsal"></td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    // Input & Insilation
+    let net, js, php, python, mySql, totalMark, percentage, result, grade;
+    net = parseFloat(prompt("1. Enter mark of Networking:"));
+    js = parseFloat(prompt("2. Enter mark of JS:"));
+    php = parseFloat(prompt("3. Enter mark of PHP:"));
+    python = parseFloat(prompt("4. Enter mark of Pythno:"));
+    mySql = parseFloat(prompt("5. Enter mark of MySql:"));
+
+    // Total Mark
+    totalMark = net + js + php + python + mySql;
+    // percentage
+    percentage = (totalMark / 5).toFixed(2);
+    // +++++++++++++ Grade Calcluter ++++++++++
+    if (percentage >= 90 && percentage <= 100) {
+      grade = "A+";
+    } else if (percentage >= 80 && percentage < 90) {
+      grade = "A"
+    } else if (percentage >= 70 && percentage < 80) {
+      grade = "B+"
+    } else if (percentage >= 60 && percentage < 70) {
+      grade = "B"
+    } else if (percentage >= 50 && percentage < 60) {
+      grade = "C+"
+    } else if (percentage >= 40 && percentage < 50) {
+      grade = "C"
+    } else if (percentage >= 30 && percentage < 40) {
+      grade = "D"
+    } else if (percentage < 30) {
+      grade = "E"
+    } else {
+      alert("You are Enterd Somthing Wrong!");
+    }
+
+    // +++++++++++++ Pass or faild ++++++++++
+    if (net < 30 || js < 30 || php < 30 || python < 30 || mySql < 30) {
+      result = "Faild !"
+    } else {
+      result = "Passed"
+    }
+
+    // Insert into Table
+    // Display 
+    document.getElementById("net").innerText = net;
+    document.getElementById("js").innerText = js;
+    document.getElementById("php").innerText = php;
+    document.getElementById("python").innerText = python;
+    document.getElementById("mySql").innerText = mySql;
+    document.getElementById("totalMark").innerText = totalMark;
+    document.getElementById("percentage").innerText = (percentage + "%");
+    document.getElementById("grade").innerText = grade;
+    document.getElementById("resultFinsal").innerText = result;
+  </script>
+</body>
+
 </html>
