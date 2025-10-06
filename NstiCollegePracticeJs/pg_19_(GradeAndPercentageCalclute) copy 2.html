@@ -39,43 +39,43 @@
     <tbody>
       <tr>
         <td>Networking</td>
-        <td class="mark">2</td>
+        <td class="mark"></td>
       </tr>
       <tr>
         <td>Java Script</td>
-        <td class="mark">3</td>
+        <td class="mark"></td>
       </tr>
       <tr>
         <td>PHP</td>
-        <td class="mark">4</td>
+        <td class="mark"></td>
       </tr>
       <tr>
         <td>Pythno</td>
-        <td class="mark">5</td>
+        <td class="mark"></td>
       </tr>
       <tr>
         <td>MySQL</td>
-        <td class="mark">6</td>
+        <td class="mark"></td>
       </tr>
     </tbody>
   </table>
   <script>
-    let arrMark = document.getElementsByClassName('mark');
     let inputBox = document.getElementById('inputBox');
+    let arrMark = document.getElementsByClassName('mark');
+    let i=0;
     function getData() {
       inputBox = Number(inputBox.value);
-
+      document.getElementsByClassName('mark')[i].innerText=inputBox;
+      // arrMark[i].innerText=inputBox;
       console.log(inputBox);
-      console.log(typeof (inputBox));
-
-      for (let i = 0; i <= 4; i++) {
-        let mark = Number(arrMark[i].innerText);
-        
-        // console.log(mark);
-        // console.log(typeof (mark));
-      }
+      // console.log(i);
+      console.log(typeof(i));
+      i++;    
+      // satendra
     }
 
+      // console.log(inputBox);
+      // console.log(typeof (inputBox));
 
     // mark[0] = parseInt(prompt("1. Enter mark of Networking:"));
     // mark[1] = parseInt(prompt("2. Enter mark of JS:"));
