@@ -62,33 +62,22 @@
   <script>
     let inputBox = document.getElementById('inputBox');
     let arrMark = document.getElementsByClassName('mark');
-    let i=0;
+    let i = 0,j=0, mark = [];
     function getData() {
-      inputBox = Number(inputBox.value);
-      document.getElementsByClassName('mark')[i].innerText=inputBox;
-      // arrMark[i].innerText=inputBox;
-      console.log(inputBox);
-      // console.log(i);
-      console.log(typeof(i));
-      i++;    
-      // satendra
+      mark[i] = inputBox.value;
+      document.getElementsByClassName('mark')[i].innerText = inputBox.value;
+      i++;
     }
-
-      // console.log(inputBox);
-      // console.log(typeof (inputBox));
-
-    // mark[0] = parseInt(prompt("1. Enter mark of Networking:"));
-    // mark[1] = parseInt(prompt("2. Enter mark of JS:"));
-    // mark[2] = parseInt(prompt("3. Enter mark of PHP:"));
-    // mark[3] = parseInt(prompt("4. Enter mark of Pythno:"));
-    // mark[4] = parseInt(prompt("5. Enter mark of MySql:"));
     // Change inner Text & calculate total mark's-
-    // mark.forEach((element) => {
-    //   marksTable[i].innerText = element;
-    //   i++;
-    //   totalMark = totalMark + element;
-    //   if (element < 30) gradeChek = false;
-    // });
+    console.log(mark.1);
+    console.log(typeof(mark));
+    mark.forEach((element) => {
+      console.log(element);
+      marksTable[j].innerText = element;
+      j++;
+      totalMark = totalMark + element;
+      if (element < 30) gradeChek = false;
+    });
     // +++++++++++++ Percentage Calcluter++++++++++
     let totalMark = 1, gradeChek = 1;
     percentage = Number((totalMark / 5).toFixed(2));
