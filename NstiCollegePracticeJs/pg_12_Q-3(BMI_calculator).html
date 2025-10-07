@@ -9,8 +9,8 @@
   <h1>BMI Calculator</h1>
   <script>
     const w = parseInt(prompt("Enter your Weight in Kg-"));
-    const h = parseFloat(prompt("Enter your height in Meter-"));
-    const  bmi = (w / (h * h)).toFixed(2);
+    const h = parseFloat(prompt("Enter your height in cm-"));
+    const  bmi = (w / ((h/100) ** 2)).toFixed(2);
     document.write("BMI is= " + bmi + "<br>");
     if (bmi < 18.5) {
       document.write("You are Under Weight");
@@ -18,7 +18,7 @@
 
 
       
-      document.write("You are Under Weight");
+      document.write("You are Normal Weight");
     } else if (bmi >= 25 && bmi < 30) {
       document.write("You are Over Weight");
     } else if (bmi >= 30) {
