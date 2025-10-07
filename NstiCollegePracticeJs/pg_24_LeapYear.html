@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leap Year or Ordinary year</title>
+</head>
+
+<body>
+    <h1>Leap Year or Ordinary year-</h1>
+    <script>
+        // Input Year
+        let year = parseInt(prompt("Enter Year:"));
+        // Check Leap Year or Ordinary year and to display-
+        if (year % 4 == 0 && year % 100 != 0) {
+            document.write("Given Year: (" + year + ") is Leap Year.");
+        } else if (year % 400 == 0) {
+            document.write("Given Year: (" + year + ") is Leap Year.");
+        } else {
+            document.write("Given Year: (" + year + ") is Ordinary year.");
+        }
+    </script>
+</body>
+</html>

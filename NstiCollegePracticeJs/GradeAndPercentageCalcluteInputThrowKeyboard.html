@@ -62,20 +62,23 @@
   <script>
     let inputBox = document.getElementById('inputBox');
     let arrMark = document.getElementsByClassName('mark');
-    let i = 0,j=0, mark = [];
+    let i = 0, j = 0, mark = [], st = 0, Arr = [];
     function getData() {
-      mark[i] = inputBox.value;
-      document.getElementsByClassName('mark')[i].innerText = inputBox.value;
+      arrMark[i].innerText = inputBox.value;
+      makeArr(inputBox.value);
       i++;
     }
+    function makeArr(a) {
+      Arr[st] = Number(a);
+      st++;
+    }
+    for (let index = 0; index < 6; index++) {
+      console.log(mark[index]);
+    }
+    // console.log(mark);
     // Change inner Text & calculate total mark's-
-    console.log(mark.1);
-    console.log(typeof(mark));
     mark.forEach((element) => {
       console.log(element);
-      marksTable[j].innerText = element;
-      j++;
-      totalMark = totalMark + element;
       if (element < 30) gradeChek = false;
     });
     // +++++++++++++ Percentage Calcluter++++++++++
