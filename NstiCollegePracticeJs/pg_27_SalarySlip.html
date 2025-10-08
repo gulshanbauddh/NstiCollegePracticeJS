@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salary Slip</title>
+  </head>
+  <body>
+    <h1>Salary Slip-</h1>
+    <script>
+      // Input
+      let empName = prompt("Enter Employ Name-");
+      let empId = prompt("Enter Employ ID-");
+      let empDesignation = prompt("Enter Employ Designation-");
+      let basicPay = parseInt(prompt("Enter Basic Pay-"));
+      let dect = parseInt(prompt("Enter Basic Dectiction-"));
+      // Calculation
+      let hra = basicPay * 0.3;
+      let da = basicPay * 0.53;
+      let ta = basicPay * 0.15;
+      let totalSalary = basicPay + hra + da + ta;
+      let netSalary = totalSalary - dect;
+      // Display or Output
+      document.write("Employ Name: " + empName);
+      document.write("<br>Employ Id: " + empId);
+      document.write("<br>Employ Designation: " + empDesignation);
+      document.write("<br>Employ Basic Pay:  ₹" + basicPay);
+      document.write("<br>Employ Dectiction:  ₹" + dect);
+      document.write("<br>Employ Total Salary:  ₹" + totalSalary);
+      document.write("<br>Employ Net Salary:  ₹" + netSalary);
+    </script>
+  </body>
+</html>
