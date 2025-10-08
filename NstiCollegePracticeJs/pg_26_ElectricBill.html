@@ -25,11 +25,11 @@
       let unit = parseInt(prompt("Enter unit"));
       // Calculate Electric Bill
       if (unit > 0 && unit < 100) {
-        bill = (unit * 5);
-      } else if (unit<100 && unit<200 ) {
-        bill = (100 * 5) + ((unit - 100) * 7);
+        bill = unit * 5;
+      } else if (unit < 100 && unit < 200) {
+        bill = 100 * 5 + (unit - 100) * 7;
       } else {
-        bill = ((100 * 5) + (100 * 7) + ((unit - 200) * 10));
+        bill = 100 * 5 + 100 * 7 + (unit - 200) * 10;
       }
       // Calculate Surcharge-
       if (bill > 1000) {
