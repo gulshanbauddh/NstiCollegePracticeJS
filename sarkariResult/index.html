@@ -2,68 +2,59 @@
 <html>
   <head>
     <title>Sarkari Result</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
-      .conTop,
-      .conBotom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #cd0808;
-        height: 180px;
-        width: 55%;
-        color: white;
-        font-size: 30px;
-      }
-      .conBotom {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        background-color: #05055f;
-        color: white;
-        height: 45px;
-        text-decoration: none;
-      }
-      .conBotom a {
-        color: white;
-        text-decoration: none;
-        padding-right: 25px;
-        font-size: 15px;
-        font-weight: 600;
-      }
-      .conBotom :first-child {
-        padding-left: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <nav>
-      <div class="conTop">
-        <h1>Sarkari Result</h1>
-        <p>SarkariResuli.com</p>
-      </div>
-      <div class="conBotom">
-        <div class="onMain">
-          <a href="#">Home</a>
-          <a href="#">Latest Job</a>
-          <a href="#">Admit Card</a>
-          <a href="#">Result</a>
-          <a href="#">Addmission</a>
-          <a href="#">Syllabus</a>
-          <a href="#">Answer Key</a>
-          <a href="#">More</a>
+    <div class="fullWeb">
+      <!-- Nav Bar -->
+      <nav>
+        <div class="conTop">
+          <h1>SARKARI RESULT</h1>
+          <p>SarkariResuli.com</p>
         </div>
+        <div class="conBotom">
+          <div class="onMain">
+            <a href="#">Home</a>
+            <a href="#">Latest Job</a>
+            <a href="#">Admit Card</a>
+            <a href="#">Result</a>
+            <a href="#">Addmission</a>
+            <a href="#">Syllabus</a>
+            <a href="#">Answer Key</a>
+            <a href="#">More</a>
+          </div>
+        </div>
+      </nav>
+      <div class="con1 margToMidle">
+        <b>Sarkari Result</b> Get Online Form, Results, Admit Card, Answer Key,
+        Syllabus, Career News, Sarkari Yojana, Scholarship, Sarkari Notice etc.
+        <br />
+        <img src="./img/liveTimTim.webp" alt="Tim Tim" />
+        <br>
+        <button>Join Whatsapp</button>
+        <br>
+        <a href="#">SarkariResuli Tools</a>
       </div>
-    </nav>
+      <div class="noticeContainer">
+        <div class="box">Delhi Police Constable Form<br>(7565 Posts)</div>
+        <div class="box">SSC CPO SI Online Form<br>(2861 Posts)</div>
+        <div class="box">BSSC Office Attendant Form<br>(3727 Posts)</div>
+        <div class="box">DDA Online Form 2025<br>(1732 Posts)</div>
+      </div>      
+      <div class="noticeContainer">
+        <div class="box">Delhi Police Constable Form<br>(7565 Posts)</div>
+        <div class="box">SSC CPO SI Online Form<br>(2861 Posts)</div>
+        <div class="box">BSSC Office Attendant Form<br>(3727 Posts)</div>
+        <div class="box">DDA Online Form 2025<br>(1732 Posts)</div>
+      </div>
+      <!-- ++++ -->
+       <script>
+        let box=document.querySelectorAll(".box");
+        box[0].style.backgroundColor="#fb0303";
+        box[1].style.backgroundColor="#ff6900";
+        box[2].style.backgroundColor="#ed13e3";
+        box[3].style.backgroundColor="#0d13b5";
+       </script>
+    </div>
   </body>
 </html>
