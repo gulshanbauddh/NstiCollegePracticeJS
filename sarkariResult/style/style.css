@@ -1,94 +1,165 @@
-      * {
-          margin: 0;
-          padding: 0;
-          font-family: Arial, sans-serif;
-      }
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-      .fullWeb,
-      .margToMidle {
-          width: 56%;
-          margin: 0 auto;
-          border: 1px solid gray;
-      }
+.fullWeb,
+.margToMidle {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid gray;
+}
 
-      nav {
-          display: flex;
-          flex-direction: column;
-      }
+nav {
+  display: flex;
+  flex-direction: column;
+}
 
-      .conTop,
-      .conBotom {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background-color: #cd0808;
-          height: 180px;
-          color: white;
-          font-size: 25px;
-      }
+.conTop,
+.conBotom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #cd0808;
+  height: 180px;
+  color: white;
+  font-size: 25px;
+}
 
-      .conBotom {
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: row;
-          background-color: #05055f;
-          color: white;
-          height: 45px;
-          text-decoration: none;
-      }
+.conBotom {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-color: #05055f;
+  color: white;
+  height: 45px;
+  text-decoration: none;
+}
 
-      .conBotom a {
-          color: white;
-          text-decoration: none;
-          padding-right: 25px;
-          font-size: 15px;
-          font-weight: 600;
-      }
+.conBotom a {
+  color: white;
+  text-decoration: none;
+  padding-right: 25px;
+  font-size: 15px;
+  font-weight: 600;
+}
 
-      .conBotom :first-child {
-          padding-left: 20px;
-      }
+.conBotom :first-child {
+  padding-left: 20px;
+}
 
-      @media (max-width: 768px) {
-          .fullWeb {
-              width: 100%;
-          }
+@media (max-width: 768px) {
+  .fullWeb {
+    width: 100%;
+  }
 
-          .conBotom a {
-              font-size: 5px;
-          }
-      }
+  .conBotom a {
+    font-size: 15px;
+  }
+}
 
-      .con1 {
-          width: 80%;
-          margin: 1rem auto;
-          border: none;
-          text-align: center;
-      }
+.con1 {
+  width: 80%;
+  margin: 1rem auto;
+  border: none;
+  text-align: center;
+}
 
-      img {
-          margin: 1rem;
-          height: 2rem;
-      }
+img {
+  margin: 1rem;
+  height: 2rem;
+}
 
-      .noticeContainer {
-          display: flex;
-          justify-content: center;
-          gap: 0.5rem;
-      }
+.noticeContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1%;
+}
 
-      .noticeContainer .box {
-          display: flex;
-          height: 5rem;
-          width: 15rem;
-          border: none;
-          color: white;
-          align-items: center;
-          text-align: center;
-          border-radius: 10px;
-          justify-content: center;
-          font-weight: 600;
-          font-size: 1.1rem;
-          padding: 0px;
-      }
+.noticeContainer .box {
+  display: flex;
+  height: 5rem;
+  width: 15rem;
+  border: none;
+  color: white;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.margToMidle button {
+  background: #25d366;
+  border: none;
+  height: 2.3rem;
+  width: 8.2rem;
+  border-radius: 11px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  color: white;
+}
+.margToMidle a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.mainContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.resultsContainer,
+.latesJobContainer,
+.admitCardsContainer {
+  border: 1px solid #a80909;
+  margin: 0rem 1rem;
+}
+.resultsContainer p,
+.admitCardsContainer p,
+.latesJobContainer p {
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px;
+  margin-bottom: 8px;
+  border-radius: 0;
+  border: 0 solid #ab183d;
+  color: #fff;
+  background-color: #a80909;
+}
+
+.resultsContainer li,
+.latesJobContainer li,
+.admitCardsContainer li {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+.resultsContainer a,
+.latesJobContainer a,
+.admitCardsContainer a {
+  color: #0000ef;
+}
+
+.buttonView {
+  display: flex;
+  border: none;
+  color: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin: 1rem;
+  background-color: #1b78e2;
+  font-weight: 600;
+  margin-inline-start: auto;
+}
+
+.mainContainer2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
