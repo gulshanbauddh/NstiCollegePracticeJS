@@ -163,3 +163,17 @@ img {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+nav {
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  z-index: 1000;
+  background-color: #ff0000;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.margToMidle{
+  margin-top: 23%;
+}
