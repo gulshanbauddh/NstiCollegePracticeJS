@@ -104,21 +104,25 @@ img {
   margin-bottom: 0.9rem;
   color: white;
 }
+
 .margToMidle a {
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: 700;
 }
+
 .mainContainer {
   display: flex;
   align-items: flex-start;
 }
+
 .resultsContainer,
 .latesJobContainer,
 .admitCardsContainer {
   border: 1px solid #a80909;
   margin: 0rem 1rem;
 }
+
 .resultsContainer p,
 .admitCardsContainer p,
 .latesJobContainer p {
@@ -140,6 +144,7 @@ img {
   margin-left: 2rem;
   margin-top: 1rem;
 }
+
 .resultsContainer a,
 .latesJobContainer a,
 .admitCardsContainer a {
@@ -162,6 +167,68 @@ img {
 .mainContainer2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.onMain a:hover {
+  color: red;
+}
+
+.buttonView:hover a {
+  color: rgb(255, 0, 0);
+}
+
+.footer {
+  display: flex;
+  background-color: #212121;
+  color: white;
+  padding: 2rem 1rem;
+  justify-content: space-between;
+}
+
+.onMainFooter a {
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.onMainFooter a:hover {
+  color: red;
+}
+
+.mainContainerSinglePage{
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.onMain a:hover {
+  color: red;
+}
+
+.buttonView:hover a {
+  color: rgb(255, 0, 0);
+}
+
+.footer {
+  display: flex;
+  background-color: #212121;
+  color: white;
+  padding: 2rem 1rem;
+  justify-content: space-between;
+}
+
+.onMainFooter a {
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.onMainFooter a:hover {
+  color: red;
+}
+
+.mainContainerSinglePage{
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 nav {
