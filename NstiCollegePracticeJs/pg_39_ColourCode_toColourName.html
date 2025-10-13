@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colour Code to Colour Name:</title>
+  </head>
+  <body>
+    <h1>Colour Code to Colour Name:</h1>
+    <script>
+      let no = parseInt(prompt("Input Number for Colour Name: (0 to 6)"));
+      let displayOut;
+      switch (no) {
+        case 0:
+          displayOut = "Violet";
+          break;
+        case 1:
+          displayOut = "Indigo";
+          break;
+        case 2:
+          displayOut = "Blue";
+          break;
+        case 3:
+          displayOut = "Green";
+          break;
+        case 4:
+          displayOut = "Yellow";
+          break;
+        case 5:
+          displayOut = "Orange";
+          break;
+        case 6:
+          displayOut = "Red";
+          break;
+        default:
+          displayOut = "Invalid! Input";
+      }
+      document.write("Colour Name is : " + displayOut);
+    </script>
+  </body>
+</html>
