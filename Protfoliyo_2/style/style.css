@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #25303f;
+    color: white;
+    font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Left Nav Bar Display Fixed */
+.leftContainer {
+    display: flex;
+    align-items: flex-start;
+    background-color: #151f2b;
+    flex-direction: column;
+    padding: 5rem 4rem;
+    width: 20%;
+    height: 100vh;
+    justify-content: space-evenly;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.leftTopImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    background-color: #151f2b;
+}
+
+.leftTopImage img {
+    height: 15rem;
+    border-radius: 0.5rem;
+}
+
+.leftTopImage p {
+    padding-top: 2rem;
+    background-color: #151f2b;
+}
+
+.headings {
+    background-color: #151f2b;
+    display: flex;
+    row-gap: 2rem;
+    flex-direction: column;
+    font-size: 2rem;
+    justify-content: space-evenly;
+    gap: 2.5rem;
+}
+
+.socialMEdiaLogo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30rem;
+    height: 2rem;
+    gap: 1rem;
+    background-color: #151f2b;
+}
+
+.socialMEdiaLogo img {
+    background-color: #151f2b;
+}
+
+.leftContainer a {
+    text-decoration: none;
+    color: white;
+    background-color: #151f2b;
+}
+
+.headings a:hover {
+    color: rgb(19, 204, 19);
+}
+
+/* Main Content */
+.containerMain{
+    display: flex;
+    /* justify-content: space-around;
+    align-items: center;
+    flex-direction: row; */
+    /* width: 60vw; */
+    /* position: absolute; */
+    /* left: 30vw; */
+}
+.containerMain1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
