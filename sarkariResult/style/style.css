@@ -199,3 +199,49 @@ img {
   justify-content: center;
   margin: 2rem 0;
 }
+
+.onMain a:hover {
+  color: red;
+}
+
+.buttonView:hover a {
+  color: rgb(255, 0, 0);
+}
+
+.footer {
+  display: flex;
+  background-color: #212121;
+  color: white;
+  padding: 2rem 1rem;
+  justify-content: space-between;
+}
+
+.onMainFooter a {
+  color: white;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.onMainFooter a:hover {
+  color: red;
+}
+
+.mainContainerSinglePage{
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* 
+nav {
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  z-index: 1000;
+  background-color: #ff0000;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.margToMidle{
+  margin-top: 23%;
+} */

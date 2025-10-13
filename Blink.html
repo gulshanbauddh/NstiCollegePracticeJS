@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Tim </title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .dlinking{
+      display: flex;
+      justify-content: center;
+      margin-top: 5rem;
+    }
+    .border{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid black;
+      width: auto;
+      border-radius: 100rem;
+      font-size: 3rem;
+      padding: 5px;
+    }
+    .blinking-circle{
+      background-color: red;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+      animation: blink-animation 0.8s infinite alternate;
+    }
+
+    @keyframes blink-animation {
+      0%{
+        opacity: 1;
+      }
+
+      50%{
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dlinking">
+    <div class="border">
+      <div class="blinking-circle"></div>
+      <div>Develloper Gulshan</div>
+    </div>
+  </div>
+</body>
+</html>
