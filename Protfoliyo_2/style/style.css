@@ -74,20 +74,79 @@
 }
 
 .headings a:hover {
-    color: rgb(19, 204, 19);
+    color: #22e7a1;
 }
 
 /* Main Content */
+/* .containerMain {
+    display: flex;
+    height: auto;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    margin: auto;
+} */
+
 .containerMain {
     display: flex;
-    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 80%;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    width: 80vw;
-    margin-left: 20vw;
+}
+
+.containerMainLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bigText {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.gWhite {
+    color: #22e7a1;
+    text-decoration: underline;
+}
+
+.containerMain,
+p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 3rem 0;
 }
 
 .containerMainRight img {
-    height: 60px;
+    height: 400px;
     width: auto;
+    border-radius: 1rem;
+    margin-left: 1rem;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    border: none;
+    background-color: #22e7a1;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 10px;
+    color: white;
+    margin: 0 2rem;
+    font-size: 1rem;
+}
+#getInTouch{
+    background: none;
+    border: 1px solid black;
 }
