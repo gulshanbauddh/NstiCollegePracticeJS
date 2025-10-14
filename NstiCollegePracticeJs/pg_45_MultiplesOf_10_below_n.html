@@ -6,7 +6,18 @@
     <title>Display all multiples of 10 below 200:</title>
   </head>
   <body>
-
+    <h1>Display all multiples of 10 below 200:</h1>
+    <script>
+      let no=parseInt(prompt("Enter number which you want Table:"));
+      let limit=parseInt(prompt("Enter Limit :"));
+      // let no = 5;
+      // let limit = 200;
+      let mul;
+      for (i = 1; i <= limit; i++) {
+        let mul = no * i;
+        if(mul<limit)
+        document.write("10 x " + i + " = " + mul + "<br>");
+      }
     </script>
   </body>
 </html>
