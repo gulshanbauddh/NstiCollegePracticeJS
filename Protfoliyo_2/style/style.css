@@ -1,152 +1,159 @@
 * {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #25303f;
-    color: white;
-    font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #25303f;
+  color: white;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Left Nav Bar Display Fixed */
 .leftContainer {
-    display: flex;
-    align-items: flex-start;
-    background-color: #151f2b;
-    flex-direction: column;
-    padding: 2rem 0rem 6rem 2rem;
-    width: 20vw;
-    height: 100vh;
-    justify-content: space-evenly;
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  background-color: #151f2b;
+  flex-direction: column;
+  padding: 2rem 1rem 6rem 2rem;
+  width: 20vw;
+  height: 100vh;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .leftTopImage {
-    font-size: 2rem;
-    background-color: #151f2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  background-color: #151f2b;
+  padding-bottom: 1.5rem;
 }
 
 .leftTopImage img {
-    border-radius: 0.5rem;
-    height: 15rem;
-    width: auto;
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: auto;
+  padding-bottom: 1rem;
+  background-color: #151f2b;
 }
 
-.leftTopImage p {
-    padding-top: 2rem;
-    background-color: #151f2b;
+.leftTopImage > div {
+  display: contents;
+  padding: 1rem 0 0 0;
+  background-color: #151f2b;
 }
 
 .headings {
-    background-color: #151f2b;
-    display: flex;
-    row-gap: 1rem;
-    flex-direction: column;
-    font-size: 1.5rem;
+  background-color: #151f2b;
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  font-size: 1.5rem;
 }
 
 .socialMEdiaLogo {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* border-radius: 3rem; */
-    height: 2rem;
-    width: auto;
-    gap: 2rem;
-    margin-top: 3rem;
-    background-color: #151f2b;
+  display: flex;
+  align-items: center;
+  width: auto;
+  gap: 1rem;
+  margin-top: 2rem;
+  background-color: #151f2b;
 }
 
 .socialMEdiaLogo img {
-    background-color: #151f2b;
+  width: 2rem;
+  background-color: #151f2b;
 }
 
 .leftContainer a {
-    text-decoration: none;
-    color: white;
-    background-color: #151f2b;
+  text-decoration: none;
+  color: white;
+  background-color: #151f2b;
 }
 
 .headings a:hover {
-    color: #22e7a1;
+  color: #22e7a1;
 }
 
 /* Main Content */
-/* .containerMain {
-    display: flex;
-    height: auto;
-    align-items: center;
-    position: absolute;
-    top: 30%;
-    left: 40%;
-    margin: auto;
-} */
 
 .containerMain {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    height: auto;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  left: 22vw;
+  height: 100vh;
 }
 
 .containerMainLeft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .bigText {
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.2;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .gWhite {
-    color: #22e7a1;
-    text-decoration: underline;
-}
-
-.containerMain,
-p {
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 3rem 0;
+  color: #22e7a1;
+  text-decoration: underline;
 }
 
 .containerMainRight img {
-    height: 400px;
-    width: auto;
-    border-radius: 1rem;
-    margin-left: 1rem;
+  height: 400px;
+  width: auto;
+  border-radius: 1rem;
+  margin-left: 1rem;
 }
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
 }
-button{
-    border: none;
-    background-color: #22e7a1;
-    height: 3rem;
-    width: 10rem;
-    border-radius: 10px;
-    color: white;
-    margin: 0 2rem;
-    font-size: 1rem;
+button {
+  border: none;
+  background-color: #22e7a1;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 10px;
+  color: white;
+  margin: 0 2rem;
+  font-size: 1rem;
 }
-#getInTouch{
-    background: none;
-    border: 1px solid black;
+#getInTouch {
+  background: none;
+  border: 1px solid black;
+}
+.containerMainLeft p {
+  line-height: 2;
+  font-size: 1.08rem;
+  margin-top: 1rem;
+}
+.progres {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.button :hover {
+  background-color: #00ff99;
 }
