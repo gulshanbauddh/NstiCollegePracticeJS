@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factor of a Number:</title>
+  </head>
+  <body>
+    <h1>Factor of a Number:</h1>
+    <script>
+      //   let no = parseInt(prompt("Enter Number:"));
+      let no = 10;
+      let factor = 1;
+      document.write("Factor's of " + no + " is = <br>");
+      for (i = 1; i <= no; i++) {
+        if (no % i === 0) {
+          factor = i;
+          document.write(factor + " <br> ");
+        }
+      }
+    </script>
+  </body>
+</html>
