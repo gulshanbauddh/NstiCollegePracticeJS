@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input No to Month In Word</title>
+    <title>Input Month number & find month name</title>
   </head>
   <body>
-    <h1>Input No to Month In Word</h1>
+    <h1>Input Month number & find month name</h1>
     <script>
-      let no = parseInt(prompt("Enter Number for Month: (1 to 12)"));
+      let no = parseInt(prompt("Enter any number b/w (1 to 12)"));
       let displayOut;
       switch (no) {
         case 1:
@@ -47,8 +47,8 @@
         case 9:
           displayOut = "December";
           break;
-          default:
-            displayOut="Invalid! Input";
+        default:
+          displayOut = "Invalid! Input";
       }
       document.write("Month Name is : " + displayOut);
     </script>
