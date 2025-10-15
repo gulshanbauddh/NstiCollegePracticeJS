@@ -10,12 +10,12 @@
     <script>
       let no = parseInt(prompt("Enter no:"));
       let dis = no, temp = 0, rev = 0, sum=0;
-      do {
-        temp = no % 10; ///  321/10=32
+      while (no > 0){
+        temp = no % 10;
         sum=sum+temp;
         rev = rev * 10 + temp;
         no = parseInt(no / 10);
-      } while (no > 0);
+      } 
       document.write("You are enterd " + dis + "<br>Revers of number is= " + rev+"<br>sum is of number is = "+sum);
     </script>
   </body>

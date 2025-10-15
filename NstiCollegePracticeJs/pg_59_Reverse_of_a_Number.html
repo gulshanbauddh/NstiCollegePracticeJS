@@ -12,11 +12,11 @@
       let dis=no;
       let temp = 0,
         rev = 0;
-      do {
+      while (no > 0) {
         temp = no % 10;
         rev = rev * 10 + temp;
         no = parseInt(no / 10);
-      } while (no > 0);
+      }
       document.write("You are enterd "+dis+" and Revers number is= " + rev);
     </script>
   </body>
