@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication table of a number upto the limil 'n':</title>
+  </head>
+  <body>
+    <h1>Multiplication table of a number upto the limil 'n':</h1>
+    <script>
+      let no = parseInt(prompt("Enter number which you want Table:"));
+      let limit = parseInt(prompt("Enter Limit :"));
+      let mul = 1;
+      for (i = 1; mul < limit; i++) {
+        mul = no * i;
+        document.write("10 x " + i + " = " + mul + "<br>");
+      }
+    </script>
+  </body>
+</html>
