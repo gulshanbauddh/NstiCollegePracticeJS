@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revers of a Number:</title>
+  </head>
+  <body>
+    <h1>Revers of a Number:</h1>
+    <script>
+      let no = parseInt(prompt("Enter no:"));
+      let dis=no;
+      let temp = 0,
+        rev = 0;
+      do {
+        temp = no % 10;
+        rev = rev * 10 + temp;
+        no = parseInt(no / 10);
+      } while (no > 0);
+      document.write("You are enterd "+dis+" and Revers number is= " + rev);
+    </script>
+  </body>
+</html>

@@ -8,11 +8,23 @@
   <body>
     <h1>Display all multiples of 10 below 200:</h1>
     <script>
-      for (i = 1; i<100; i++) {
-        let mul = 10 * i;
-        if(mul<200)
+      // Method 1 best;
+      let limit = 200;
+      var mul = 0;
+      for (i = 1; mul < limit; i++) {
         document.write("10 x " + i + " = " + mul + "<br>");
+        mul = 10 * i;
       }
+
+      // Method 2:
+      // for (i = 1; i != 0; i++) {
+      //   // document.write(i + "<br>");
+      //   let mul = 10 * i;
+      //   if (mul >= limit) {
+      //     break;
+      //   }
+      //   document.write("10 x " + i + " = " + mul + "<br>");
+      // }
     </script>
   </body>
 </html>
