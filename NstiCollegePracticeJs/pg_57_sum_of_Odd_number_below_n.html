@@ -10,11 +10,11 @@
     <script>
       let sum=0;
       let no = parseInt(prompt("Enter number:"));
-      for (i = 1; i < no; (i = i + 2)) {
+      for (i = 1; i < no; i+=2) {
         sum = sum + i;
       }
       document.write(
-        "Your enterd number is : " + no + " and sum of all Odd number below is : " + sum
+        "Your enterd number is : " + no + " <br>Sum of all Odd number below is : " + sum
       );
     </script>
   </body>
