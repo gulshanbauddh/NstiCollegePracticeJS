@@ -9,13 +9,17 @@
 <body>
     <h1>Sum of n number Using For Loop:</h1>
     <script>
-        let no=parseInt(prompt("Enter Your Number:"));
+        // let no=parseInt(prompt("Enter Your Number:"));
+        let no=7;
         let sum=0;
-        for(let i=1; i<=no; i++){ 
+        for(let i=1; i<no; i++){ 
             sum=sum+i;
-            document.write("<br>i="+i);
+            document.write(i +" + ");
         }
-        document.write("Your enterd number is = "+no +"<br>Sum of number is = "+sum);
+        document.write(no);
+        sum=sum+no;
+        document.write(" = "+sum);
+        // document.write("Your enterd number is = "+no +"<br>Sum of number is = "+sum);
     </script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Prime or Not</title>
+  </head>
+  <body>
+    <h1>Check Prime or Not</h1>
+    <script>
+      let no = parseInt(prompt("Enter any number:"));
+      // let no = 17;
+      let isPrimeNumber = true;
+      for (i = 2; i < no; i++) {
+        if (no % i == 0) {
+          isPrimeNumber = false;
+          break;
+        }
+      }
+      document.write("Your number is: " + no + "<br>");
+      document.write(isPrimeNumber ? "Prime." : "Not prime.");
+    </script>
+  </body>
+</html>

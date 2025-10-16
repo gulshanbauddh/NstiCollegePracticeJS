@@ -16,7 +16,8 @@
         do{
             temp=no%10;
             rev=rev*10+temp;
-            no=parseInt(no/10);
+            // no=parseInt(no/10);
+            no=Math.floor(no/10);
         }while(no>0);
         
         document.write("Your Entred number is = "+orginalNo+" and reverse = "+rev);
