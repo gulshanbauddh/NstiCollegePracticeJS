@@ -9,10 +9,12 @@
     <h1>Factor of a Number:</h1>
     <script>
       let no = parseInt(prompt("Enter Number:"));
-      document.write("Factor's of " + no + " is = <br>");
+      no=23;
+      document.write("Factor's of " + no + " is = ");
       for (i = 1; i <= no; i++) {
         if (no % i === 0) {
-          document.write(i + " <br> ");xx
+          document.write(i + " ");
+          document.write((i!=no)?" , ":"")
         }
       }
     </script>

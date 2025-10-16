@@ -8,17 +8,18 @@
   <body>
     <h1>Check Prime or Not</h1>
     <script>
-      let no = parseInt(prompt("Enter any number:"));
-      // let no = 17;
+      let num = parseInt(prompt("Enter any number:"));
+      num = 12;
       let isPrimeNumber = true;
-      for (i = 2; i < no; i++) {
-        if (no % i == 0) {
+      for (i = 2; i < num; i++) {
+        if (num % i == 0) {
           isPrimeNumber = false;
           break;
         }
       }
-      document.write("Your number is: " + no + "<br>");
+      document.write("Your number is: " + num + "<br>");
       document.write(isPrimeNumber ? "Prime." : "Not prime.");
     </script>
   </body>
+  
 </html>
