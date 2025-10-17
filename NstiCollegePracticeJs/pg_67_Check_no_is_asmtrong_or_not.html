@@ -9,14 +9,15 @@
     <h1>Check no is asmtrong or not:</h1>
     <script>
       let num = parseInt(prompt("Enter any number:"));
-      let temp, sum=0;
-      document.write("Your number is: "+num+"<br>");
-      while(num>0){        
-        temp=num%10;
-        sum=sum+Math.pow(temp,3);
-        num=Math.floor(num/10);
+      // num = 153;
+      let orgNum = num, sum = 0;
+      document.write("Your number is: " + num + "<br>");
+      while (num > 0) {
+        let temp = num % 10;
+        sum = sum + Math.pow(temp, 3);
+        num = Math.floor(num / 10);
       }
-      document.write((sum===num)?"Asmtrong": "not Asmtrong")
+      document.write(sum == orgNum ? "Asmtrong" : "not Asmtrong");
     </script>
   </body>
 </html>
