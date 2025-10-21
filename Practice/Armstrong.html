@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong number between to Limit:</title>
+  </head>
+  <body>
+    <h1>Armstrong number between to Limit:</h1>
+    <script>
+      // var num1 = parseInt(prompt("Enter Limit 1:"));
+      // var num2 = parseInt(prompt("Enter Limit 2:"));
+      num1 = 1;
+      num2 = 100000;
+      // while (num1 <= num2) {
+      //   var num = num1;
+      //   var digit = num.toString().length;
+      //   var sum = 0;
+      //   var orgNum = num;
+      //   while (num > 0) {
+      //     var temp = num % 10;
+      //     sum = sum + (temp ** digit);
+      //     num = Math.floor(num / 10);
+      //   }
+      //   if (sum == orgNum) {
+      //     document.write("asmtrong= " + sum + "<br>");
+      //   }
+      //   num1++;
+      // }
+
+      // for loop:
+      for (num = num1; num < num2; num++) {
+        var orgNum = num;
+        sum = 0;
+        let digit = orgNum.toString().length;
+        while (orgNum > 0) {
+          var temp = orgNum % 10;
+          sum = sum + Math.pow(temp, digit);
+          orgNum = Math.floor(orgNum / 10);
+        }
+        if (sum == num) {
+          document.write("Asmtrong= " + sum + "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
