@@ -8,20 +8,20 @@
   <body>
     <h1>Armstrong:</h1>
     <script>
-      let limit_1 = parseInt(prompt("Enter 1st Limti:"));
-      let limit_2 = parseInt(prompt("Enter 2st Limti:"));
-      // limit_1 = 1;
-      // limit_2 = 10000;
-      for (limit_1; limit_1 <= limit_2; limit_1++) {
+      let lim_1 = parseInt(prompt("Enter Starting Limit:"));
+      let lim_2 = parseInt(prompt("Enter Ending Limit:"));
+      lim_1 = 100;
+      lim_2 = 500;
+      for (lim_1; lim_1 <= lim_2; lim_1++) {
         let sum = 0;
-        let num = limit_1;
+        let num = lim_1;
         let digit = num.toString().length;
         while (num > 0) {
           let temp = num % 10;
           sum = sum + temp ** digit;
-          num = parseInt(num / 10);
+          num = Math.floor(num / 10);
         }
-        if (limit_1 == sum) {
+        if (lim_1 == sum) {
           document.write("Armstrong numbers : " + sum + "<br>");
         }
       }

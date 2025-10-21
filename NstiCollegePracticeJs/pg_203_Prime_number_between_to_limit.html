@@ -8,10 +8,12 @@
   <body>
     <h1>Prime number b/w two limit:</h1>
     <script>
-      let num1 = parseInt(prompt("Enter Limit 1:"));
-      let num2 = parseInt(prompt("Enter Limit 2:"));
-      while (num1 <= num2) {
-        num = num1;
+      let lim_1 = parseInt(prompt("Enter Starting Limit:"));
+      let lim_2 = parseInt(prompt("Enter Ending Limit:"));
+      lim_1 = 1;
+      lim_2 = 10;
+      while (lim_1 <= lim_2) {
+        num = lim_1;
         let isPrimeNumber = true;
         for (i = 2; i <= num / 2; i++) {
           if (num % i == 0) {
@@ -20,9 +22,9 @@
           }
         }
         if (isPrimeNumber) {
-          document.write(num + "<br>");
+          document.write(num + ", ");
         }
-        num1++;
+        lim_1++;
       }
     </script>
   </body>

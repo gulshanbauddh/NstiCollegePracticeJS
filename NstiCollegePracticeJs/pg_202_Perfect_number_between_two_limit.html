@@ -6,23 +6,23 @@
     <title>Check Perfect number b/w two number:</title>
   </head>
   <body>
+    <!-- 6, 28, 496 etc is perfect number: -->
     <h1>Check Perfect number b/w two number:</h1>
     <script>
-      let num1 = parseInt(prompt("Enter Limit 1:"));
-      let num2 = parseInt(prompt("Enter Limit 2:"));
-      while (num1 < num2) {
-        var check = 0;
-        var num = num1;
-
+      let lim_1 = parseInt(prompt("Enter Limit 1:"));
+      let lim_2 = parseInt(prompt("Enter Limit 2:"));
+      lim_1 = 1;
+      lim_2 = 500;
+      for (lim_1; lim_1 <= lim_2; lim_1++) {
+        let check = 0;
+        let num = lim_1;
         for (i = 1; i < num; i++) {
           if (num % i === 0) {
             check = check + i;
           }
         }
         if (num === check) document.write("<br>Perfect number : " + num);
-        num1++;
       }
-      // 6, 28, 496 etc is perfect number:
     </script>
   </body>
 </html>
