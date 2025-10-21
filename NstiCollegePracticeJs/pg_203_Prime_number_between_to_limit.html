@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime number b/w two limit:</title>
+  </head>
+  <body>
+    <h1>Prime number b/w two limit:</h1>
+    <script>
+      let num1 = parseInt(prompt("Enter Limit 1:"));
+      let num2 = parseInt(prompt("Enter Limit 2:"));
+      while (num1 <= num2) {
+        num = num1;
+        let isPrimeNumber = true;
+        for (i = 2; i <= num / 2; i++) {
+          if (num % i == 0) {
+            isPrimeNumber = false;
+            break;
+          }
+        }
+        if (isPrimeNumber) {
+          document.write(num + "<br>");
+        }
+        num1++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LCM and HCF of two number:</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LCM and HCF of two number:</h1>
+    <script>
+      // Input
+      // let num1 = parseInt(prompt("Enter Limit 1:"));
+      // let num2 = parseInt(prompt("Enter Limit 2:"));
+      num1 = 6;
+      num2 = 48;
+      let flag = 1;
+      // let temp;
+      // calculate HCF:
+      // while (num2 != 0) {
+      //   temp = num2;
+      //   num2 = num1 % num2;
+      //   num1 = temp;
+      // }
+      // document.write("HCF is : " + num1 + "<br>");
+
+      // calculate LCM:
+      lcm(num1, num2);
+      function lcm(num1, num2) {
+        if (num1 < num2) {
+          let swap = num1;
+          num1 = num2;
+          num2 = swap;
+        }
+        if (num1 > num2) {
+          if (flag)
+            if (parseInt(num1 % num2) == 0) {
+              document.write("LCM is : " + num1);
+              flag = 0;
+            } else {
+              for (i = 2; i <= num2; i++) {
+                if (parseInt(num2 % i) == 0) {
+                  num1 = num1 * i;
+                  lcm(num1, num2);
+                }
+              }
+            }
+        }
+      }
+    </script>
+  </body>
+</html>
