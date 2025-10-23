@@ -31,11 +31,13 @@
       // Input
       let num1 = parseInt(prompt("Enter Limit 1:"));
       let num2 = parseInt(prompt("Enter Limit 2:"));
-      // num1 = 395;
-      // num2 = 300;
+      num1 = 395;
+      num2 = 300;
+      if(num1!=NaN && num2!= NaN){
+        let hcf = funHcf(num1, num2);
+        let lcm = funLcm(num1, num2, hcf);
+      }
       // Function Calling:
-      let hcf = funHcf(num1, num2);
-      let lcm = funLcm(num1, num2, hcf);
       // Display or Output LCM & HCF:
       document.write(`Your insert number is : ${num1} and ${num2}`);
       document.write("<br>LCM is : " + lcm + "<br>");
