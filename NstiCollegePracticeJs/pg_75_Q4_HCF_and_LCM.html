@@ -16,7 +16,7 @@
     <script>
       // calculate HCF:
       function funHcf(num1, num2) {
-        while (num2 != 0) {
+        while (num2 > 0) {
           let temp = num2;
           num2 = num1 % num2;
           num1 = temp;
@@ -30,10 +30,17 @@
       }
       // Input
 
+<<<<<<< HEAD:NstiCollegePracticeJs/pg_204_HCF_and_LCM.html
       let num1 = parseInt(prompt("Enter Limit 1:"));
       let num2 = parseInt(prompt("Enter Limit 2:"));
       // num1 = 395;
       // num2 = 300;
+=======
+      let num1 = parseInt(prompt("Enter Number 1:"));
+      let num2 = parseInt(prompt("Enter Number 2:"));
+      num1 = 30;
+      num2 = 40;
+>>>>>>> b303698c63bdc6fd461dcd504e12f9494e132f45:NstiCollegePracticeJs/pg_75_Q4_HCF_and_LCM.html
       // Function Calling:
       let hcf = funHcf(num1, num2);
       let lcm = funLcm(num1, num2, hcf);
