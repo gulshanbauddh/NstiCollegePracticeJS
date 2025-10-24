@@ -14,6 +14,19 @@
   <body>
     <h1>LCM and HCF of two number:</h1>
     <script>
+      // Input
+      let num1 = parseInt(prompt("Enter Number 1:"));
+      let num2 = parseInt(prompt("Enter Number 2:"));
+      num1 = 54;
+      num2 = 12;
+      // Function Calling:
+      let hcf = funHcf(num1, num2);
+      let lcm = funLcm(num1, num2, hcf);
+      // Display or Output LCM & HCF:
+      document.write(`Your insert number is : ${num1} and ${num2}`);
+      document.write("<br>LCM is : " + lcm + "<br>");
+      document.write("HCF is : " + hcf);
+
       // calculate HCF:
       function funHcf(num1, num2) {
         while (num2 > 0) {
@@ -28,19 +41,19 @@
         let lcm = (num1 * num2) / hcf;
         return lcm;
       }
-      // Input
+      // // Input
 
-      let num1 = parseInt(prompt("Enter Number 1:"));
-      let num2 = parseInt(prompt("Enter Number 2:"));
-      num1 = 30;
-      num2 = 40;
-      // Function Calling:
-      let hcf = funHcf(num1, num2);
-      let lcm = funLcm(num1, num2, hcf);
-      // Display or Output LCM & HCF:
-      document.write(`Your insert number is : ${num1} and ${num2}`);
-      document.write("<br>LCM is : " + lcm + "<br>");
-      document.write("HCF is : " + hcf);
+      // let num1 = parseInt(prompt("Enter Number 1:"));
+      // let num2 = parseInt(prompt("Enter Number 2:"));
+      // num1 = 54;
+      // num2 = 12;
+      // // Function Calling:
+      // let hcf = funHcf(num1, num2);
+      // let lcm = funLcm(num1, num2, hcf);
+      // // Display or Output LCM & HCF:
+      // document.write(`Your insert number is : ${num1} and ${num2}`);
+      // document.write("<br>LCM is : " + lcm + "<br>");
+      // document.write("HCF is : " + hcf);
     </script>
   </body>
 </html>
