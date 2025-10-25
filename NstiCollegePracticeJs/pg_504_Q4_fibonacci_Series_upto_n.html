@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <h3>Fibonacci Series up to n:</h3>
+    <script>
+      // Initalision & Declaration:
+      let limit=parseInt(prompt("Enter limit of Fibonacci Series:"));
+      let num1 = 0;
+      let num2 = 1;
+      let fib=0;
+      document.write(`1, `);
+      // Calculate & Display Fibonacci Series:
+      while(fib<limit){
+        fib=num1+num2;
+        num1=num2;
+        num2=fib;
+        if(fib>limit) break;
+        document.write(` ${fib} , `);
+      }
+    </script>
+  </body>
+</html>

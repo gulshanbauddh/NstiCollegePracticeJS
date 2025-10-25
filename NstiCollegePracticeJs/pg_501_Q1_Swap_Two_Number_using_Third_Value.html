@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap Two Number </title>
+</head>
+<body>
+  <h1>Swap Two Number using Third Variable:</h1>
+  <script>
+    // Insitation & Input
+    let a=parseInt(prompt("Enter 1st number a="));
+    let b=parseInt(prompt("Enter 2st number b="));
+    document.write(`Befoer Swaping a= ${a} and b= ${b}`);
+    // Swaping
+    let temp=a;
+    a=b;
+    b=temp;
+    // Display Swaped value-
+    document.write(`<br>After Swaping a= ${a} and b= ${b}`);
+  </script>
+</body>
+</html>
