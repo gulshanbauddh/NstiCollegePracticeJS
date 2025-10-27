@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Insert then display all colour using for..Each loop in Array:</title>
+    <style>
+      *{
+        background-color: black;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>Insert then display all colour using for..Each loop in Array:</h1>
+    <h3>Insert then display all colour using for..Each loop in Array:</h3>
     <script>
       let arr, n;
       n = parseInt(prompt("Enter limit of your Array:"));
@@ -16,7 +22,7 @@
       }
       document.write("All inserted Color is: <br>");
       arr.forEach(function (element, index) {
-        document.write((index+1) + " : " + element + "<br>");
+        document.write((index + 1) + " : " + element + "<br>");
       });
     </script>
   </body>

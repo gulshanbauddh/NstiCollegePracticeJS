@@ -17,11 +17,11 @@
       let lcm = 1;
       // Find Smallest Number:
       if (a < b) hcfCal(a, b);
-      else if (b > a) hcfCal(b, a);
+      else if (a > b) hcfCal(b, a);
       // Calculate HCF & GCD:
-      function hcfCal(big, small) {
+      function hcfCal(small, big) {
         for (let i = 1; i <= small; i++) {
-          if (big % i == 0 && small % i == 0) {
+          if (small % i == 0 && big % i == 0) {
             hcf = i;
           }
         }

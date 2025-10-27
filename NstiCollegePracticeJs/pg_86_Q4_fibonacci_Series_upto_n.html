@@ -9,18 +9,18 @@
     <h3>Fibonacci Series up to n:</h3>
     <script>
       // Initalision & Declaration:
-      let limit=parseInt(prompt("Enter limit of Fibonacci Series:"));
-      let num1 = 0;
-      let num2 = 1;
-      let fib=0;
-      document.write(`1, `);
+      let limit = parseInt(prompt("Enter limit of Fibonacci Series:"));
+      limit=16;
+      let f1 = -1;
+      let f2 = 1;
+      let f3 = 0;
       // Calculate & Display Fibonacci Series:
-      while(fib<limit){
-        fib=num1+num2;
-        num1=num2;
-        num2=fib;
-        if(fib>limit) break;
-        document.write(` ${fib} , `);
+      while (f3 <= limit) {
+        f3 = f1 + f2;
+        f1 = f2;
+        f2 = f3;
+        if (f3 > limit) break;
+        document.write(f3+" ");
       }
     </script>
   </body>
