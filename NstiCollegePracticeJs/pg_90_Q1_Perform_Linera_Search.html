@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perform Linear Search:</title>
+  </head>
+  <body>
+    <h2>Perform Linear Search:</h2>
+    <script>
+      let arr = [1, 5, 7, 8, 3, 4, 6, 3, 8, 9, , 3, 5, 2, , 8];
+      document.write("Your Array is : " + arr);
+      let limit = arr.length,
+        flag = 0;
+      let searchKey = parseInt(
+        prompt("Enter your search key or searching Element:")
+      );
+      for (i = 0; i < limit; i++) {
+        if (arr[1] == searchKey) {
+          flag = 1;
+          break;
+        }
+      }
+      if (flag)
+        document.write(
+          "<br>Element found and your inser Element is : " + searchKey
+        );
+      else
+        document.write(
+          "<br>Element not found and your inser Element is : " + searchKey
+        );
+    </script>
+  </body>
+</html>

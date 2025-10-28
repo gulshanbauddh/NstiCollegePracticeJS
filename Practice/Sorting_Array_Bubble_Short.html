@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbble Sorting:</title>
+  </head>
+  <body>
+    <h2>Bubble Sorting:</h2>
+    <script>
+      let arr = [4, 6, 8, 2, 4, 5, 4, 87, 215, 36, 48, 75, 65, 58];
+      let n = arr.length;
+
+      document.write(arr + "<br>");
+      for (i = 0; i < n - 1; i++) {
+        for (j = 1; j < n - i - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      document.write(arr);
+    </script>
+  </body>
+</html>
