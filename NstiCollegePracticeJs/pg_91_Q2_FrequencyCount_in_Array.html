@@ -10,12 +10,8 @@
     <script>
       let arr = [1, 5, 7, 8, 3, 4, 6, 3, 8, 9, , 3, 5, 2, , 8];
       document.write("Your Array is : " + arr);
-      let limit = arr.length,
-        flag = 0,
-        fc = 0;
-      let searchKey = parseInt(
-        prompt("Enter your search key or searching Element:")
-      );
+      let limit = arr.length, flag = 0, fc = 0;
+      let searchKey = parseInt(prompt("Enter your search key or searching Element:"));
       for (i = 0; i < limit; i++) {
         if (arr[1] == searchKey) {
           flag = 1;
@@ -24,16 +20,8 @@
         }
       }
       if (flag)
-        document.write(
-          "<br>Element found and your inser Element is : " +
-            searchKey +
-            " and Frequency count = " +
-            fc
-        );
-      else
-        document.write(
-          "<br>Element not found and your inser Element is : " + searchKey
-        );
+        document.write("<br>Element found and your insert Element is : " +searchKey +" and Frequency count = " +fc);
+      else document.write("<br>Element not found and your insert Element is : " + searchKey);
     </script>
   </body>
 </html>
