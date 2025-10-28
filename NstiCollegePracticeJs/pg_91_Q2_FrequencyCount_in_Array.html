@@ -8,12 +8,12 @@
   <body>
     <h2>Frequency count in array:</h2>
     <script>
-      let arr = [1, 5, 7, 8, 3, 4, 6, 3, 8, 9, , 3, 5, 2, , 8];
+      let arr = [1, 5, 7, 8, 3, 4, 6, 3, 8, 9, 3, 5, 2, , 8];
       document.write("Your Array is : " + arr);
       let limit = arr.length, flag = 0, fc = 0;
       let searchKey = parseInt(prompt("Enter your search key or searching Element:"));
       for (i = 0; i < limit; i++) {
-        if (arr[1] == searchKey) {
+        if (arr[i] == searchKey) {
           flag = 1;
           fc++;
           break;
