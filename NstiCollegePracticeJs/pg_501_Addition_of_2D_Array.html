@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-D Array :</title>
+  </head>
+  <body>
+    <h2>2-D Array :</h2>
+    <script>
+      // Array 1st:
+      let a, m, n, c;
+      m = parseInt(prompt("Enter limit of Row of 1st Matrix :"));
+      n = parseInt(prompt("Enter limit of Column of 1st Matrix :"));
+      a = new Array(m);
+      for (i = 0; i < m; i++) {
+        a[i] = new Array(n);
+      }
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          a[i][j] = parseInt(prompt("Enter Array Elemenet :"));
+        }
+      }
+      // Array 2nd:
+      let b;
+      b = new Array(m);
+      for (i = 0; i < m; i++) {
+        b[i] = new Array(n);
+      }
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          b[i][j] = parseInt(prompt("Enter Array Elemenet :"));
+        }
+      }
+      // Array 2nd:
+      c = new Array(m);
+      for (i = 0; i < m; i++) {
+        c[i] = new Array(n);
+      }
+      // Add Array
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          c[i][j] = a[i][j] + b[i][j];
+        }
+      }
+      // Display of Array 1st:
+      document.write("Display of Array a:<br>");
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          document.write(a[i][j] + " ");
+        }
+        document.write("<br>");
+      }
+      // Display of Array 2nd:
+      document.write("Display of Array b:<br>");
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          document.write(b[i][j] + " ");
+        }
+        document.write("<br>");
+      }
+      // Display of Array 3nd:
+      document.write("Display of Array c:<br>");
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          document.write(c[i][j] + " ");
+        }
+        document.write("<br>");
+      }
+    </script>
+    <script src="./text.js"></script>
+  </body>
+</html>
