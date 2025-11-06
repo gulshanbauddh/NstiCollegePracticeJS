@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication of Matrices :</title>
+  </head>
+  <body>
+    <h2>Multiplication of Matrices :</h2>
+    <script>
+      // Read Matrix:
+      function readMatrix(a, m, n) {
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            a[i][j] = parseInt(prompt("Enter element of Matrix:"));
+          }
+        }
+      }
+      // Multiplication of Matrix: m x n, n x q
+      function mulMatrix(a, b, c, m, n, q) {
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < q; j++) {
+            c[i][j] = 0;
+            for (k = 0; k < n; k++) {
+              c[i][j] = c[i][j] + a[i][k] * b[j][i];
+            }
+          }
+        }
+      }
+      // Display Matrix
+      function displayMatrix(a, m, n) {
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            document.write(a[i][j] + "  ");
+          }
+          document.write("<br>");
+        }
+      }
+    </script>
+    <script>
+      let a, m, n, b, p, q, c;
+      // Input Array Limit:
+      m = parseInt(prompt("Enter 1st Array Row Limit:"));
+      n = parseInt(prompt("Enter 1st Array Column Limit:"));
+      p = parseInt(prompt("Enter 2nd Array Row Limit:"));
+      q = parseInt(prompt("Enter 2nd Array Column Limit:"));
+      if(n==p){
+      // Object Creation:
+      a = new Array(m, n);
+      b = new Array(p, q);
+      c = new Array(m, q);
+      // Make 2d Matrix
+      for (i = 0; i < m; i++) a[i] = new Array(n);
+      for (i = 0; i < p; i++) b[i] = new Array(q);
+      for (i = 0; i < m; i++) c[i] = new Array(q);
+      // Read Matrix: Matrix 1 & 2
+      readMatrix(a, m, n);
+      readMatrix(b, p, q);
+      // Multiplication:
+      mulMatrix(a, b, c, m, n, q);
+      // Display Matrix: Matrix 1 & 2
+      document.write("Matrix a:<br>");
+      displayMatrix(a, m, n);
+      document.write("Matrix b:<br>");
+      displayMatrix(b, p, q);
+      document.write("Matrix c:<br>");
+      displayMatrix(c, m, q);
+      } else{
+        document.write("Multiplication is not possible")
+      }
+    </script>
+  </body>
+</html>
