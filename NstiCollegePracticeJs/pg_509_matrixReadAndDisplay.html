@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Using Function :</title>
+</head>
+
+<body>
+    <h2>Matrix Using Function :</h2>
+    <script>
+        var a, m, n, b, p, q;
+        m = parseInt(prompt("Enter Row limit of 1st Matrix :"));
+        n = parseInt(prompt("Enter Column limit of 1st Matrix :"));
+        p = parseInt(prompt("Enter Row limit of 2nd Matrix :"));
+        q = parseInt(prompt("Enter Column limit of 2nd Matrix :"));
+        a = new Array(m);
+        b = new Array(p);
+        if (m == p && n == q) {
+            for (i = 0; i < m; i++)  a[i] = new Array(n);
+            for (i = 0; i < p; i++)  b[i] = new Array(q);
+
+            alert("Enter Matrix 1st Elements:")
+            for (i = 0; i < m; i++) {
+                for (j = 0; j < n; j++) {
+                    a[i][j] = parseInt(prompt("Enter Element of Matrix;"));
+                }
+            }
+            alert("Enter Matrix 2nd Elements:")
+            for (i = 0; i < p; i++) {
+                for (j = 0; j < n; j++) {
+                    b[i][j] = parseInt(prompt("Enter Element of Matrix;"));
+                }
+            }
+            // Display matrices:
+            // Display Matrix a:
+            document.write("<br>Matrix a is :<br>");
+            for (i = 0; i < m; i++) {
+                for (j = 0; j < n; j++) {
+                    document.write(a[i][j] + "  ");
+                }
+                document.write("<br>")
+            }
+            // Display Matrix b:
+            document.write("<br>Matrix b is :<br>");
+            for (i = 0; i < p; i++) {
+                for (j = 0; j < q; j++) {
+                    document.write(b[i][j] + "  ");
+                }
+                document.write("<br>")
+            }
+        } else document.write("Addition is not possible");
+    </script>
+</body>
+
+</html>

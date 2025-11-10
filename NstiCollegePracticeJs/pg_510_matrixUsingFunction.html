@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Using Function :</title>
+</head>
+
+<body>
+    <h2>Matrix Using Function :</h2>
+    <script>
+        // Read Matrix
+        function readMatrix(a, m, n) {
+            for (i = 0; i < m; i++) {
+                for (j = 0; j < n; j++) {
+                    a[i][j] = parseInt(prompt("Enter Element of Matrix;"));
+                }
+            }
+        }
+        // Addition of Matrix:
+        function addMatrix(a, b, c) {
+            for (i = 0; i < m; i++) {
+                for (j = 0; j < n; j++) {
+                    c[i][j] = a[i][j] + b[i][j];
+                }
+            }
+        }
+        // Display of Matrix:
+        function displayMatrix(a, m, n) {
+            for (i = 0; i < m; i++) {
+                for (j = 0; j < n; j++) {
+                    document.write(a[i][j]+"  ");
+                }
+                document.write("<br>")
+            }
+        }
+    </script>
+    <script>
+        var a, m, n, b, p, q, c;
+        m = parseInt(prompt("Enter Row limit of 1st Matrix :"));
+        n = parseInt(prompt("Enter Column limit of 1st Matrix :"));
+        p = parseInt(prompt("Enter Row limit of 2nd Matrix :"));
+        q = parseInt(prompt("Enter Column limit of 2nd Matrix :"));
+        a = new Array(m, n);
+        b = new Array(p, q);
+        c = new Array(m, n);
+        if (m == p && n == q) {
+            for (i = 0; i < m; i++) {
+                a[i] = new Array(n);
+            }
+            for (i = 0; i < p; i++) {
+                b[i] = new Array(q);
+            }
+            for (i = 0; i < m; i++) {
+                c[i] = new Array(n);
+            }
+            alert("Enter Matrix 1st Elements:")
+            readMatrix(a, m, n);
+            alert("Enter Matrix 2nd Elements:")
+            readMatrix(b, p, q);
+            // Addition of Matrix:
+            addMatrix(a,b,c);
+            // Display matrices:
+            // Display Matrix a:
+            document.write("<br>Matrix a is :<br>");
+            displayMatrix(a,m,n);
+            // Display Matrix b:
+            document.write("<br>Matrix b is :<br>");
+            displayMatrix(b,p,q);
+            // Display Matrix c:
+            document.write("<br>Matrix c = a + b is :<br>");
+            displayMatrix(c,m,n);
+        } else document.write("Addition is not possible");
+    </script>
+</body>
+
+</html>
