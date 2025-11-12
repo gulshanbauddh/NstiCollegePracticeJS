@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function :</title>
+</head>
+
+<body>
+  <h2>Arrow Function :</h2>
+  <script>
+    const number = [5, 10, 15, 20];
+    // Arrow function to calculate total
+    // const total= arr => arr.reduce((sum,n)=>sum+n,0);
+    let total = arr1 => arr1.reduce((sum, n) => sum + n, 0);
+    // Arrow function to calculate average
+    const average = arr2 => total(arr2) / arr2.length;
+    // Arrow function to calculate 
+
+    document.write("<h3>Numbers: <h3>" + number.join(",") + "<br>");
+    document.write("Sum = " + total(number) + "<br>");
+    document.write("Sum = " + average(number) + "<br>");
+
+
+
+  </script>
+</body>
+
+</html>

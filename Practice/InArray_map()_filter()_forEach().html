@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>map(), filter (), forEach()</title>
+</head>
+
+<body>
+  <h2>map(), filter (), forEach()</h2>
+  <script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    document.write("<br>Array : " + arr);
+    document.write("<br><br>Square : ");
+    let square = arr.map(n => n * n);
+    document.write(square);
+
+    document.write("<br><br>Even: ");
+    let even = arr.filter(n => (n % 2 == 0));
+    document.write(even);
+    let evenSum = even.reduce((a, b) => (a + b))
+    document.write("<br>Sum of Even is : " + evenSum);
+
+    document.write("<br><br>Odd: ");
+    let odd = arr.filter(n => (n % 2 != 0));
+    document.write(odd);
+    let sumOdd = odd.reduce((a, b) => (a + b));
+    document.write("<br>Sum of Odd is : " + sumOdd);
+    document.write("<br><br>Sum of Even + Odd is : " + (evenSum + sumOdd));
+
+    document.write("<br><br>forEach function : Method 1<br><br>");
+    arr.forEach(n => document.write(n + " "));
+
+    document.write("<br><br>forEach function : Method 2<br><br>");
+    arr.forEach((element) => {
+      document.write(element + " ");
+    });
+
+    // Orignal Array Display using [join] function.
+    document.write("<br>Orignal Array Display using [join] function : " + arr.join(","))
+  </script>
+</body>
+
+</html>

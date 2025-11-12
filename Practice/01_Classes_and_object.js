@@ -1,13 +1,14 @@
-const student={
-  name:"Gulshan",
-  fullName:"Gulshan Bauddh",
-  marks:94.6,
-  printMarks : function (){
-    console.log("I am Fuction inside object.");
+const car = {
+  brand: "Tata",
+  model: "Top Class",
+  year: "2026",
+  showBrand: function () {
+    console.log("Car brand is: " + this.brand +" Modle is: "+this.model+" and year is: "+this.year);
+  }, 
+  showName: function () {
+    console.log("Car brand is: " + this.brand +" Modle is: "+this.model+" and year is: "+this.year);
   }
-}
-//#1
-// console.log(student.fullName,student.name);
-//#2
-// console.log();
-this.marks;
+};
+
+car.showBrand();  // Output: Car brand is: Tata
+car.showName();
