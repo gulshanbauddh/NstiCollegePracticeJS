@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Even Odd Sepration :</title>
+  </head>
+  <body>
+    <h2>Array Even Odd Sepration :</h2>
+    <script>
+      let arr;
+      let limit = parseInt(prompt("Enter Limit:"));
+      arr = new Array(limit);
+      // Read Array
+      for (i = 0; i < limit; i++) {
+        arr[i] = parseInt(prompt("Enter Array Elements :"));
+      }
+      // Display Array
+      document.write("Your Array is : ");
+      for (i = 0; i < limit; i++) {
+        document.write(arr[i] + "  ");
+      }
+      // Sepration of Array:
+      let even, odd;
+      let ec = 0;
+      let oc = 0;
+      even = new Array();
+      odd = new Array();
+
+      for (i = 0; i < limit; i++) {
+        if (arr[i] % 2 == 0) even[ec++] = arr[i];
+        else odd[oc++] = arr[i];
+      }
+
+      // Display Even and Odd Array
+      document.write("<br>Even Array is : ");
+      for (i = 0; i < even.length; i++) {
+        document.write(even[i] + "  ");
+      }
+      document.write("<br>Odd Array is : ");
+      for (i = 0; i < odd.length; i++) {
+        document.write(odd[i] + "  ");
+      }
+    </script>
+  </body>
+</html>
