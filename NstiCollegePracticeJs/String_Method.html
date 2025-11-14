@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>String Method :</title>
+</head>
+
+<body>
+  <h2>String Method :</h2>
+  <script>let str = " Hello, JavaScript Worls!";
+    let str1 = " String 1";
+    let str2 = " String 2";
+    document.write("<br><b>Orignal String is :</b> " + str);
+    document.write("<br><b>to upper case () :</b> " + str.toUpperCase());
+    document.write("<br><b>to Lowercase ():</b> " + str.toLowerCase());
+    document.write("<br><b>charAt () :</b> " + str.charAt(1));
+    document.write("<br><b>concat() :</b>" + str.concat(str1, str2, str1, str2));
+    document.write("<br><b>str1.indexOf('g') :</b> " + str1.indexOf("g"));
+    document.write("<br><b>str1.lastIndexOf('g') :</b>" + str1.lastIndexOf("g"));
+    document.write("<br><b>str.search('rl') :</b>" + str.search("rl")); // If string find then give starting index.
+    document.write("<br><b>str.search('ral') :</b>" + str.search("ral"));// If string is not find then give starting always -1.
+    document.write("<br><b>str.match('cript') :</b>" + str.match("cript")); // In console return object and in html page return given string else null.
+    document.write("<br><b>str.replace('Hello', 'Gulshan') :</b>" + str.replace("Hello", "Gulshan")); // if string found then return update string.
+    document.write("<br><b>str1.substr(0,5) :</b>" + str1.substr(0, 5)); // return part of Dtring according to given string index.
+  </script>
+</body>
+
+</html>
