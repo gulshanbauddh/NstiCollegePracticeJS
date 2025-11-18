@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <title>check string palindrom or not</title>
+</head>
+<dody>
+  <center>  
+  <h2>Check string is palindrom or not</h2>
+    <script>
+      var str, revstr, l, i;
+      str = prompt("Enter a Word Of A String");
+      l = str.length;
+      revstr = "";
+      document.write("<br>");
+      for (i = l - 1; i >= 0; i--) {
+        revstr = revstr + str.charAt(i);
+      }
+      if (str == revstr) {
+        document.write("<b>"+str + "</b> is a palindrom");
+      } else{
+        document.write("<b>"+str + "</b> is not a palindrom");
+      }
+    </script>
+  </center>
+  </body>
+
+</html>
