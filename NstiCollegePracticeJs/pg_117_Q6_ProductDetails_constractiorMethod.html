@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q6 Product details with constructor method :</title>
+</head>
+
+<body>
+  <center>
+  <h2>Q6 Product details with constructor method :</h2>
+
+  <script>
+    // Constructor function for product-
+    function Product(pId, pName, price, qty) {
+      this.pId = pId;
+      this.pName = pName;
+      this.price = price;
+      this.qty = qty;
+      this.totalPrice = this.qty * this.price;
+    }
+    //Creating an array of product object-
+    var product = [
+      new Product(101, "Dell i5", 50000, 3),
+      new Product(102, "Lenovo i3", 40000, 5),
+      new Product(103, "Acer i7", 30000, 5),
+    ];
+    // Creating the table- 
+    document.write("<table border='2' cellspacing='0' cellpading='10' align='center' style='text-align: center;'>");
+    document.write("<tr><th>Product Id</th><th>Product Name</th><th>Price</th><th>Quantity</th><th>Total Price</th></tr>");
+    // Looping through the product array and insertingroe dynamically.
+    for(i=0; i<product.length; i++){
+      document.write("<tr><td>"+product[i].pId+"</td><td>"+product[i].pName+"</td><td>"+product[i].price+"</td><td>"+product[i].qty+"</td><td>"+product[i].totalPrice);
+    }
+    document.write("</table></center>")
+  </script>
+</body>
+
+</html>
