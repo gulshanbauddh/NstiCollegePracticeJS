@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>for using for...of loop display min max & avg:</title>
-  </head>
-  <body>
-    <h1>
-      for using for...of loop display min max & avgfor using for...of loop
-      display min max & avg:
-    </h1>
-    <script>
-      // Array is:
-      let arr = [10, 54, 65, 84, 5, 69, 78 ,1, 45, 68];
-      document.write("Each Elements of Array:<br>[ ");
-      // Initalize value:
-      let sum = 0;
-      let max = arr[0];
-      let min = arr[0];
-      // Display all elements and calculate all:
-      for(let num of arr){
-        sum+=num;
-        if(num>max) max=num;
-        if(num<min) min=num;
-        document.write(num+" ");
-      }
-      let avg=sum/arr.length;
-      document.write(" ]<br>Sum : "+ sum);
-      document.write("<br>Max: "+ max);
-      document.write("<br>min: "+ min);
-      document.write("<br>Avg: "+ avg);
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>for using for...of loop display min max & avg:</title>
+</head>
+
+<body>
+  <h1>
+    for using for...of loop display min max & avgfor using for...of loop
+    display min max & avg:
+  </h1>
+  <script>
+    // Array is:
+    let arr, n;
+    n = parseInt(prompt("Enter array limit :"));
+    arr = new Array(n);
+    for (i = 0; i < n; i++) arr[i] = parseInt(prompt("Enter Array elements :"));
+    //  Display all elements
+    document.write("Each Elements of Array:<br>[ ");
+    for (i = 0; i < n; i++) document.write(arr[i] + " ");
+    // Initalize value:
+    let sum = 0;
+    let max = arr[0];
+    let min = arr[0];
+    // Calculation:
+    for (let num of arr) {
+      sum += num;
+      if (num > max) max = num;
+      if (num < min) min = num;
+    }
+    let avg = sum / arr.length;
+    document.write(" ]<br>Sum : " + sum);
+    document.write("<br>Max: " + max);
+    document.write("<br>min: " + min);
+    document.write("<br>Avg: " + avg);
+  </script>
+</body>
+
 </html>
