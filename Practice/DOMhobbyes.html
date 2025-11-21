@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my Hobbyes :</title>
+</head>
+
+<body>
+  <script>
+    function disHobby() {
+      let hobbyList = document.getElementsByName("hobby");
+      let hobbyArray = []
+      for (i = 0; i < hobbyList.length; i++) {
+        if (hobbyList[i].checked) hobbyArray.push(hobbyList[i].value)
+      }
+      let hobbyPara = document.getElementById("hobbyesList");
+      hobbyPara.innerHTML = "<b>Hobbyes : </b> " + hobbyArray.join(" , ");      
+    }
+  </script>
+  <h1>my Hobbyes :</h1>
+  <input name="hobby" type="checkbox" value="Reading"> Reading <br>
+  <input name="hobby" type="checkbox" value="Playing"> Playing <br>
+  <input name="hobby" type="checkbox" value="Study"> Study <br>
+  <input name="hobby" type="checkbox" value="Watch Tv"> Watch TV <br>
+  <input name="hobby" type="checkbox" value="Running"> Running <br><br>
+  <input type="button" onclick="disHobby()" value="Show Hobbies">
+  <p id="hobbyesList"></p>
+</body>
+
+</html>
