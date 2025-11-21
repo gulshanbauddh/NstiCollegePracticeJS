@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbble Sorting:</title>
+  </head>
+
+  <body>
+    <h2>Bubble Sorting:</h2>
+    <script>
+      let arr, n;
+      n = parseInt(prompt("Enter Array limit :"));
+      arr = new Array(n);
+      // Read Array :
+      for (i = 0; i < n; i++)
+        arr[i] = parseInt(prompt("Enter Array Elements :"));
+      // Display Orignal Array :
+      document.write("Orignal Array is :");
+      for (i = 0; i < n; i++) document.write(arr[i] + "  ");
+      // Bubble sorting (Assanding):
+      for (i = 0; i < n; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+
+      // Display sorted Array :
+      document.write("<br>Ascending Array is :");
+      for (i = 0; i < n; i++) document.write(arr[i] + "  ");
+
+      // Bubble sorting (Desending):
+      for (i = 0; i < n; i++) {
+        for (j = 0; j < n - 1 - i; j++) {
+          if (arr[j] < arr[j + 1]) {
+            let temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+          }
+        }
+      }
+      // Display sorted Array :
+      document.write("<br>Descending Array is :");
+      for (i = 0; i < n; i++) document.write(arr[i] + "  ");
+    </script>
+  </body>
+</html>

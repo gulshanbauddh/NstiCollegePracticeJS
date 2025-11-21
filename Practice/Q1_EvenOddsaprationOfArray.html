@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sepration Even, Odd using Array :</title>
+  </head>
+  <body>
+    <h2>Sepration Even, Odd using Array :</h2>
+    <script>
+      //declaration and Initialization of array-
+      let arr, n ,even, odd, ec=0, oc=0;
+      n = parseInt(prompt("Enter the size of array:"));
+      arr = new Array(n);
+      //Read array elements-
+      for (i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Enter elements : "));
+      }
+      // Display original array-
+      document.write("Original Array: ");
+      for (i = 0; i < n; i++) {
+        document.write(arr[i] + " ");
+      }
+      //Sepration of even and odd numbers-
+      even = new Array();
+      odd = new Array();
+      for (i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) even[ec++] = arr[i];
+        else odd[oc++] = arr[i];
+      }
+      // Display Even and Odd Array
+      // Even-
+      document.write("<br>Even Array: ");
+      for (i = 0; i < even.length; i++) {
+        document.write(even[i] + " ");
+      }
+      // Odd-
+      document.write("<br>Odd Array: ");
+      for (i = 0; i < odd.length; i++) {
+        document.write(odd[i] + " ");
+      }
+    </script>
+  </body>
+</html>
