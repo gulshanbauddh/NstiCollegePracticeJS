@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Table :</title>
 </head>
+
 <body>
   <h1>DOM Table :</h1>
-  <form action="">
-    <input type="number" name="" id=""><br><br>
-    <input type="text" name="" id=""><br><br>
-    <input type="radio" name="" id=""><br><br>
-    <input type="radio" name="" id=""><br><br>
+  <script>
+    function insTable() {
+      let rollNo = document.getElementById("rollNo").value;
+      let name = document.getElementById("name").value;
+      let genderList = document.getElementsByName("gender");
+      let gender = ""
+      for (i = 0; i < genderList.length; i++) {
+        if (genderList[i].checked) gender = genderList[i].value;
+      }
+      console.log(rollNo);
+      console.log(name);
+      console.log(gender);
+      document.write(`  <table border="1" cellspacing="0" cellpadding="8"><tr><th>Roll No.</th><th>Name</th><th>Gender</th></tr>`)
+      document.write(`<tr><td>${rollNo}</td><td>${rollNo}</td><td>${rollNo}</td></tr>`)
+    }
+    document.write("</table>")
+  </script>
+  <form>
+    <input placeholder=" Roll number" type="text" id="rollNo"><br><br>
+    <input placeholder=" Name" type="text" id="name"><br><br>
+    <input type="radio" name="gender" value=" Male"> Male<br>
+    <input type="radio" name="gender" value=" Female"> Female<br>
+    <input type="radio" name="gender" value=" Other"> Other<br> <br>
+    <input value="Insert into Table" type="button" onclick="insTable()">
   </form>
-  <script></script>
 </body>
+
 </html>
