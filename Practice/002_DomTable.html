@@ -9,9 +9,21 @@
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f0f0f0;
       }
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
       .container {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         padding: 20px;
         margin: auto 25vw;
@@ -59,47 +71,54 @@
       input[type="button"]:hover {
         background-color: #45a049;
       }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 25px;
+        }
+        .container {
+          padding: 15px;
+        }
+        th,
+        td {
+          padding: 8px;
+          font-size: 14px;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          margin: auto 25vw;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          margin: inherit;
+          margin-top: 5vh;
+        }
+        table {
+          width: 80vw;
+          margin:0px;
+        }
+        form{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
       <h1>Students Roll number and Name Table :</h1>
-      <script>
-        let count = 1;
-        function insTable() {
-          let rollNo = document.getElementById("rollNo").value;
-          let name = document.getElementById("name").value;
-          let genderList = document.getElementsByName("gender");
-          let newTableDdata = document.getElementById("newTableDdata");
-          let gender = "";
-          for (i = 0; i < genderList.length; i++) {
-            if (genderList[i].checked) {
-              gender = genderList[i].value;
-            }
-          }
-          if (rollNo === "" || name === "" || gender === "") {
-            alert("Please fill all the fields.");
-            return;
-          }
-
-          newTableDdata.innerHTML += `<tr><td>${count++}</td><td>${rollNo}</td><td>${name}</td><td>${gender}</td></tr>`;
-          document.getElementById("rollNo").value = "";
-          document.getElementById("name").value = "";
-          document.getElementById("gender").checked = false;
-        }
-        document.write("</table>");
-      </script>
       <form>
-        <input
-          placeholder=" Roll number"
-          type="number"
-          id="rollNo"
-        /><br /><br />
-        <input placeholder=" Name" type="text" id="name" /><br /><br />
+        <input placeholder=" Roll number" type="number" id="rollNo" />
+        <input placeholder=" Name" type="text" id="name" /> <br>
+        <div class="gender">
         <input type="radio" name="gender" value=" Male" /> Male
         <input type="radio" name="gender" value=" Female" /> Female
-        <input type="radio" name="gender" value=" Other" /> Other <br />
+        <input type="radio" name="gender" value=" Other" /> Other <br /></div>
         <br />
         <input value="Insert Into Table" type="button" onclick="insTable()" />
       </form>
@@ -118,5 +137,32 @@
         </table>
       </div>
     </div>
+    <script>
+      let count = 1;
+      function insTable() {
+        let rollNo = document.getElementById("rollNo").value;
+        let name = document.getElementById("name").value;
+        let genderList = document.getElementsByName("gender");
+        let newTableDdata = document.getElementById("newTableDdata");
+        let gender = "";
+        for (i = 0; i < genderList.length; i++) {
+          if (genderList[i].checked) {
+            gender = genderList[i].value;
+          }
+        }
+        if (rollNo === "" || name === "" || gender === "") {
+          alert("Please fill all the fields.");
+          return;
+        }
+
+        newTableDdata.innerHTML += `<tr><td>${count++}</td><td>${rollNo}</td><td>${name}</td><td>${gender}</td></tr>`;
+        document.getElementById("rollNo").value = "";
+        document.getElementById("name").value = "";
+        for (let i = 0; i < genderList.length; i++) {
+          genderList[i].checked = false;
+        }
+      }
+      document.write("</table>");
+    </script>
   </body>
 </html>
