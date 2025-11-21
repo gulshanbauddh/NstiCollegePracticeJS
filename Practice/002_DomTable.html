@@ -1,39 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Table :</title>
-</head>
-
-<body>
-  <h1>DOM Table :</h1>
-  <script>
-    function insTable() {
-      let rollNo = document.getElementById("rollNo").value;
-      let name = document.getElementById("name").value;
-      let genderList = document.getElementsByName("gender");
-      let gender = ""
-      for (i = 0; i < genderList.length; i++) {
-        if (genderList[i].checked) gender = genderList[i].value;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students Roll number and Name Table :</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f0f0f0;
       }
-      console.log(rollNo);
-      console.log(name);
-      console.log(gender);
-      document.write(`  <table border="1" cellspacing="0" cellpadding="8"><tr><th>Roll No.</th><th>Name</th><th>Gender</th></tr>`)
-      document.write(`<tr><td>${rollNo}</td><td>${rollNo}</td><td>${rollNo}</td></tr>`)
-    }
-    document.write("</table>")
-  </script>
-  <form>
-    <input placeholder=" Roll number" type="text" id="rollNo"><br><br>
-    <input placeholder=" Name" type="text" id="name"><br><br>
-    <input type="radio" name="gender" value=" Male"> Male<br>
-    <input type="radio" name="gender" value=" Female"> Female<br>
-    <input type="radio" name="gender" value=" Other"> Other<br> <br>
-    <input value="Insert into Table" type="button" onclick="insTable()">
-  </form>
-</body>
+      .container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px;
+        margin: auto 25vw;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-top: 10vh;
+      }
+      h1 {
+        color: #333;
+      }
+      table {
+        width: 30vw;
+        margin: 20px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 8px;
+        width: 200px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="button"] {
+        padding: 10px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
 
+  <body>
+    <div class="container">
+      <h1>Students Roll number and Name Table :</h1>
+      <script>
+        let count = 1;
+        function insTable() {
+          let rollNo = document.getElementById("rollNo").value;
+          let name = document.getElementById("name").value;
+          let genderList = document.getElementsByName("gender");
+          let newTableDdata = document.getElementById("newTableDdata");
+          let gender = "";
+          for (i = 0; i < genderList.length; i++) {
+            if (genderList[i].checked) {
+              gender = genderList[i].value;
+            }
+          }
+          if (rollNo === "" || name === "" || gender === "") {
+            alert("Please fill all the fields.");
+            return;
+          }
+
+          newTableDdata.innerHTML += `<tr><td>${count++}</td><td>${rollNo}</td><td>${name}</td><td>${gender}</td></tr>`;
+          document.getElementById("rollNo").value = "";
+          document.getElementById("name").value = "";
+          document.getElementById("gender").checked = false;
+        }
+        document.write("</table>");
+      </script>
+      <form>
+        <input
+          placeholder=" Roll number"
+          type="number"
+          id="rollNo"
+        /><br /><br />
+        <input placeholder=" Name" type="text" id="name" /><br /><br />
+        <input type="radio" name="gender" value=" Male" /> Male
+        <input type="radio" name="gender" value=" Female" /> Female
+        <input type="radio" name="gender" value=" Other" /> Other <br />
+        <br />
+        <input value="Insert Into Table" type="button" onclick="insTable()" />
+      </form>
+      <div id="table">
+        <br />
+        <table border="1" cellspacing="0" cellpadding="8">
+          <thead>
+            <tr>
+              <th>Sr. no</th>
+              <th>Roll No.</th>
+              <th>Name</th>
+              <th>Gender</th>
+            </tr>
+          </thead>
+          <tbody id="newTableDdata"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
 </html>
