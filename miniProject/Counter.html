@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter :</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 30vh;
+      background-color: antiquewhite;
+      width: 90vw;
+      height: 60vh;
+      margin: 10vh auto;
+      border-radius: 20px;
+    }
+
+    .counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 20px;
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    input {
+      align-items: center;
+      text-align: center;
+      width: 10%;
+      margin-top: 10px;
+    }
+
+    .counter img {
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Counter</h1>
+    <input type="text" id="display" value="0" disabled>
+    <div class="counter">
+      <div class="button" id="minus" onclick="minus()">-</div>
+      <div class="button" id="reset" onclick="reset()"><img src="./img/reset.png" alt="reset"></div>
+      <div class="button" id="plus" onclick="plus()">+</div>
+    </div>
+  </div>
+  <!-- JS Start -->
+  <script>
+
+    let display = document.getElementById("display");
+    function minus() {
+      let num = Number(display.value);
+      display.value = num - 1;
+    }
+
+    function plus() {
+      let num = Number(display.value);
+      display.value = num + 1;
+    }
+    function reset() {
+      display.value = 0;
+    }
+  </script>
+</body>
+
+</html>

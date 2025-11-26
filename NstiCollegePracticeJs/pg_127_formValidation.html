@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form validation :</title>
+</head>
+
+<body>
+  <center>
+    <table border="01" cellspacing="0" cellpadding="6">
+      <tr>Form validation :</tr>
+      <tr>
+        <td>Name :</td>
+        <td><input type="text" placeholder="Enter Your Name" id="name"></td>
+      </tr>
+
+      <tr>
+        <td>Father's Name :</td>
+        <td><input type="text" id="fatherName"></td>
+      </tr>
+
+      <tr>
+        <td>Email ID :</td>
+        <td><input type="email" id="emailId"></td>
+      </tr>
+
+      <tr>
+        <td>Mobile Number :</td>
+        <td><input type="text" id="mobile"></td>
+      </tr>
+
+      <tr>
+        <td>Gender :</td>
+        <td>
+          <input type="radio" value="male"> Male
+          <input type="radio" value="female"> Female
+        </td>
+      </tr>
+
+      <tr>
+        <td>Date of Birth (DOB) :</td>
+        <td><input  type="date" id="date" onblur="realAge() "></td>
+      </tr>
+
+      <tr>
+        <td>Religion :</td>
+        <td>
+          <select name="" id="religion">
+            <option value="" selected>Select your Religion</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Sikkh">Sikkh</option>
+            <option value="Isai">Isai</option>
+            <option value="Buddhist">Buddhist</option>
+            <option value="Other">Other</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>categories :</td>
+        <td>
+          <select name="" id="categories">
+            <option value="" selected>Select your categories </option>
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC/ST">SC/ST</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Address :</td>
+        <td><textarea id="" rows="4" cols="26"></textarea></td>
+
+      </tr>
+
+      <tr>
+        <td>Qualification :</td>
+        <td>
+          <input type="checkbox"> High School
+          <input type="checkbox"> Intermediate
+          <input type="checkbox"> ITI
+          <input type="checkbox"> Diploma
+          <input type="checkbox"> Graduation
+          <input type="checkbox"> Post Graduation
+          <input type="checkbox"> Engineering
+          <input type="checkbox"> Other
+        </td>
+      </tr>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="Submit">
+        </td>
+        <td>
+          <input type="button" value="Clear">
+        </td>
+      </tr>
+    </table>
+  </center>
+  <!-- Js Start -->
+   <script>
+    const realAge=()=>{
+      const formDate=document.getElementById("date")
+      let d1=new Date(formDate.value);
+      let d2=new Date();
+      let diffMonth=d2.getMonth()-d1.getMonth();
+      (diffMonthdiffMonth<0 || diffMonth===0 &&  d2.getMonth()-d1.getMonth())? 
+      console.log(diffMonth);
+    }
+       
+    </script>
+</body>
+
+</html>
