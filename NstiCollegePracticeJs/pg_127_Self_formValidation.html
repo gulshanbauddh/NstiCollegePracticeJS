@@ -108,7 +108,9 @@
       let d1=new Date(formDate.value);
       let d2=new Date();
       let diffMonth=d2.getMonth()-d1.getMonth();
-      (diffMonthdiffMonth<0 || diffMonth===0 &&  d2.getMonth()-d1.getMonth())
+
+      let disAge=(diffMonth<0 || diffMonth===0 &&  d2.getDate()-d1.getDate()<0)?d2.getFullYear()-d1.getFullYear()-1:d2.getFullYear()-d1.getFullYear();
+      alert("Your Real Age is :"+disAge+" Years");
       console.log(diffMonth);
     }
        
