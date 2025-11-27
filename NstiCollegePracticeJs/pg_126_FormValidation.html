@@ -16,7 +16,7 @@
       <p id="userIdMessage"></p>
 
       <!---- User password Input --->
-      <input type="password" id="userPassword" placeholder="Enter your Password">
+      <input type="text" id="userPassword" placeholder="Enter your Password">
       <p id="passwordMessage"></p>
       <button onclick="valicateForm()">Valid user id & Password</button>
     </div>
@@ -31,7 +31,7 @@
       // regix for user iD
       const regixUserID =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
       // regix for user Password
-      const regixPassword =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$#%*?!])[A-Za-z\d@$#%*?!]{8,}$/;
+      const regixPassword =  /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$#%*?!])[A-Za-z\d@$#%*?!]{8,}$/;
       //validate user
       if (regixUserID.test(userId)) {
         userIdMessage.style.color = "green";
