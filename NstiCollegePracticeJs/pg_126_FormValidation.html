@@ -29,10 +29,8 @@
       const userIdMessage = document.getElementById("userIdMessage");
       const passwordMessage = document.getElementById("passwordMessage");
       // regix for user iD
-      // const regixUserID = /^[A-Za-z0-9]{4,}$/;
-      const regixUserID =/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$#%*?!])[A-Za-z\d@$#%*?!]{8,}$/;
-      // regix for user iD
-      //const regixPassword = /^[(A-Za-z0-9\d@$#%*?!)]{8,}$/;
+      const regixUserID =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
+      // regix for user Password
       const regixPassword =  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$#%*?!])[A-Za-z\d@$#%*?!]{8,}$/;
       //validate user
       if (regixUserID.test(userId)) {
@@ -45,7 +43,7 @@
       // Valid Password-
       if (regixPassword.test(userPassword)) {
         passwordMessage.style.color = "green";
-        passwordMessage.textContent = "Passowrd is strong";
+        passwordMessage.textContent = "Strong Passowrd";
       } else {
         passwordMessage.style.color = "red";
         passwordMessage.textContent = "password must be atlist 8 character and conatin alphanumarical and special character";
