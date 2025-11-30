@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show borde allignment and backgroung color (CSS)</title>
+</head>
+
+<body>
+  <h1>Show borde allignment and backgroung color (CSS) :</h1>
+  <h3 id="content_data">Use the CSS style in the JS.</h3>
+  <p id="para">The js change the color and the background color of thhe input fields.</p>
+  <form>
+    Student Name: <input type="text" id="name" value="Your Name Here"><br><br>
+    Student Email: <input type="text" id="email" value="Your Email Here"><br><br>
+  </form>
+  <button onclick="changeStyle()">Click Me to Change Color and Font Color</button>
+  <script>
+    function changeStyle() {
+      document.getElementById("name").style.color = "blue";
+      document.getElementById("name").style.backgroundColor = "yellow";
+      document.getElementById("email").style.color = "red";
+      document.getElementById("email").style.backgroundColor = "blue";
+
+      document.getElementById("name").style.border = "2px solid red";
+      document.getElementById("email").style.border = "2px solid orange";
+    }
+  </script>
+</body>
+
+</html>
