@@ -6,5 +6,8 @@
     "javascript": "javascriptreact"
   },
   "editor.tabSize": 2,
-  "editor.mouseWheelZoom": true
+  "editor.mouseWheelZoom": true,
+  "fiveServer.browser": [
+    "chrome"
+  ]
 }
