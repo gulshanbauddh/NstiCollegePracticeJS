@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even & Odd number sepration using seperated array's :</title>
+  </head>
+  <body>
+    <h1>Even & Odd number sepration using seperated array's :</h1>
+    <script>
+      // Inislation and Declaration
+      let arr, n, ec = 0, oc = 0;
+      let even = new Array();
+      let odd = new Array();
+      // Enter Limit of Array
+      n = parseInt(prompt("Enter Array Limit:"));
+      arr = new Array(n);
+      // Insert Array from user
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Enter elements of Array: "));
+      } 
+      // seprate Even and odd
+      for (let i = 0; i < n; i++) {
+        // seprate only Even:
+        if (arr[i] % 2 == 0) {
+          even[ec++] = arr[i];
+        }else{
+          // seprate only odd:
+          odd[oc++] = arr[i];
+        }
+      }
+      // Print or display of Array
+      document.write("Orignal Array :" + arr + "<br>");
+      document.write("Even Array :" + even+ " <br>");
+      document.write("Odd Array : " + odd + "<br>");
+    </script>
+  </body>
+</html>

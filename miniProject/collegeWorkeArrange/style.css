@@ -33,6 +33,7 @@ h1 {
   color: #212121;
   text-decoration: none;
   border: 2px solid #212121;
+  width: 50%;
 }
 .buttonList {
   display: flex;
@@ -43,7 +44,6 @@ h1 {
 .buttonList a {
   display: block;
   text-decoration: none;
-  background-color: white;
   margin: 10px;
   width: 70px;
   height: 35px;
@@ -53,4 +53,12 @@ h1 {
   font-size: 15px;
   font-weight: 600;
   color: black;
+}
+a.codeDisplay {
+  background-color: blue;
+  color: white;
+}
+a.outputDisplay {
+  background-color: green;
+  color: white;
 }

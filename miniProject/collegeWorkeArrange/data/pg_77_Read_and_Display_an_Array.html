@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read and Display an Array:</title>
+    <style>
+      * {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Read and Display an Array:</h1>
+    <script>
+      let arr, n, sum = 0;
+      n = parseInt(prompt("Enter size of Array:"));
+      arr = new Array();
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Enter Element of index " + i + " :"));
+        sum += arr[i];
+      }
+      document.write("Array is : ");
+      for (let i = 0; i < n; i++) document.write(arr[i] + " , ");
+      // Calculate Sum:
+      document.write("<br>Sum of Array : " + sum);
+      // Seperated Even:
+      document.write("<br>Even Elements of the Array : <br>");
+      for (let i = 0; i < n; i++) 
+        if (arr[i] % 2 == 0) document.write(arr[i] + " , ");
+      
+      // Seperated Odd:
+      document.write("<br> Odd Elements of the Array:<br> ");
+      for (let i = 0; i < n; i++) {
+        if (arr[i] % 2 != 0) document.write(arr[i] + " , ");
+      }
+    </script>
+  </body>
+</html>

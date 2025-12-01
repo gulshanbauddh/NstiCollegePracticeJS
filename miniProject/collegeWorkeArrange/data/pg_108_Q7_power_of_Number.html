@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power of Number :</title>
+</head>
+
+<body>
+  <h2>Power of Number :</h2>
+  <script>
+    function power(x, n) {
+      let p = 1;
+      for (i = 1; i <= n; i++) {
+        p = p * x;
+      }
+      return p;
+    }
+
+    let x, n;
+    x = parseInt(prompt("Enter Base:"));
+    n = parseInt(prompt("Enter Power :"));
+    let p = power(x, n);
+    document.write("You are Enter : " + x + "<sup>" + n + "</sup> = " + p);
+  </script>
+</body>
+
+</html>

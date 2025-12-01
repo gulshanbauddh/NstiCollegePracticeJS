@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>pg_17_(Quadratic Equation)</title>
+  </head>
+
+  <body>
+    <h2>Roots of Quadratic Equation-</h2>
+    <script>
+      var a, b, c;
+      a = parseInt(prompt("Enter the value  of a-"));
+      b = parseInt(prompt("Enter the value  of b-"));
+      c = parseInt(prompt("Enter the value  of c-"));
+      document.write("a=" + a + " , b=" + b + " , c= " + c + "<br>");
+      let d = (b * b) - (4 * a * c);
+      let root1, root2;
+      if (d > 0) {
+        document.write("Root's are Real and diffrence-<br>");
+        root1 = (-b + Math.sqrt(d)) / (2 * a);
+        root2 = (-b - Math.sqrt(d)) / (2 * a);
+        document.write("Root 1=" + root1.toFixed(2) + "<br>");
+        document.write("Root 2=" + root2.toFixed(2) + "<br>");
+      } else if (d === 0) {
+        document.write("Root's are Real and same-<br>");
+        root1 = -b / (2 * a);
+        document.write("The Root is Real and Equal-<br>");
+        document.write("Root =" + root1.toFixed(2) + "<br>");
+      } else if (d < 0) {
+        document.write("Root's are Imaginary and diffrence-<br>");
+        let realPart = -b / (2 * a);
+        let imaginaryPart = Math.sqrt(-d) / (2 * a);
+        document.write("Root 1=" + realPart.toFixed(2) +"+" + imaginaryPart.toFixed(2) + "i<br>");
+        document.write("Root 2=" + realPart.toFixed(2) + "-" + imaginaryPart.toFixed(2) +"i<br>");
+      } else {
+        document.write("Somting entred Wrong!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum even no between Limit n1 to n2</title>
+</head>
+<body>
+    <h1>sum of even no between Limit n1 to n2</h1>
+    <script>
+        let n1=parseInt(prompt("Enter 1st number:"));
+        let n2=parseInt(prompt("Enter 2st number:"));
+        n1=5;
+        n2=20;
+        sum=0;
+        document.write("Your Enterd number is = "+n1+" and "+n2);
+        for(n1; n1<=n2; n1++){
+            if(n1%2==0){
+                sum=sum+n1;
+            }
+        }
+        document.write("<br>Sum of all Even number between n1 and n2 is  = "+sum);
+    </script>
+</body>
+</html>

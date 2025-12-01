@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=3, initial-scale=1.0">
+  <title>Counting number of Para :</title>
+</head>
+<body>
+  <script>
+    function countPara(){
+      let totalPara=document.getElementsByTagName("p")
+      alert("Total 'p' tag is: "+totalPara.length);
+    }
+  </script>
+  <h2>Counting number of Para :</h2>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <button onclick="countPara()">Count Para</button>
+</body>
+</html>

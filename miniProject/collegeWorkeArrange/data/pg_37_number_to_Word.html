@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number to Word</title>
+  </head>
+  <body>
+    <h1>Number to Word:</h1>
+    <script>
+      let no = parseInt(prompt("Enter Number for change into Word: (0 to 9)"));
+      let displayOut;
+      switch (no) {
+        case 0:
+          displayOut = "Zero";
+          break;
+        case 1:
+          displayOut = "One";
+          break;
+        case 2:
+          displayOut = "Two";
+          break;
+        case 3:
+          displayOut = "Three";
+          break;
+        case 4:
+          displayOut = "Four";
+          break;
+        case 5:
+          displayOut = "Five";
+          break;
+        case 6:
+          displayOut = "Six";
+          break;
+        case 7:
+          displayOut = "Seven";
+          break;
+        case 8:
+          displayOut = "Eight";
+          break;
+        case 9:
+          displayOut = "Nine";
+          break;
+          default:
+            displayOut="Invalid! Input";
+      }
+      document.write("Word is: " + displayOut);
+    </script>
+  </body>
+</html>

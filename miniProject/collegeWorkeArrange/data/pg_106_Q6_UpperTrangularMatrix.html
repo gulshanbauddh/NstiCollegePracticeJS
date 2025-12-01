@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagonal of Matrix :</title>
+</head>
+
+<body>
+  <h2>Diagonal of Matrix :</h2>
+  <script>
+    // Read matrix:
+    function readMatrix(a, m, n) {
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          a[i][j] = parseInt(prompt("Enter element of matrix :"));
+        }
+      }
+    }
+    // Display matrix: 
+    function displayMatrix(a, m, n) {
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          document.write(a[i][j] + "  ");
+        }
+        document.write("<br>");
+      }
+    }
+    // Upper Trangular Matrix:
+    function uppenTrangularMatrix(a, m, n) {
+      for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+          if (i <= j)
+            document.write(a[i][j] + "  ");
+          else
+            document.write("&nbsp;&nbsp;&nbsp;");
+        }
+        document.write("<br>");
+      }
+    }
+
+    let a, m, n;
+    m = parseInt(prompt("Enter row limit of matrix :"));
+    n = parseInt(prompt("Enter column limit of matrix :"));
+
+    // Object creation
+    a = new Array(m);
+    for (i = 0; i < m; i++)  a[i] = new Array(n);
+
+    readMatrix(a, m, n); // Read Matrix
+    document.write("Matrix is :<br>")
+    displayMatrix(a, m, n); // Display matrix
+    if (m == n) {
+      document.write("<hr>Upper Traingular Matrix is : <hr>")
+      uppenTrangularMatrix(a, m, n)   // Upper Traingular Matrix
+    }
+    else document.write("Diagonal not possible!")
+
+  </script>
+</body>
+
+</html>
