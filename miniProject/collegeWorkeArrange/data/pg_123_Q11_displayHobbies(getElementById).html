@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q4- Display your Hobbies | using getElementsByNaame() :</title>
+</head>
+
+<body>
+  <!-- Start JS -->
+  <script>
+    function getCheckHobbies() {
+      let checkbox = document.getElementsByName("hobby");
+      let selectedHobbies = [];
+      for (i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          selectedHobbies.push(checkbox[i].value);
+        } 
+      }
+      document.getElementById("hobbyResult").innerHTML = "Selected Hobbies = " + selectedHobbies.join(" , ")
+    }
+  </script>
+  <!-- Start HTML -->
+  <p>Q4- Display your Hobbies | using getElementsByNaame :</p>
+  <input type="checkbox" name="hobby" value="Reading"> Reading
+  <input type="checkbox" name="hobby" value="Traveling"> Traveling
+  <input type="checkbox" name="hobby" value="Music"> Music
+  <input type="checkbox" name="hobby" value="Play"> Play
+  <br><br>
+  <button onclick="getCheckHobbies()">Show Selected Hobbies</button>
+  <p id="hobbyResult"></p>
+</body>
+
+</html>

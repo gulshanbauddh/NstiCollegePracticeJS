@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Month number & find month name</title>
+  </head>
+  <body>
+    <h1>Input Month number & find month name</h1>
+    <script>
+      let no = parseInt(prompt("Enter any number b/w (1 to 12)"));
+      let displayOut;
+      switch (no) {
+        case 1:
+          displayOut = "January";
+          break;
+        case 2:
+          displayOut = "February";
+          break;
+        case 3:
+          displayOut = "March";
+          break;
+        case 4:
+          displayOut = "April";
+          break;
+        case 5:
+          displayOut = "May";
+          break;
+        case 6:
+          displayOut = "June";
+          break;
+        case 7:
+          displayOut = "July";
+          break;
+        case 8:
+          displayOut = "August";
+          break;
+        case 9:
+          displayOut = "September";
+          break;
+        case 9:
+          displayOut = "October";
+          break;
+        case 9:
+          displayOut = "November";
+          break;
+        case 9:
+          displayOut = "December";
+          break;
+        default:
+          displayOut = "Invalid! Input";
+      }
+      document.write("Month Name is : " + displayOut);
+    </script>
+  </body>
+</html>

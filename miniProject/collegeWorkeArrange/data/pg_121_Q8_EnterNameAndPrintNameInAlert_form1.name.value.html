@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q8: Name print in name usinng DOM :</title>
+</head>
+
+<body>
+  <h2>Q8: Name print in name usinng DOM :</h2>
+  <script>
+    function printvalue() {
+      var name = document.form1.textBoxName.value;
+      alert("Welcome : " + name)
+    }
+  </script>
+  <form name="form1">
+    Enter Name: <input type="text" name="textBoxName" />
+    <input type="button" onclick="printvalue()" value="Print name">
+  </form>
+</body>
+
+</html>

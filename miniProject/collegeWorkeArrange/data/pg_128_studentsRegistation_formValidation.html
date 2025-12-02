@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form validation :</title>
+</head>
+
+<body>
+  <center>
+    <table cellspacing="20" align="center">
+      <form method="post" id="app">
+        <tr>
+          <td colspan="2" align="center">
+            <b><u>Form validation :</u></b>
+          </td>
+
+        </tr>
+        <tr>
+          <td>Name :</td>
+          <td><input type="text" size="40" id="n1"></td>
+        </tr>
+        <tr>
+          <td>DOB :</td>
+          <td>
+            <input type="date" name="date1" id="n2" onblur="getage()">
+            <input type="text" name="age" size="5" disabled id="n3">
+          </td>
+        </tr>
+
+        <tr>
+          <td>Gender :</td>
+          <td>
+            <input type="radio" name="r1" id="n4" value="male">Male :
+            <input type="radio" name="r1" id="n5" value="female">Female :
+          </td>
+        </tr>
+
+        <tr>
+          <td>Religion & Cast :</td>
+          <td>
+            <select name="religion" id="n6">
+              <option value="Hindu">Hindu</option>
+              <option value="Muslim">Muslim</option>
+              <option value="Sikkh">Sikkh</option>
+              <option value="Isai">Chrseian</option>
+              <option value="Buddhist">Buddhist</option>
+              <option value="Other">Other</option>
+            </select>
+            <select name="cast" id="n7">
+              <option value="General">General</option>
+              <option value="OBC">OBC</option>
+              <option value="SC/ST">SC/ST</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Father's / Guardian name :</td>
+          <td><input type="" name="gName" size="40" id="n9"></td>
+        </tr>
+        <tr>
+          <td>Address :</td>
+          <td><textarea rows="5" cols="42" id="n12" name="add"></textarea></td>
+        </tr>
+        <tr>
+          <td>Contact numaber :</td>
+          <td><input type="text" name="contNo" size="40" id="n13">
+          </td>
+        </tr>
+        <tr>
+          <td>Qualification :</td>
+          <td align="left">
+            SSLC <input type="checkbox" id="qual1" value="sslc">
+            Plus Two <input type="checkbox" id="qual2" value="plusTwo">
+            Degree <input type="checkbox" id="qual3" value="degree">
+            Deploma <input type="checkbox" id="qual4" value="deploma">
+            Graduation<input type="checkbox" id="qual5" value="graduation">
+            Other<input type="checkbox" id="qual6" value="other">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="2">
+            <input type="button" onclick="validate()" value="Submit">
+            <input type="reset" value="Clear">
+          </td>
+        </tr>
+      </form>
+    </table>
+  </center>
+  <!-- Js Start -->
+  <script>
+    function getage() {
+      var dob = document.getElementById("n2");
+      var age = document.getElementById("n3")
+      if (dob.value) {
+        var dt1 = new Date();
+        var dt2 = new Date(dob.value);
+        var d1 = dt1.getFullYear();
+        var d2 = dt2.getFullYear();
+        var monthDiff = dt1.getMonth() - dt2.getMonth();
+        age.value = (monthDiff < 0) || (monthDiff === 0 && dt1.getDate() < dt2.getDate()) ? d1 - d2 - 1 : d1 - d2;
+      } else {
+        age.value = "";
+      }
+    }
+    function validate() {
+      var name = document.getElementById("n1");
+      var dob = document.getElementById("n2");
+      var fName = document.getElementById("n9");
+      var address = document.getElementById("n12");
+      var contact = document.getElementById("n13");
+      var qual1 = document.getElementById("qual1");
+      var qual2 = document.getElementById("qual2");
+      var qual3 = document.getElementById("qual3");
+      var qual4 = document.getElementById("qual4");
+      var qual5 = document.getElementById("qual5");
+      var qual6 = document.getElementById("qual6");
+
+
+      if (name.value == "") {
+        alert("Please enter your name as in birth certifacate");
+        name.focus();
+        return;
+      }
+      if (dob.value.trim() === "") {
+        alert("Please select date of birth");
+        dob.focus();
+        return;
+      }
+      if (fName.value.trim() === "") {
+        alert("Please enter father's or guardian's name");
+        fName.focus();
+        return;
+      }
+      if (address.value.trim() === "") {
+        alert("Please enter your address");
+        address.focus();
+        return;
+      }
+      if (contact.value.trim() === "") {
+        alert("Please enter your contact number");
+        contact.focus();
+        return;
+      }
+      var l1 = contact.value.length;
+      if (l1 !== 10 || isNaN(contact.value)) {
+        alert("Please enter valid 10-digit contact number.");
+        dob.focus();
+        return;
+      }
+      if (!qual1.checked && !qual2.checked && !qual3.checked && !qual4.checked && !qual5.checked) {
+        alert("Please setect ypur qualification")
+        return;
+      }
+      alert("Registered successfully");
+      document.getElementById("app").submit();
+    }
+
+  </script>
+</body>
+
+</html>

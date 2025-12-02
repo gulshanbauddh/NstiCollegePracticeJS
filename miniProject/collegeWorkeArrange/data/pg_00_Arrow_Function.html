@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+  , initial-scale=1.0"
+    />
+    <title>Arrow Function : map, filter, forEach, reduce :</title>
+  </head>
+
+  <body>
+    <h2>Arrow Function : map, filter, forEach, reduce :</h2>
+    <script>
+      // ++++++++++ map +++++++++++
+      document.write(`<b>map used :</b>`);
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+      const square = arr.map((n) => n * n);
+      document.write(`<br>Square is : [ ${square} ]`);
+
+      // ++++++++++ filter +++++++++++
+      // ---------- even ------------
+      document.write(`<br><b>filter used :</b>`);
+      const even = arr.filter((a) => a % 2 == 0);
+      // ---------- even ------------
+      const odd = arr.filter((a) => a % 2 != 0);
+      document.write(`<br>Even is : [ ${even} ]`);
+      document.write(`<br>Odd is : [ ${odd} ]`);
+
+      // ++++++++++ Sum of Array : +++++++++++
+      document.write(`<br><b>reduce used :</b>`);
+      document.write(`<br>Sum of Orignal Array :`);
+      const sumOfArray = arr.reduce((a, sum) => sum + a, 0);
+      const sumOfEven = even.reduce((a, sum) => sum + a, 0);
+      const sumOfOdd = odd.reduce((a, sum) => sum + a, 0);
+      document.write(`<br>Sum of orignal Array is : [ ${sumOfArray} ]`);
+      document.write(`<br>Sum of Even Array is : [ ${sumOfEven} ]`);
+      document.write(`<br>Sum of Odd Array is : [ ${sumOfOdd} ]`);
+    </script>
+  </body>
+</html>

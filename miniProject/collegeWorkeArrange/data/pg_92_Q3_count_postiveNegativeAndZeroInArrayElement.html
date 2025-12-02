@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Postive Negative And Zero In Array Element:</title>
+  </head>
+  <body>
+    <h2>Perform Linear Search:</h2>
+    <script>
+      let arr = [1, -5, 7, 8, 3, -4, 6, 0, -3, 8, 9, , -3, 5, 2, 0, 8];
+      document.write("Your Array is : [ " + arr);
+      let limit = arr.length, pc = 0, nc = 0, zc = 0;
+      for (i = 0; i < limit; i++) {
+        if (arr[i] > 0) pc++;
+        else if (arr[i] < 0) nc++;
+        else zc++;
+      }
+      document.write(" ]<br>Postive number count = "+pc+", Negative number count = "+nc+", and Zero number count ="+ zc);
+    </script>
+  </body>
+</html>
