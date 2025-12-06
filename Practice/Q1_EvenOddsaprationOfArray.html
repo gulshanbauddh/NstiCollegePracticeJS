@@ -10,6 +10,8 @@
       let arr, n ,even, odd, ec=0, oc=0;
       n = parseInt(prompt("Enter the size of array:"));
       arr = new Array(n);
+      even = new Array();
+      odd = new Array();
       //Read array elements-
       for (i = 0; i < n; i++) {
         arr[i] = parseInt(prompt("Enter elements : "));
@@ -20,8 +22,6 @@
         document.write(arr[i] + " ");
       }
       //Sepration of even and odd numbers-
-      even = new Array();
-      odd = new Array();
       for (i = 0; i < n; i++) {
         if (arr[i] % 2 == 0) even[ec++] = arr[i];
         else odd[oc++] = arr[i];

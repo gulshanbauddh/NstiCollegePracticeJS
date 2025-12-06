@@ -9,7 +9,7 @@
   <h1>Min & Max in Array</h1>
   <script>
   //declaration and Initialization of array-
-      let arr, n, min, max;
+      let arr, n;
       n = parseInt(prompt("Enter the size of array:"));
       arr = new Array(n);
       //Read array elements-
@@ -22,8 +22,8 @@
         document.write(arr[i] + " ");
       }
       // Find Min & Max
-      min=arr[0];
-      max=arr[0];
+      let min=arr[0];
+      let max=arr[0];
       for(i=0; i<n; i++){
         if(arr[i]>max) max=arr[i];
         if(arr[i]<min) min=arr[i];
