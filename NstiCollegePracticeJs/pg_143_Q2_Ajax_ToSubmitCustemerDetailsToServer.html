@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    function sendCustemerDetails() {
+      var zhttp = new XMLHttpRequest();
+      const custDetails = document.querySelector("#cDatils")
+      const cDatils = new FormData(custDetails);
+
+      zhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 201) {
+          document.getElementById("example").innerHTML = this.responseText;
+          console.log("Custemer details Posted Successfully")
+        }
+      };
+
+      zhttp.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+      zhttp.send(new FormData(custDetails));
+    }
+  </script>
+  <!--Creating simple form-->
+  <center>
+    <form id="cDatils">
+      <h2>Enter the requested Data</h2>
+      <label for="custemerCode">Custemer Code</label>
+      <input id="custemerCode" type="text" name="pname"><br><br>
+      <label for="custemerName">Custemer Name</label>
+      <input id="custemerName" type="number" name="custemerName"><br><br>
+      <label for="custemerPin">Custemer Pin</label>
+      <input id="custemerPin" type="text" name="custemerPin"><br><br>
+      
+      <button type="button" onclick="sendCustemerDetails()">Submit Record</button>
+    </form>
+    <div id="example"></div>
+  </center>
+</body>
+
+</html>
