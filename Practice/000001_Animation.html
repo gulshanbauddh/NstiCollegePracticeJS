@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* 1st Animation-
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: myAnimation;
+  animation-duration: 14s;
+}
+
+@keyframes myAnimation {
+  from {
+    background-color: red;
+    border-radius: 1%;      
+  }
+  to {
+    background-color: rgb(37, 251, 119);
+    border-radius: 50%;
+  }
+} */
+    @keyframes myAnimation {
+      0% {
+        background-color: red;
+        top: 0px;
+        left: 0px;
+      }
+
+      50% {
+        background-color: rgb(0, 255, 60);
+        top: 0px;
+        left: 200px;
+      }
+
+      90% {
+        background-color: rgb(0, 47, 255);
+        top: 200px;
+        left: 200px;
+      }
+
+      95% {
+        background-color: rgb(0, 47, 255);
+        top: 200px;
+        left: 0px;
+      }
+
+      100% {
+        background-color: rgb(255, 221, 0);
+        top: 0px;
+        left: 0px;
+      }
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background-color: red;
+      animation-name: myAnimation;
+      animation-duration: 4s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>CSS Animation</h1>
+
+  <div></div>
+
+  <p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+
+</body>
+
+</html>
