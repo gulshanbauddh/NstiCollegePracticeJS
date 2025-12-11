@@ -157,42 +157,17 @@ DROP TABLE students;
 | Student Update | UPDATE      |
 | Student Delete | DELETE      |
 
----
 
-## ✅ Important Notes
+```sql
 
-* `WHERE` clause ka use bina soch samjhe mat karo
-* `DELETE` aur `DROP` ka use bahut carefully karein
-* Hamesha `SELECT` pehle chala kar confirm karein
-* `id` ke through UPDATE aur DELETE karna best practice hai
+DESCRIBE traniess;
 
----
-
-## ✅ Use Case
-
-Ye CRUD operations use hote hain:
-
-* Registration Forms
-* Login System
-* School Management System
-* Hospital Management System
-* Shopping Website
-
----
-
-📌 **Ye file aap exam, project aur interview sab ke liye use kar sakte ho.**
-
-```
-
----
-
-Agar aap chaho to main:
-
-✅ **PHP + MySQL CRUD ke notes**  
-✅ **HTML Form → MySQL Insert Flow**  
-✅ **Mini Project CRUD Notes (PDF / DOC / MD)**  
-
-bhi bana sakta hoon 📂🔥
-
-Batao next kis format me chahiye — **PDF, Word, ya GitHub Markdown?**
-```
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| ID            | int         | YES  |     | NULL    |       |
+| NAME          | varchar(25) | YES  |     | NULL    |       |
+| FATHER_NAME   | varchar(25) | YES  |     | NULL    |       |
+| PLACE         | varchar(25) | YES  |     | NULL    |       |
+| MOBILE_NUMBER | bigint      | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
