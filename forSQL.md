@@ -1,3 +1,18 @@
+y
+u
+r
+a
+p
+c
+2
+0
+2
+5
+2
+0
+2
+6
+
 # 1. Open in MySQL Shell
 ```bash
 step 1: \connect root@localhost  (for connect to mysql local host)
