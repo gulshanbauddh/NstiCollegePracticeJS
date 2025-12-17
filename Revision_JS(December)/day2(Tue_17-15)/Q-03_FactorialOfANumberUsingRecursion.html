@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial of a number using Recursion :</title>
+</head>
+
+<body>
+  <h2>Factorial of a number using Recursion :Factorial of a number using Recursion :</h2>
+  <script>
+    // Factorial function
+    function fact(num) {
+      if (num > 0) {
+        return num * fact(num - 1);
+      }
+      else {
+        return 1;
+      }
+    }
+
+    let num = parseInt(prompt("Enter any postive Integer :"));
+    if (isNaN(num) || num < 0) document.write("Please Enter Correct number");
+    else {
+      let factorial = fact(num);
+      document.write("Number is : " + num);
+      document.write("<br>Factorial is : " + factorial);
+    }
+  </script>
+</body>
+
+</html>

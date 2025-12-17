@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Electricty Bill</title>
+</head>
+
+<body>
+  <center>
+    <h1>Q-10 Electricty Bill</h1>
+    <script>
+      // Initilasion, Decelaration & Input
+      let bill, sur = 0;
+      let conName = prompt("Enter consumer Name:");
+      let conId = prompt("Enter Consumer Id");
+      let unit = parseInt(prompt("Enter unit"));
+      // Calculate Electric Bill
+      if (unit < 100) {
+        bill = (unit * 5);
+      } else if (unit < 200) {
+        bill = (100 * 5) + ((unit - 100) * 7);
+      } else {
+        bill = ((100 * 5) + (100 * 7) + ((unit - 200) * 10));
+      }
+      // Calculate Surcharge-
+      if (bill > 1000) {
+        sur = bill * 0.1;
+      }
+      // Display and output-
+      document.write("<h3>Electricty Rate-</h3>");
+      document.write("-------------------------------------------");
+      document.write("<br>0-100 unit @ ₹ 5");
+      document.write("<br>100-200 unit @ ₹ 7");
+      document.write("<br>200 above unit @ ₹ 10");
+      document.write("<br>-------------------------------------------");
+      document.write("<h3>Your Bill-</h3>");
+      document.write("Name of Consumere:  " + conName);
+      document.write("<br>Consumer Id:  " + conId);
+      document.write("<br>Number of unit: " + unit);
+      document.write("<br>Surcharge: ₹ " + sur);
+      document.write("<br>Total Bill: ₹ " + (bill + sur));
+    </script>
+  </center>
+</body>
+
+</html>

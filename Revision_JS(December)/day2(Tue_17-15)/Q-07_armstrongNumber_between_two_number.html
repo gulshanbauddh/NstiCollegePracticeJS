@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-7 armstrong Number between two number :</title>
+</head>
+
+<body>
+  <h1>Q-7 armstrong Number between two number :</h1>
+  <script>
+    let lim1 = parseInt(prompt("Enter limit 1."));
+    let lim2 = parseInt(prompt("Enter limit 2."));
+    document.write("Armstrong numbers is : ")
+    for (let limit = lim1; limit <= lim2; limit++) {
+      let rem = 0, sum = 0, num = limit;
+      let orgNum = limit, numLength = String(limit).length;
+      while (num > 0) {
+        rem = (num % 10) ** numLength;
+        num = parseInt(num / 10);
+        sum = sum + rem;
+      }
+      if (orgNum == sum) document.write(orgNum + "  ");
+    }
+  </script>
+</body>
+
+</html>

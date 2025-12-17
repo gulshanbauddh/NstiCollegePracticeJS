@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Series :</title>
+</head>
+
+<body>
+  <h2>Fibonacci Series :</h2>
+  <script>
+    let f1 = -1, f2 = 1, f3 = 0;
+    let limit = parseInt(prompt("Enter any postive Integer."));
+    document.write("Enterd limitber is : " + limit);
+    document.write("<br>Fibonacci Series is : ");
+    while (f3 < limit) {
+      f3 = f1 + f2;
+      f1 = f2;
+      f2 = f3;
+      if (f3 > limit) break;
+      document.write(f3 + " ")
+    }
+  </script>
+</body>
+
+</html>

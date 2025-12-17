@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI calculater:</title>
+</head>
+
+<body>
+  <h2>BMI calculater:</h2>
+  <script>
+    let w = parseInt(prompt("Enter weight in Kg."));
+    let h = parseInt(prompt("Enter height in cm."));
+    h = h / 100;
+    if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) {
+      document.write("Please enter valid weight and height.");
+    } else {
+      let bmi = w / (h * h);
+      bmi = bmi.toFixed(2);
+      document.write("Your BMI is: " + bmi + "<br>");
+      if (bmi < 18.5) {
+        document.write("You are underweight.");
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        document.write("You have a normal weight.");
+      } else if (bmi >= 25 && bmi < 29.9) {
+        document.write("You are overweight.");
+      } else {
+        document.write("You are obese.");
+      }
+    }
+  </script>
+</body>
+
+</html>
