@@ -14,14 +14,14 @@
     var a = parseFloat(prompt("Enter length of side a in cm:"));
     var b = parseFloat(prompt("Enter length of side b in cm:"));
     var c = parseFloat(prompt("Enter length of side c in cm:"));
-    document.write("Three sides of the triangle are: a = " + a + ", b = " + b + ", c = " + c + "<br>");
+    document.write("Three sides of the triangle are: a = "+a+", b = "+b+", c = "+c+"<br>");
 
     // Calculate semi-perimeter
-    var s = (a + b + c) / 2;
+    var s = (a+b+c)/2;
 
     // Calculate the area -
-    var area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-    document.write("<p>Area of the triangle is: " + area.toFixed(2) + "cm<sup>2</sup></p>");
+    var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    document.write("<p>Area of the triangle is: "+area.toFixed(2)+"cm<sup>2</sup></p>");
   </script>
 </body>
 
