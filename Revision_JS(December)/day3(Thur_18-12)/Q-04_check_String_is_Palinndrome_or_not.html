@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-04 check String is Palinndrome or not</title>
+</head>
+<body>
+  <h2>Q-04 check String is Palinndrome or not:</h2>
+  <script>
+    var reversedStr = "";
+    var str = prompt("Enter a string:");
+    str = str.trim();
+    document.write("The entered string is: " + str + "<br>"); 
+    for(let i=str.length-1; i>=0; i--) {
+      reversedStr += str[i];
+    }
+    
+    if (str === reversedStr) {
+      document.write("The string is a palindrome.");
+    } else {
+      document.write("The string is not a palindrome.");
+    }
+  </script>
+</body>
+</html>

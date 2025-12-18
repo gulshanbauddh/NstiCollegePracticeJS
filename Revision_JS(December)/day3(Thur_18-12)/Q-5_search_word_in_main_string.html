@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-5 search word in main string</title>
+</head>
+
+<body>
+  <h2>Q-5 search word in main string :</h2>
+  <script>
+    // Input main string and word to search
+    var mainString = prompt("Enter the main string:"); // Gulshan
+    var wordToSearch = prompt("Enter the word to search:"); // an
+
+    // Search for the word in the main string
+    for (var i = 0; i < wordToSearch.length; i++) {
+      for (var j = 0; i < mainString.length; j++) {
+        if (mainString[j] === wordToSearch[i]) {
+          
+        }
+      }
+    }
+
+    // Display the result
+    if (index !== -1) {
+      document.write("<p>The word '" + wordToSearch + "' is found in the main string at index: " + index + "</p>");
+    } else {
+      document.write("<p>The word '" + wordToSearch + "' is not found in the main string.</p>");
+    }
+  </script>
+</body>
+
+</html>

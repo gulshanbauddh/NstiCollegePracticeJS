@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-01 salary Slip of Employee</title>
+</head>
+
+<body>
+  <h2>Q-01 salary Slip of Employee :</h2>
+  <script>
+    // Employee Details
+    var employeeName = prompt("Enter Employee Name:");
+    var employeeID = prompt("Enter Employee ID:");
+    var basicSalary = parseInt(prompt("Enter Basic Salary:"));
+    var deductions = parseInt(prompt("Enter Deductions:"));
+    var hra = 0.20 * basicSalary;
+    var da = 0.10 * basicSalary;
+    var ta = 0.10 * basicSalary;
+    var totalSalary = basicSalary + hra + da + ta;
+
+    // Calculating Gross Salary and Net Salary
+    var netSalary = totalSalary - deductions;
+
+    // Displaying the Salary Slip
+    document.write("<h3>Salary Slip</h3>");
+    document.write("<p><strong>Employee Name:</strong> " + employeeName + "</p>");
+    document.write("<p><strong>Employee ID:</strong> " + employeeID + "</p>");
+    document.write("<p><strong>Basic Salary:</strong> ₹ " + basicSalary.toFixed(2) + "</p>");
+    document.write("<p><strong>House Rent Allowance (HRA):</strong> ₹ " + hra.toFixed(2) + "</p>");
+    document.write("<p><strong>Dearness Allowance (DA):</strong> ₹ " + da.toFixed(2) + "</p>");
+    document.write("<p><strong>Travel Allowance (TA):</strong> ₹ " + ta.toFixed(2) + "</p>");
+    document.write("<p><strong>Deductions:</strong> ₹ " + deductions.toFixed(2) + "</p><hr>");
+    document.write("<p><strong>Total Salary:</strong> ₹ " + totalSalary.toFixed(2) + "</p>");
+    document.write("<p><strong>Net Salary:</strong> ₹ " + netSalary.toFixed(2) + "</p>");
+  </script>
+</body>
+
+</html>
