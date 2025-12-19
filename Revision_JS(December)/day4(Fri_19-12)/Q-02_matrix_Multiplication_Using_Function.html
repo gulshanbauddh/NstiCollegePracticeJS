@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-02 matrix Multiplication Using Function</title>
+</head>
+
+<body>
+  <h2>Q-02 matrix Multiplication Using Function :</h2>
+  <script>
+    let mat1, mat2, mulMat, m, n, p, q, a, b;
+    alert("Insert Order of Matrix A")
+    m = parseInt(prompt("Enter Matrix A -> m Order"));
+    n = parseInt(prompt("Enter Matrix A -> n Order"));
+    alert("Insert Order of Matrix B");
+    p = parseInt(prompt("Enter Matrix B -> p Order"));
+    q = parseInt(prompt("Enter Matrix B -> q Order"));
+    mat1 = new Array(m);
+    mat2 = new Array(p);
+    // 2D object creations-
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        mat1[i] = new Array(n);
+      }
+    }
+    for (let i = 0; i < p; i++) {
+      for (let j = 0; j < q; j++) {
+        mat2[i] = new Array(q);
+      }
+    }
+
+    // Read matrix
+    alert("Insert Elements of Matrix A");
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        mat1[i][j] = parseInt(prompt("Enter Matrix element's of Matrix A :"))
+      }
+    }
+    alert("Insert Elements of Matrix B");
+    for (let i = 0; i < p; i++) {
+      for (let j = 0; j < q; j++) {
+        mat2[i][j] = parseInt(prompt("Enter Matrix element's of Matrix B :"))
+      }
+    }
+
+    // Display Matrix
+    document.write("Matrix A:<br>");
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        document.write(mat1[i][j] + " " + " ");
+      }
+      document.write("<br>");
+    }
+    document.write("Matrix B:<br>");
+    for (let i = 0; i < p; i++) {
+      for (let j = 0; j < q; j++) {
+        document.write(mat2[i][j] + " " + " ")
+      }
+      document.write("<br>");
+    }
+    // m, n, p, q
+    // Multiplication of Matrixx:
+    if (n === p) {
+      mulMatrix(m, p);
+    } else {
+      document.write("Multiplication of Matrix is not Possible.")
+    }
+
+    function mulMatrix() {
+      mulMat = new Array(m);
+      // 2D object creations-
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < q; j++) {
+          mulMat[i] = new Array(q);
+        }
+      }
+
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < q; j++) {
+          mulMat[i][j] = mat1[i][j] + mat2[i][j];
+        }
+      }
+      document.write("<hr>Matrix (C = A x B) :<br>");
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < q; j++) {
+          document.write(mulMat[i][j] + " " + " ")
+        }
+        document.write("<br>");
+      }
+    }
+  </script>
+</body>
+
+</html>

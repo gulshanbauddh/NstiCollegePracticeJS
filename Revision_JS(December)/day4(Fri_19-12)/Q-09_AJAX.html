@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-09 AJAX</title>
+</head>
+
+<body>
+  <h2>Q-09 AJAX</h2>
+  <script>
+    function sendFormData() {
+      var zhttp = new XMLHttpRequest();
+      const mFormEle = document.querySelector("#mForm")
+      const myForm = new FormData(mFormEle);
+
+      zhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 201) {
+          document.getElementById("example").innerHTML = this.responseText;
+          console.log("Form Data Posted Successfully")
+        }
+      };
+
+      zhttp.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+      zhttp.send(new FormData(mFormEle));
+    }
+  </script>
+  <!--Creating simple form-->
+  <center>
+    <form id="mForm">
+      <h2>Enter the requested Data</h2>
+      <label for="ProductName">Product Name</label>
+      <input id="ProductName" type="text" name="pname"><br><br>
+      <label for="Pid">Product Id</label>
+      <input id="Pid" type="number" name="pid"><br><br>
+      <label for="Brand">Brand</label>
+      <input id="Brand" type="text" name="brand"><br><br>
+      <label for="Price">Price</label>
+      <input id="Price" type="number" name="price"><br><br>
+      <button type="button" onclick="sendFormData()">Submit Record</button>
+    </form>
+    <div id="example"></div>
+  </center>
+</body>
+
+</html>

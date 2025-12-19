@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-06 Student RegistationForm :</title>
+</head>
+
+<body>
+  <h2>Q-06 Student RegistationForm :</h2>
+  <table cellspacing="15" align="center">
+    <form action="none" method="post" id="sForm">
+      <tr>
+        <td colspan="2" align="center"><b><u>Form Validation </u></b></td>
+      </tr>
+      <tr>
+        <th>Name :</th>
+        <td><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <th>Father's name :</th>
+        <td><input type="text" name="fName" id="fName"></td>
+      </tr>
+      <tr>
+        <th>DOB :</th>
+        <td>
+          <input type="date" name="dob" id="dob" onblur="getAge()">
+          <input type="text" name="date" id="age" size="3" disabled>
+        </td>
+      </tr>
+      <tr>
+        <th>Gender:</th>
+        <td>
+          Male :<input type="radio" name="a" id="">
+          Female :<input type="radio" name="a" id="">
+          Other :<input type="radio" name="a" id="">
+        </td>
+      </tr>
+      <tr>
+        <th>Religion & Cast :</th>
+        <td>
+          <select name="" id="">
+            <option value="">Hindu</option>
+            <option value="">Muslim</option>
+            <option value="">Sikh</option>
+            <option value="">Christion</option>
+            <option value="">Buddhist</option>
+            <option value="">Other</option>
+          </select>
+          <select name="" id="">
+            <option value="">General</option>
+            <option value="">OBC</option>
+            <option value="">SC/ST</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>Address :</th>
+        <td> <textarea name="add" id="add"></textarea></td>
+      </tr>
+      <tr>
+        <td>Qualification :</td>
+        <td align="left">
+          SSLC <input type="checkbox" id="qual1" value="sslc">
+          Plus Two <input type="checkbox" id="qual2" value="plusTwo">
+          Degree <input type="checkbox" id="qual3" value="degree">
+          Deploma <input type="checkbox" id="qual4" value="deploma">
+          Graduation<input type="checkbox" id="qual5" value="graduation">
+          Other<input type="checkbox" id="qual6" value="other">
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <input type="button" onclick="validate()" value="Submit">
+          <input type="reset" value="Clear">
+        </td>
+      </tr>
+    </form>
+  </table>
+
+  <script>
+    function getAge() {
+      let sDob = document.getElementById("dob");
+      let age = document.getElementById("age");
+      if (sDob.value) {
+        let curDate = new Date();
+        sDob = new Date(sDob.value);
+        let syear = sDob.getFullYear();
+        let curYear = curDate.getFullYear();
+        let monthDiff = sDob.getMonth() - curDate.getMonth();
+        age.value = (monthDiff > 0 || monthDiff == 0 && curDate.getDate() > sDob.getDate()) ? (curYear - syear - 1) : (curYear - syear)
+      } else {
+        age.value = "";
+      }
+    }
+    function validate() {
+      var name = document.getElementById("name");
+      var dob = document.getElementById("dob");
+      var fName = document.getElementById("fName");
+      var add = document.getElementById("add");
+      var qual1 = document.getElementById("qual1");
+      var qual2 = document.getElementById("qual2");
+      var qual3 = document.getElementById("qual3");
+      var qual4 = document.getElementById("qual4");
+      var qual5 = document.getElementById("qual5");
+      var qual6 = document.getElementById("qual6");
+      if (name.value == "") {
+        alert("Please enter your name as in birth certifacate");
+        name.focus();
+        return;
+      }
+      if (fName.value.trim() === "") {
+        alert("Please enter father's or guardian's name");
+        fName.focus();
+        return;
+      }
+      if (dob.value.trim() === "") {
+        alert("Please select date of birth");
+        dob.focus();
+        return;
+      }
+      if (add.value.trim() === "") {
+        alert("Please enter your address");
+        add.focus();
+        return;
+      }
+      if (!qual1.checked && !qual2.checked && !qual3.checked && !qual4.checked && !qual5.checked) {
+        alert("Please setect ypur qualification")
+        return;
+      }
+      alert("Registered successfully");
+      document.getElementById("app").submit();
+    }
+  </script>
+</body>
+
+</html>

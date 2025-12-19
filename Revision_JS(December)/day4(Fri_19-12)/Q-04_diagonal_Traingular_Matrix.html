@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-04 Diagonal Traingular Matrix :</title>
+</head>
+<h2>Q-04 Diagonal Traingular Matrix :</h2>
+
+<script>
+  let mat1, m, n;
+  m = parseInt(prompt("Enter Matrix A -> m Order"));
+  n = parseInt(prompt("Enter Matrix A -> n Order"));
+  mat1 = new Array(m);
+
+  if (m != n) {
+    alert("Diagonal of Matrix is possible only in Square Matrix");
+    document.write("Diagonal of Matrix is possible only in Square Matrix.<br>You Entered Matrix Order is " + m + " x " + n);
+  } else {
+    // 2D object creations-
+    for (let i = 0; i < m; i++) {
+      mat1[i] = new Array(n);
+    }
+    // Read matrix
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        mat1[i][j] = parseInt(prompt("Enter Matrix element's of Matrix A :"))
+      }
+    }
+    // Display Matrix
+    document.write("Matrix A:<br>");
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        document.write(mat1[i][j] + " " + " ");
+      }
+      document.write("<br>");
+    }
+
+    // Diagonal of Matrix
+    document.write("<hr>Matrix (C = A x B) :<br>");
+    for (let i = 0; i < m; i++) {
+      for (let j = 0; j < n; j++) {
+        if (i == j) document.write(mat1[i][j] + " " + " ")
+        else document.write(" &nbsp; &nbsp; ");
+      }
+      document.write("<br>");
+    }
+  }
+</script>
+</body>
+</body>
+
+</html>
