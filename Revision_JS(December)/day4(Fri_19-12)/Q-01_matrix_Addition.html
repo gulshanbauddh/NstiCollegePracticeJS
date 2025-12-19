@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-01 matrix Addition</title>
+</head>
+
+<body>
+  <h2>Q-01 matrix Addition :</h2>
+  <script>
+    let mat1, mat2, addMat, m, n, p, q, a, b;
+    m = parseInt(prompt("Enter Matrix A -> m Order"));
+    n = parseInt(prompt("Enter Matrix A -> n Order"));
+    p = parseInt(prompt("Enter Matrix B -> p Order"));
+    q = parseInt(prompt("Enter Matrix B -> q Order"));
+    mat1 = new Array(m);
+    mat2 = new Array(p);
+
+    if (m === p && n == q) {
+      addMatrix(m, p);
+    } else {
+      document.write("Addition of Matrix is not Possible.")
+    }
+    function addMatrix() {
+      // 2D object creations-
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          mat1[i] = new Array(n);
+        }
+      }
+      for (let i = 0; i < p; i++) {
+        for (let j = 0; j < q; j++) {
+          mat2[i] = new Array(q);
+        }
+      }
+
+      // Read matrix
+      alert("Insert Elements of Matrix A");
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          mat1[i][j] = parseInt(prompt("Enter Matrix element's of Matrix A :"))
+        }
+      }
+      alert("Insert Elements of Matrix B");
+      for (let i = 0; i < p; i++) {
+        for (let j = 0; j < q; j++) {
+          mat2[i][j] = parseInt(prompt("Enter Matrix element's of Matrix B :"))
+        }
+      }
+
+      // Display Matrix
+      document.write("Matrix A:<br>");
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          document.write(mat1[i][j] + " " + " ");
+        }
+        document.write("<br>");
+      }
+      document.write("Matrix B:<br>");
+      for (let i = 0; i < p; i++) {
+        for (let j = 0; j < q; j++) {
+          document.write(mat2[i][j] + " " + " ")
+        }
+        document.write("<br>");
+      }
+      // m, n, p, q
+      // Addition of Matrixx:
+
+
+      addMat = new Array(m);
+      // 2D object creations-
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          addMat[i] = new Array(n);
+        }
+      }
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          addMat[i][j] = mat1[i][j] + mat2[i][j];
+        }
+      }
+      document.write("<hr>Matrix (C = A + B):<br>");
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < q; j++) {
+          document.write(addMat[i][j] + " " + " ")
+        }
+        document.write("<br>");
+      }
+    }
+  </script>
+</body>
+
+</html>
