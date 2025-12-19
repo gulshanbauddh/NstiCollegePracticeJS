@@ -10,85 +10,66 @@
 <body>
   <h2>Q-02 matrix Multiplication Using Function(using Function):</h2>
   <script>
+    // 2D object creations-
+    function objectCreation(matrix, x, y) {
+      for (let i = 0; i < x; i++) {
+        matrix[i] = new Array(y);
+      }
+    }
+    // Read matrix
+    function readMatrix(matrix, x, y) {
+      for (let i = 0; i < x; i++) {
+        for (let j = 0; j < y; j++) {
+          matrix[i][j] = parseInt(prompt("Enter Matrix element's of Matrix :"))
+        }
+      }
+    }
+    // Display Matrix
+    function displayMatrix(mat1, m, n) {
+      document.write("Matrix A:<br>");
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+          document.write(mat1[i][j] + " " + " ");
+        }
+        document.write("<br>");
+      }
+    }
+
+    // m, n, p, q
+    // Multiplication of Matrixx:
+    function mulMatrix(mat1, mat2, m, n, q, mulMat) {
+      for (let i = 0; i < m; i++) {
+        for (let j = 0; j < q; j++) {
+          mulMat[i][j] = 0;
+          for (let k = 0; k < n; k++) {
+            mulMat[i][j] += mat1[i][k] * mat2[k][j];
+          }
+        }
+      }
+    }
+
+
     let mat1, mat2, mulMat, m, n, p, q, a, b;
-    alert("Insert Order of Matrix A")
     m = parseInt(prompt("Enter Matrix A -> m Order"));
     n = parseInt(prompt("Enter Matrix A -> n Order"));
-    alert("Insert Order of Matrix B");
     p = parseInt(prompt("Enter Matrix B -> p Order"));
     q = parseInt(prompt("Enter Matrix B -> q Order"));
     mat1 = new Array(m);
     mat2 = new Array(p);
-    // 2D object creations-
-    for (let i = 0; i < m; i++) {
-      for (let j = 0; j < n; j++) {
-        mat1[i] = new Array(n);
-      }
-    }
-    for (let i = 0; i < p; i++) {
-      for (let j = 0; j < q; j++) {
-        mat2[i] = new Array(q);
-      }
-    }
+    mulMat = new Array(m);
 
-    // Read matrix
-    alert("Insert Elements of Matrix A");
-    for (let i = 0; i < m; i++) {
-      for (let j = 0; j < n; j++) {
-        mat1[i][j] = parseInt(prompt("Enter Matrix element's of Matrix A :"))
-      }
-    }
-    alert("Insert Elements of Matrix B");
-    for (let i = 0; i < p; i++) {
-      for (let j = 0; j < q; j++) {
-        mat2[i][j] = parseInt(prompt("Enter Matrix element's of Matrix B :"))
-      }
-    }
-
-    // Display Matrix
-    document.write("Matrix A:<br>");
-    for (let i = 0; i < m; i++) {
-      for (let j = 0; j < n; j++) {
-        document.write(mat1[i][j] + " " + " ");
-      }
-      document.write("<br>");
-    }
-    document.write("Matrix B:<br>");
-    for (let i = 0; i < p; i++) {
-      for (let j = 0; j < q; j++) {
-        document.write(mat2[i][j] + " " + " ")
-      }
-      document.write("<br>");
-    }
-    // m, n, p, q
-    // Multiplication of Matrixx:
     if (n === p) {
-      mulMatrix(m, p);
+      objectCreation(mat1, m, n);
+      objectCreation(mat2, p, q);
+      objectCreation(mulMat, m, q);
+      readMatrix(mat1, m, n);
+      readMatrix(mat2, p, q);
+      mulMatrix(mat1, mat2, m, n, q, mulMat);
+      displayMatrix(mat1, m, n);
+      displayMatrix(mat2, p, q);
+      displayMatrix(mulMat, m, q);
     } else {
-      document.write("Multiplication of Matrix is not Possible.")
-    }
-
-    function mulMatrix() {
-      mulMat = new Array(m);
-      // 2D object creations-
-      for (let i = 0; i < m; i++) {
-        for (let j = 0; j < q; j++) {
-          mulMat[i] = new Array(q);
-        }
-      }
-
-      for (let i = 0; i < m; i++) {
-        for (let j = 0; j < q; j++) {
-          mulMat[i][j] = mat1[i][j] + mat2[i][j];
-        }
-      }
-      document.write("<hr>Matrix (C = A x B) :<br>");
-      for (let i = 0; i < m; i++) {
-        for (let j = 0; j < q; j++) {
-          document.write(mulMat[i][j] + " " + " ")
-        }
-        document.write("<br>");
-      }
+      document.write("Multiplication of Matrix is not Possible.");
     }
   </script>
 </body>
