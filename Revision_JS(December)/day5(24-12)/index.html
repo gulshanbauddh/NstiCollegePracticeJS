@@ -29,7 +29,7 @@
       let date = document.getElementById("date").value;
       console.log(date);
       let date1 = new Date(date);
-      let today = new Date("2000-02-01");
+      let today = new Date();
       if (date1.getFullYear() > today.getFullYear()) {
         let temp = date1;
         date1 = today;
