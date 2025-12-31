@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 Students Registration Form</title>
+</head>
+
+<body>
+
+  <center>
+    <h2>03 : Students Registration Form</h2>
+
+    <form id="mForm">
+
+      <label for="rollNum">Roll Number :</label>
+      <input type="text" name="rollNum" id="rollNum">
+      <br><br>
+
+      <label for="studentName">Student Name :</label>
+      <input type="text" name="studentName" id="studentName">
+      <br><br>
+
+      <label for="fatherName">Father Name :</label>
+      <input type="text" name="fatherName" id="fatherName">
+      <br><br>
+
+      <label>Gender :</label>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <br><br>
+
+      <button type="button" onclick="formSubmit()">Submit</button>
+
+    </form>
+
+    <br>
+    <div id="example"></div>
+  </center>
+
+  <script>
+    function formSubmit() {
+      var xhttp = new XMLHttpRequest();
+      var formElement = document.getElementById("mForm");
+      var formData = new FormData(formElement);
+
+      xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 201) {
+          document.getElementById("example").innerHTML = this.responseText;
+          console.log("Form Data Posted Successfully!");
+        }
+      };
+
+      xhttp.open("POST", "https://jsonplaceholder.typicode.com/photos", true);
+      xhttp.send(formData);
+    }
+  </script>
+
+</body>
+
+</html>
