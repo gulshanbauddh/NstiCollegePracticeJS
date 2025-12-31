@@ -14,7 +14,7 @@
 
 insert INTO students
 values
-  (1010, 'JOB-SAVIO', 'M', 'SCIENCE-CS', 8);
+  (1010, 'JOB-SAVIO', 'M', 'SCIENCE_CS', 8);
 
 INSERT INTO STUDENTS
   (SNAME, SEX, GP_NAME, QUAL_PERCEN)
@@ -22,12 +22,12 @@ VALUES
   ("Mayank", "M", "Science_CS", 95),
   ('LAKSHMI', 'F', 'COMMERCE', 92),
   ('DEVIKA', 'F', 'HUMANITIES', 91),
-  ('NIKETH', 'M', 'SCIENCE-CS', 86),
-  ('RESHMA', 'F', 'SCIENCE-BS', 81),
+  ('NIKETH', 'M', 'SCIENCE_CS', 86),
+  ('RESHMA', 'F', 'SCIENCE_BS', 81),
   ('REHNA', 'F', 'COMMERCE', 65),
-  ('SONU', 'M', 'SCIENCE-BS', 81),
+  ('SONU', 'M', 'SCIENCE_BS', 81),
   ('SNEHA', 'F', 'COMMERCE', 91),
-  ('JOB-SAVIO', 'M', 'SCIENCE-CS', 87),
+  ('JOB-SAVIO', 'M', 'SCIENCE_CS', 87),
   ('RAMU', 'M', 'HUMANITIES', 80);
 
 -- Q-1 Display the above students table
@@ -72,10 +72,10 @@ select Sname, QUAL_PERCEN
 from students
 where QUAL_PERCEN>=90;
 
--- Q-10 Display the list of students where GP_NAME <> SCIENCE_BS
+-- Q-10 Display the list of students where GP_NAME = SCIENCE_BS
 select *
 from students
-where GP_NAME <>'SCIENCE_BS';
+where GP_NAME = 'SCIENCE_BS';
 
 -- Q-11 Display the details of students where GP_NAME <> SCIENCE_BS ?
 select *
