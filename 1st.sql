@@ -1,57 +1,70 @@
--- To show databases
-show databases;
+set sql_safe_updates=0;
+-- 1. Create Table name Employee. 
+create table employee(
+			emp_ID int primary key,
+            emp_name varchar(50),
+            department varchar(80),
+            Salary int,
+            city varchar(50)
+            );
+insert into employee values 
+			(101,'Ravi','Sales',25000,'Delhi'),
+      (102,'Megha','HR',35000,'Mumbai'),
+      (103,'Ram','IT',45000,'Banglor'),
+      (104,'Suman','IT',55000,'Delhi'),
+      (105,'Anita','Selse',30000,'Mumbai');
+			
+insert into employee values 
+			(101,'Ravi','Sales',25000,'Delhi'),
+      (104,'Suman','IT',55000,'Delhi'),
+            
+-- 2. Display all employees.
+Select * from employee;
 
--- To Create database 
-create database school;
-use school;
+-- 3. Display employee where work in IT department .
+Select * from employee
+where department='IT';
 
--- To create a table 
-create table STUDENT (
-AD_No int unique primary key auto_increment,
-SNAME varchar(60),
-SEX varchar(6),
-GP_NAME varchar(60),
-QUAL_PERCENTAGE int
-);
+-- 4. Display employee who earn more than 30000 .
+Select * from employee
+where salary>30000;
 
--- To Descrive My Table 
-desc STUDENT; 
+-- 5. Delete employee from the city Delhi.
+delete from employee
+where city='delhi';
 
--- to Insert Data into STUDENT Table
-insert into STUDENT
-			values (1001, "NAVANEETH", "M", "SCIENCE_CS", 85);
-insert into STUDENT
-			(sname,sex,gp_name,Qual_percentage)
-            values
-			('DEVIKA', 'F', 'HUMANITIES', 91),
-			('NIKETH', 'M', 'SCIENCE-CS', 86),
-			('RESHMA', 'F', 'SCIENCE-BS', 81),
-			('REHNA', 'F', 'COMMERCE', 65),
-			('SONU', 'M', 'SCIENCE-BS', 81),
-			('SNEHA', 'F', 'COMMERCE', 91),
-			('JOB-SAVIO', 'M', 'SCIENCE-CS', 87),
-			('RAMU', 'M', 'HUMANITIES', 80);
+-- 6. Display highest salary .
+select emp_name as Employee_Name, salary as MAX_Salary from employee
+    where salary = (select max(salary) from employee);
+--    (or 2nd type)
+select * from employee
+    where salary = (select max(salary) from employee);
 
--- Qu.01 Display the Details of Student Table
-select * from STUDENT;
--- Qu.02 Display the AD_No, Name, Sex from the Student table
-select AD_No,SNAME,SEX from STUDENT;
--- Qu.03 Update the group Name from commerce AD_N0 = 1001
-update STUDENT 
-	SET GP_NAME = "COMMERCE"
-    WHERE AD_No = 1001;
--- Qu,04 Remove the Details of Student whoose AD_No = 1004
-delete from Student
-where AD_No = 1004;
--- Qu.05 Display the Details of student whoose AD_No = 1010
-select * from student
-	where AD_No = 1010;
--- Qu.06 Display the name of student who belong to commerce
-select SNAME from student
-	WHERE GP_NAME = 'COMMERCE';
--- Qu.07 Display the Student Name & Qualification Name whoose Obtained Marks>=90%
-select SNAME,QUAL_PERCENTAGE from student
-	where QUAL_PERCENTAGE >= 90;
--- Qu.08 Display the student name where group name != Science_CS
-select SNAME from student
-	where GP_NAME != "SCIENCE_CS";
+-- 7. Display employee minimum salary.
+select emp_name as Employee_Name, salary as MAX_Salary from employee
+where salary = (select min(salary) from employee);
+
+-- 8. Count number of employee in each department.
+SELECT department,COUNT(EMP_ID) AS Num_of_Employee FROM EMPLOYEE
+group by department;
+
+-- 9. Display average salary of IT department. 
+select  emp_name as Employee_Name, avg(salary) as Average_Salary
+from employee
+where department = 'IT'
+group by emp_name;
+
+-- 10. So employee sort by/order by salary DESC.
+select * from employee
+ order by salary desc;
+ 
+select * from employee
+ order by salary ASC;
+
+-- 11. Display employees who name start with 'S' .
+SELECT emp_name from employee
+where emp_name like 'S%';
+
+-- 12. Rename the table employee to employedDetails.
+RENAME table employee to Emp_Details;
+RENAME table Emp_Details TO employee;
