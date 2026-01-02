@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      /* From extension vscode.github */
+      /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+      .vscode-dark img[src$="\#gh-light-mode-only"],
+      .vscode-light img[src$="\#gh-dark-mode-only"],
+      .vscode-high-contrast:not(.vscode-high-contrast-light)
+        img[src$="\#gh-light-mode-only"],
+      .vscode-high-contrast-light img[src$="\#gh-dark-mode-only"] {
+        display: none;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+    />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI",
+          system-ui, "Ubuntu", "Droid Sans", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
+
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+        pointer-events: none;
+      }
+    </style>
+    <style>
+      :root {
+        --color-note: #0969da;
+        --color-tip: #1a7f37;
+        --color-warning: #9a6700;
+        --color-severe: #bc4c00;
+        --color-caution: #d1242f;
+        --color-important: #8250df;
+      }
+    </style>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-note: #2f81f7;
+          --color-tip: #3fb950;
+          --color-warning: #d29922;
+          --color-severe: #db6d28;
+          --color-caution: #f85149;
+          --color-important: #a371f7;
+        }
+      }
+    </style>
+    <style>
+      .markdown-alert {
+        padding: 0.5rem 1rem;
+        margin-bottom: 16px;
+        color: inherit;
+        border-left: 0.25em solid #888;
+      }
+
+      .markdown-alert > :first-child {
+        margin-top: 0;
+      }
+
+      .markdown-alert > :last-child {
+        margin-bottom: 0;
+      }
+
+      .markdown-alert .markdown-alert-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        line-height: 1;
+      }
+
+      .markdown-alert .markdown-alert-title .octicon {
+        margin-right: 0.5rem;
+        display: inline-block;
+        overflow: visible !important;
+        vertical-align: text-bottom;
+        fill: currentColor;
+      }
+
+      .markdown-alert.markdown-alert-note {
+        border-left-color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-note .markdown-alert-title {
+        color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-important {
+        border-left-color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-important .markdown-alert-title {
+        color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-warning {
+        border-left-color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-warning .markdown-alert-title {
+        color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-tip {
+        border-left-color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-tip .markdown-alert-title {
+        color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-caution {
+        border-left-color: var(--color-caution);
+      }
+
+      .markdown-alert.markdown-alert-caution .markdown-alert-title {
+        color: var(--color-caution);
+      }
+    </style>
+  </head>
+  <body class="vscode-body vscode-light">
+    <pre><code class="language-sql">mysql<span class="hljs-operator">&gt;</span> use  <span class="hljs-number">001</span>_college;
+Database changed
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- set sql_safe_updates=0;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 1. Create Table name Employee.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> employee(
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             emp_ID <span class="hljs-type">int</span> <span class="hljs-keyword">primary</span> key,
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             emp_name <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             department <span class="hljs-type">varchar</span>(<span class="hljs-number">80</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             Salary <span class="hljs-type">int</span>,
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             city <span class="hljs-type">varchar</span>(<span class="hljs-number">50</span>)
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             );
+Query OK, <span class="hljs-number">0</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.04</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span>
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             (<span class="hljs-number">101</span>,<span class="hljs-string">&#x27;Ravi&#x27;</span>,<span class="hljs-string">&#x27;Sales&#x27;</span>,<span class="hljs-number">25000</span>,<span class="hljs-string">&#x27;Delhi&#x27;</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             (<span class="hljs-number">102</span>,<span class="hljs-string">&#x27;Megha&#x27;</span>,<span class="hljs-string">&#x27;HR&#x27;</span>,<span class="hljs-number">35000</span>,<span class="hljs-string">&#x27;Mumbai&#x27;</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             (<span class="hljs-number">103</span>,<span class="hljs-string">&#x27;Ram&#x27;</span>,<span class="hljs-string">&#x27;IT&#x27;</span>,<span class="hljs-number">45000</span>,<span class="hljs-string">&#x27;Banglor&#x27;</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             (<span class="hljs-number">104</span>,<span class="hljs-string">&#x27;Suman&#x27;</span>,<span class="hljs-string">&#x27;IT&#x27;</span>,<span class="hljs-number">55000</span>,<span class="hljs-string">&#x27;Delhi&#x27;</span>),
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>             (<span class="hljs-number">105</span>,<span class="hljs-string">&#x27;Anita&#x27;</span>,<span class="hljs-string">&#x27;Selse&#x27;</span>,<span class="hljs-number">30000</span>,<span class="hljs-string">&#x27;Mumbai&#x27;</span>);
+Query OK, <span class="hljs-number">5</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.01</span> sec)
+Records: <span class="hljs-number">5</span>  Duplicates: <span class="hljs-number">0</span>  Warnings: <span class="hljs-number">0</span>
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 2. Display all employees.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">Select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee;
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">101</span> <span class="hljs-operator">|</span> Ravi     <span class="hljs-operator">|</span> Sales      <span class="hljs-operator">|</span>  <span class="hljs-number">25000</span> <span class="hljs-operator">|</span> Delhi   <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">102</span> <span class="hljs-operator">|</span> Megha    <span class="hljs-operator">|</span> HR         <span class="hljs-operator">|</span>  <span class="hljs-number">35000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">104</span> <span class="hljs-operator">|</span> Suman    <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">55000</span> <span class="hljs-operator">|</span> Delhi   <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">105</span> <span class="hljs-operator">|</span> Anita    <span class="hljs-operator">|</span> Selse      <span class="hljs-operator">|</span>  <span class="hljs-number">30000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">5</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 3. Display employee where work in IT department .</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">Select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> department<span class="hljs-operator">=</span><span class="hljs-string">&#x27;IT&#x27;</span>;
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">104</span> <span class="hljs-operator">|</span> Suman    <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">55000</span> <span class="hljs-operator">|</span> Delhi   <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">2</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 4. Display employee who earn more than 30000 .</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">Select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> salary<span class="hljs-operator">&gt;</span><span class="hljs-number">30000</span>;
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">102</span> <span class="hljs-operator">|</span> Megha    <span class="hljs-operator">|</span> HR         <span class="hljs-operator">|</span>  <span class="hljs-number">35000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">104</span> <span class="hljs-operator">|</span> Suman    <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">55000</span> <span class="hljs-operator">|</span> Delhi   <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 5. Delete employee from the city Delhi.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> city<span class="hljs-operator">=</span><span class="hljs-string">&#x27;delhi&#x27;</span>;
+Query OK, <span class="hljs-number">2</span> <span class="hljs-keyword">rows</span> affected (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 6. Display highest salary .</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> emp_name <span class="hljs-keyword">as</span> Employee_Name, salary <span class="hljs-keyword">as</span> MAX_Salary <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>     <span class="hljs-keyword">where</span> salary <span class="hljs-operator">=</span> (<span class="hljs-keyword">select</span> <span class="hljs-built_in">max</span>(salary) <span class="hljs-keyword">from</span> employee);
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-operator">|</span> Employee_Name <span class="hljs-operator">|</span> MAX_Salary <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-operator">|</span> Ram           <span class="hljs-operator">|</span>      <span class="hljs-number">45000</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">--    (or 2nd type)</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>     <span class="hljs-keyword">where</span> salary <span class="hljs-operator">=</span> (<span class="hljs-keyword">select</span> <span class="hljs-built_in">max</span>(salary) <span class="hljs-keyword">from</span> employee);
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 7. Display employee minimum salary.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> emp_name <span class="hljs-keyword">as</span> Employee_Name, salary <span class="hljs-keyword">as</span> MAX_Salary <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> salary <span class="hljs-operator">=</span> (<span class="hljs-keyword">select</span> <span class="hljs-built_in">min</span>(salary) <span class="hljs-keyword">from</span> employee);
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-operator">|</span> Employee_Name <span class="hljs-operator">|</span> MAX_Salary <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-operator">|</span> Anita         <span class="hljs-operator">|</span>      <span class="hljs-number">30000</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+------------+</span>
+<span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 8. Count number of employee in each department.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">SELECT</span> department,<span class="hljs-built_in">COUNT</span>(EMP_ID) <span class="hljs-keyword">AS</span> Num_of_Employee <span class="hljs-keyword">FROM</span> EMPLOYEE
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> department;
+<span class="hljs-operator">+</span><span class="hljs-comment">------------+-----------------+</span>
+<span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Num_of_Employee <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">------------+-----------------+</span>
+<span class="hljs-operator">|</span> HR         <span class="hljs-operator">|</span>               <span class="hljs-number">1</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>               <span class="hljs-number">1</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span> Selse      <span class="hljs-operator">|</span>               <span class="hljs-number">1</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">------------+-----------------+</span>
+<span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 9. Display average salary of IT department.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span>  emp_name <span class="hljs-keyword">as</span> Employee_Name, <span class="hljs-built_in">avg</span>(salary) <span class="hljs-keyword">as</span> Average_Salary
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> department <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;IT&#x27;</span>
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> emp_name;
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+----------------+</span>
+<span class="hljs-operator">|</span> Employee_Name <span class="hljs-operator">|</span> Average_Salary <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+----------------+</span>
+<span class="hljs-operator">|</span> Ram           <span class="hljs-operator">|</span>     <span class="hljs-number">45000.0000</span> <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">---------------+----------------+</span>
+<span class="hljs-number">1</span> <span class="hljs-type">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 10. So employee sort by since order by salary DESC.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>  <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> salary <span class="hljs-keyword">desc</span>;
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">102</span> <span class="hljs-operator">|</span> Megha    <span class="hljs-operator">|</span> HR         <span class="hljs-operator">|</span>  <span class="hljs-number">35000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">105</span> <span class="hljs-operator">|</span> Anita    <span class="hljs-operator">|</span> Selse      <span class="hljs-operator">|</span>  <span class="hljs-number">30000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>  <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> salary <span class="hljs-keyword">ASC</span>;
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span> emp_ID <span class="hljs-operator">|</span> emp_name <span class="hljs-operator">|</span> department <span class="hljs-operator">|</span> Salary <span class="hljs-operator">|</span> city    <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">105</span> <span class="hljs-operator">|</span> Anita    <span class="hljs-operator">|</span> Selse      <span class="hljs-operator">|</span>  <span class="hljs-number">30000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">102</span> <span class="hljs-operator">|</span> Megha    <span class="hljs-operator">|</span> HR         <span class="hljs-operator">|</span>  <span class="hljs-number">35000</span> <span class="hljs-operator">|</span> Mumbai  <span class="hljs-operator">|</span>
+<span class="hljs-operator">|</span>    <span class="hljs-number">103</span> <span class="hljs-operator">|</span> Ram      <span class="hljs-operator">|</span> IT         <span class="hljs-operator">|</span>  <span class="hljs-number">45000</span> <span class="hljs-operator">|</span> Banglor <span class="hljs-operator">|</span>
+<span class="hljs-operator">+</span><span class="hljs-comment">--------+----------+------------+--------+---------+</span>
+<span class="hljs-number">3</span> <span class="hljs-keyword">rows</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 11. Display employees who name start with &#x27;S&#x27; .</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-keyword">SELECT</span> emp_name <span class="hljs-keyword">from</span> employee
+    <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">where</span> emp_name <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;S%&#x27;</span>;
+<span class="hljs-keyword">Empty</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql<span class="hljs-operator">&gt;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- 12. Rename the table employed to employedDetails.</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- RENAME table employee to Emp_Details;</span>
+mysql<span class="hljs-operator">&gt;</span> <span class="hljs-comment">-- RENAME table Emp_Details TO employee;</span>
+mysql<span class="hljs-operator">&gt;</span>
+</code></pre>
+  </body>
+</html>
