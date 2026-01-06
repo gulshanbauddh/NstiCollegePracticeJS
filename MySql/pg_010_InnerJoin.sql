@@ -1,4 +1,3 @@
-``` sql
 use nsti_mumbai_sql;
 -- Create Table (Employee)
 create table employee(emp_id int primary key auto_increment,
@@ -95,6 +94,5 @@ on e.dept_id=d.dept_id
 where join_date>'2019-01-01'
 group by d.dept_name
 having sum(e.salary)>50000;
-```
 
 

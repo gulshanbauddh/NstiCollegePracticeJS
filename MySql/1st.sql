@@ -8,7 +8,7 @@ create table employee(
             city varchar(50)
             );
 insert into employee values 
-			(101,'Ravi','Sales',25000,'Delhi'),
+	  (101,'Ravi','Sales',25000,'Delhi'),
       (102,'Megha','HR',35000,'Mumbai'),
       (103,'Ram','IT',45000,'Banglor'),
       (104,'Suman','IT',55000,'Delhi'),
