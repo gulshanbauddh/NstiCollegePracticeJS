@@ -9,14 +9,12 @@
     <h1>Check Palindrome or Not</h1>
     <script>
         let no=parseInt(prompt("Enter your number to check Palindrome:"));
-        // let no=124;
         let orginalNo=no;
         let temp;
         let rev=0;
         do{
             temp=no%10;
             rev=rev*10+temp;
-            // no=parseInt(no/10);
             no=Math.floor(no/10);
         }while(no>0);
         
