@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>pg_015.md</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<style>
+		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+		/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+		body {
+			font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+			font-size: var(--vscode-markdown-font-size, 14px);
+			padding: 0 26px;
+			line-height: var(--vscode-markdown-line-height, 22px);
+			word-wrap: break-word;
+		}
+
+		#code-csp-warning {
+			position: fixed;
+			top: 0;
+			right: 0;
+			color: white;
+			margin: 16px;
+			text-align: center;
+			font-size: 12px;
+			font-family: sans-serif;
+			background-color: #444444;
+			cursor: pointer;
+			padding: 6px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+		}
+
+		#code-csp-warning:hover {
+			text-decoration: none;
+			background-color: #007acc;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+		}
+
+		body.scrollBeyondLastLine {
+			margin-bottom: calc(100vh - 22px);
+		}
+
+		body.showEditorSelection .code-line {
+			position: relative;
+		}
+
+		body.showEditorSelection .code-active-line:before,
+		body.showEditorSelection .code-line:hover:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -12px;
+			height: 100%;
+		}
+
+		body.showEditorSelection li.code-active-line:before,
+		body.showEditorSelection li.code-line:hover:before {
+			left: -30px;
+		}
+
+		.vscode-light.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.15);
+		}
+
+		.vscode-light.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.40);
+		}
+
+		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-dark.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.4);
+		}
+
+		.vscode-dark.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.60);
+		}
+
+		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 160, 0, 0.7);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 160, 0, 1);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:focus,
+		input:focus,
+		select:focus,
+		textarea:focus {
+			outline: 1px solid -webkit-focus-ring-color;
+			outline-offset: -1px;
+		}
+
+		hr {
+			border: 0;
+			height: 2px;
+			border-bottom: 2px solid;
+		}
+
+		h1 {
+			padding-bottom: 0.3em;
+			line-height: 1.2;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+		}
+
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table>thead>tr>th {
+			text-align: left;
+			border-bottom: 1px solid;
+		}
+
+		table>thead>tr>th,
+		table>thead>tr>td,
+		table>tbody>tr>th,
+		table>tbody>tr>td {
+			padding: 5px 10px;
+		}
+
+		table>tbody>tr+tr>td {
+			border-top: 1px solid;
+		}
+
+		blockquote {
+			margin: 0 7px 0 5px;
+			padding: 0 16px 0 10px;
+			border-left-width: 5px;
+			border-left-style: solid;
+		}
+
+		code {
+			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+			font-size: 1em;
+			line-height: 1.357em;
+		}
+
+		body.wordWrap pre {
+			white-space: pre-wrap;
+		}
+
+		pre:not(.hljs),
+		pre.hljs code>div {
+			padding: 16px;
+			border-radius: 3px;
+			overflow: auto;
+		}
+
+		pre code {
+			color: var(--vscode-editor-foreground);
+			tab-size: 4;
+		}
+
+		/** Theming */
+
+		.vscode-light pre {
+			background-color: rgba(220, 220, 220, 0.4);
+		}
+
+		.vscode-dark pre {
+			background-color: rgba(10, 10, 10, 0.4);
+		}
+
+		.vscode-high-contrast pre {
+			background-color: rgb(0, 0, 0);
+		}
+
+		.vscode-high-contrast h1 {
+			border-color: rgb(0, 0, 0);
+		}
+
+		.vscode-light table>thead>tr>th {
+			border-color: rgba(0, 0, 0, 0.69);
+		}
+
+		.vscode-dark table>thead>tr>th {
+			border-color: rgba(255, 255, 255, 0.69);
+		}
+
+		.vscode-light h1,
+		.vscode-light hr,
+		.vscode-light table>tbody>tr+tr>td {
+			border-color: rgba(0, 0, 0, 0.18);
+		}
+
+		.vscode-dark h1,
+		.vscode-dark hr,
+		.vscode-dark table>tbody>tr+tr>td {
+			border-color: rgba(255, 255, 255, 0.18);
+		}
+	</style>
+
+	<style>
+		/* Tomorrow Theme */
+		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+		/* Tomorrow Comment */
+		.hljs-comment,
+		.hljs-quote {
+			color: #8e908c;
+		}
+
+		/* Tomorrow Red */
+		.hljs-variable,
+		.hljs-template-variable,
+		.hljs-tag,
+		.hljs-name,
+		.hljs-selector-id,
+		.hljs-selector-class,
+		.hljs-regexp,
+		.hljs-deletion {
+			color: #c82829;
+		}
+
+		/* Tomorrow Orange */
+		.hljs-number,
+		.hljs-built_in,
+		.hljs-builtin-name,
+		.hljs-literal,
+		.hljs-type,
+		.hljs-params,
+		.hljs-meta,
+		.hljs-link {
+			color: #f5871f;
+		}
+
+		/* Tomorrow Yellow */
+		.hljs-attribute {
+			color: #eab700;
+		}
+
+		/* Tomorrow Green */
+		.hljs-string,
+		.hljs-symbol,
+		.hljs-bullet,
+		.hljs-addition {
+			color: #718c00;
+		}
+
+		/* Tomorrow Blue */
+		.hljs-title,
+		.hljs-section {
+			color: #4271ae;
+		}
+
+		/* Tomorrow Purple */
+		.hljs-keyword,
+		.hljs-selector-tag {
+			color: #8959a8;
+		}
+
+		.hljs {
+			display: block;
+			overflow-x: auto;
+			color: #4d4d4c;
+			padding: 0.5em;
+		}
+
+		.hljs-emphasis {
+			font-style: italic;
+		}
+
+		.hljs-strong {
+			font-weight: bold;
+		}
+	</style>
+
+	<style>
+		/*
+ * Markdown PDF CSS
+ */
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+			padding: 0 12px;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			overflow-x: auto;
+			white-space: pre-wrap;
+			overflow-wrap: break-word;
+		}
+
+		pre:not(.hljs) {
+			padding: 23px;
+			line-height: 19px;
+		}
+
+		blockquote {
+			background: rgba(127, 127, 127, 0.1);
+			border-color: rgba(0, 122, 204, 0.5);
+		}
+
+		.emoji {
+			height: 1.4em;
+		}
+
+		code {
+			font-size: 25px;
+			line-height: 30px;
+		}
+
+		/* for inline code */
+		:not(pre):not(.hljs)>code {
+			color: #C9AE75;
+			/* Change the old color so it seems less like an error */
+			font-size: inherit;
+		}
+
+		/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+		.page {
+			page-break-after: always;
+		}
+	</style>
+
+	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+	<script>
+		mermaid.initialize({
+			startOnLoad: true,
+			theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+				? 'dark'
+				: 'default'
+		});
+	</script>
+	<pre class="hljs"><code><div>mysql&gt; <span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> employee(Emp_ID <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span> auto_increment,Emp_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),Dept_ID <span class="hljs-built_in">int</span>, Salary <span class="hljs-built_in">int</span>);
+ERROR 1050 (42S01): Table 'employee' already exists
+mysql&gt;  <span class="hljs-comment">-- drop table employee;</span>
+mysql&gt;
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee (Emp_name,Dept_ID, Salary)
+                      <span class="hljs-keyword">values</span>
+                            (<span class="hljs-string">'Alice'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">30000</span>),
+                            (<span class="hljs-string">'Bob'</span>,<span class="hljs-number">20</span>,<span class="hljs-number">40000</span>),
+                            (<span class="hljs-string">'John'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">35000</span>),
+                            (<span class="hljs-string">'John'</span>,<span class="hljs-number">30</span>,<span class="hljs-number">45000</span>);
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> employee;
++<span class="hljs-comment">--------+----------+---------+--------+------------+</span>
+| emp_id | emp_name | dept_id | salary | join_date  |
++<span class="hljs-comment">--------+----------+---------+--------+------------+</span>
+|      1 | Ravi     |      10 |  25000 | 2018-06-01 |
+|      2 | Suman    |      20 |  30000 | 2019-08-15 |
+|      3 | Riya     |      10 |  27000 | 2020-01-10 |
+|      4 | Karan    |      30 |  22000 | 2021-03-12 |
+|      5 | Anu      |      20 |  28000 | 2022-07-20 |
+|      6 | Alice    |      10 |  30000 | NULL       |
+|      7 | Bob      |      20 |  40000 | NULL       |
+|      8 | John     |      10 |  35000 | NULL       |
+|      9 | John     |      30 |  45000 | NULL       |
++<span class="hljs-comment">--------+----------+---------+--------+------------+</span>
+9 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Department <span class="hljs-keyword">values</span> (<span class="hljs-number">10</span>,<span class="hljs-string">'HR'</span>),(<span class="hljs-number">20</span>,<span class="hljs-string">'IT'</span>),(<span class="hljs-number">30</span>,<span class="hljs-string">'Finance'</span>);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> Department;
++<span class="hljs-comment">---------+-----------+</span>
+| dept_id | Dept_name |
++<span class="hljs-comment">---------+-----------+</span>
+|      10 | Sales     |
+|      20 | HR        |
+|      30 | IT        |
+|      40 | Marketing |
+|      10 | HR        |
+|      20 | IT        |
+|      30 | Finance   |
++<span class="hljs-comment">---------+-----------+</span>
+7 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql&gt; <span class="hljs-comment">--       1. Using index with Where clause-</span>
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> employee
+       <span class="hljs-keyword">where</span> emp_name=<span class="hljs-string">'john'</span>;
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+| emp_id | emp_name | dept_id | salary | join_date |
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+|      8 | John     |      10 |  35000 | NULL      |
+|      9 | John     |      30 |  45000 | NULL      |
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+2 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql&gt; <span class="hljs-comment">-- 2. Using index with Order by</span>
+mysql&gt; <span class="hljs-keyword">select</span> emp_id,emp_name
+       <span class="hljs-keyword">from</span> employee
+       <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> emp_name;
++<span class="hljs-comment">--------+----------+</span>
+| emp_id | emp_name |
++<span class="hljs-comment">--------+----------+</span>
+|      6 | Alice    |
+|      5 | Anu      |
+|      7 | Bob      |
+|      8 | John     |
+|      9 | John     |
+|      4 | Karan    |
+|      1 | Ravi     |
+|      3 | Riya     |
+|      2 | Suman    |
++<span class="hljs-comment">--------+----------+</span>
+9 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+
+mysql&gt; <span class="hljs-comment">-- 3. Using index with LIKE (prefix search)-</span>
+mysql&gt; <span class="hljs-keyword">select</span> emp_id,emp_name
+       <span class="hljs-keyword">from</span> employee
+       <span class="hljs-keyword">where</span> emp_name <span class="hljs-keyword">like</span> <span class="hljs-string">'jo%'</span>;
++<span class="hljs-comment">--------+----------+</span>
+| emp_id | emp_name |
++<span class="hljs-comment">--------+----------+</span>
+|      8 | John     |
+|      9 | John     |
++<span class="hljs-comment">--------+----------+</span>
+2 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql&gt; <span class="hljs-comment">-- 4. Index used in Join queries-</span>
+mysql&gt; <span class="hljs-comment">-- Create Index</span>
+mysql&gt; <span class="hljs-keyword">create</span> <span class="hljs-keyword">index</span> idx_dept_id <span class="hljs-keyword">on</span> employee(dept_id);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; <span class="hljs-keyword">select</span> e.Emp_name,d.dept_name
+       <span class="hljs-keyword">from</span> employee e
+       <span class="hljs-keyword">join</span> department d
+       <span class="hljs-keyword">on</span> e.dept_id=d.dept_Id;
++<span class="hljs-comment">----------+-----------+</span>
+| Emp_name | dept_name |
++<span class="hljs-comment">----------+-----------+</span>
+| Ravi     | Sales     |
+| Riya     | Sales     |
+| Alice    | Sales     |
+| John     | Sales     |
+| Suman    | HR        |
+| Anu      | HR        |
+| Bob      | HR        |
+| Karan    | IT        |
+| John     | IT        |
+| Ravi     | HR        |
+| Riya     | HR        |
+| Alice    | HR        |
+| John     | HR        |
+| Suman    | IT        |
+| Anu      | IT        |
+| Bob      | IT        |
+| Karan    | Finance   |
+| John     | Finance   |
++<span class="hljs-comment">----------+-----------+</span>
+18 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+
+mysql&gt; <span class="hljs-comment">-- Verify index usage (Very importent)-</span>
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> employee
+       <span class="hljs-keyword">where</span> emp_name=<span class="hljs-string">'john'</span>;
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+| emp_id | emp_name | dept_id | salary | join_date |
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+|      8 | John     |      10 |  35000 | NULL      |
+|      9 | John     |      30 |  45000 | NULL      |
++<span class="hljs-comment">--------+----------+---------+--------+-----------+</span>
+2 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+</div></code></pre>
+
+</body>
+
+</html>
