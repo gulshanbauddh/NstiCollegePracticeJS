@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <h1>Binary Search :</h1>
+  <h2>Binary Search :</h2>
   <script>
     // Generate Array:
     let arr;
@@ -20,7 +20,7 @@
       arr[i] = parseInt(prompt("Enter Array Element : "));
     }
     // Array before sorting (Display)
-    document.write("<br> Array Before sortion :<br>");
+    document.write("Array Before sortion : [");
     for (i = 0; i < n; i++) {
       document.write(arr[i] + " ");
     }
@@ -35,15 +35,15 @@
       }
     }
     // Array after sorting (Display)
-    document.write("<br> Array After sortion :<br>");
+    document.write("]<br> Array After sortion : [");
     for (i = 0; i < n; i++) {
       document.write(arr[i] + " ");
     }
     // Binary Search:
-    document.write("<hr>Binary Search :");
+    // document.write("<hr>Binary Search :");
     let searchKey = parseInt(prompt("Enter Search Key :"));
     let initial = 0; final = (n - 1), mid = 0, flag = 0;
-    document.write("<br>Searching key is : " + searchKey);
+    document.write("]<hr>Searching key is : " + searchKey);
     while (initial <= final) {
       mid = Math.floor((initial + final) / 2);
       if (searchKey > arr[mid]) {
@@ -55,7 +55,7 @@
         break;
       }
     }
-    if (flag) document.write("<br>Element found at index : " + (mid + 1));
+    if (flag) document.write("<br>Element found at index : " + (mid));
     else document.write("<br>Element not found");
   </script>
 </body>
