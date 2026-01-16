@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pg-35 Arthmatic Operation Using SwitchCase</title>
-  </head>
-  <body>
-    <h1>Arthmatic Operation Using SwitchCase-</h1>
-    <script>
-      // Inislation & Declaration
-      let no1 = parseFloat(prompt("Enter a Number:"));
-      let operator = prompt("Enter operator like (+, -, *, /, %)");
-      let no2 = parseFloat(prompt("Enter a Number:"));
-      let result;
-      // Calculation and Switch:
-      switch (operator) {
-        case "+":
-          result = no1 + no2;
-          break;
-        case "-":
-          result = no1 - no2;
-          break;
-        case "*":
-          result = no1 * no2;
-          break;
-        case "/":
-          if (no2 == 0) result = "Invalid ! ";
-          else result = (no1 / no2).toFixed(3);
-          break;
-        case "%":
-          result = no1 % no2;
-          break;
-        default:
-          result = "Invalid ! Operator";
-      }
-      // Output or Display:
-      document.write(
-        "Result: " + no1 + " " + operator + " " + no2 + " = " + result
-      );
 
-      // cal(no1, operator, no2)
-      // function  cal(no1, operator, no2){
-      //     let result= no1+operator+no2;
-      //     document.write(no1+operator + no2 +" = "+result);
-      // }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pg-35 Arthmatic Operation Using SwitchCase</title>
+</head>
+
+<body>
+  <h1>Arthmatic Operation Using SwitchCase-</h1>
+  <script>
+    // Inislation & Declaration
+    let no1 = parseFloat(prompt("Enter a Number:"));
+    let operator = prompt("Enter operator like (+, -, *, /, %)");
+    let no2 = parseFloat(prompt("Enter a Number:"));
+    let result;
+    // Calculation and Switch:
+    switch (operator) {
+      case "+":
+        result = no1 + no2;
+        break;
+      case "-":
+        result = no1 - no2;
+        break;
+      case "*":
+        result = no1 * no2;
+        break;
+      case "/":
+        if (no2 == 0) result = "Invalid ! ";
+        else result = (no1 / no2).toFixed(2);
+        break;
+      case "%":
+        result = no1 % no2;
+        break;
+      default:
+        result = "Invalid ! Operator";
+    }
+    // Output or Display:
+    document.write("Result: " + no1 + " " + operator + " " + no2 + " = " + result);
+  </script>
+</body>
+
 </html>
