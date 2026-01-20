@@ -10,21 +10,23 @@
 <body>
   <h2>factorial using Recursion :</h2>
   <script>
+
+    // Initlisation 
+    let num = parseInt(prompt("Enter Number :"));
+    if (isNaN(num) || num < 0) {
+      document.write("Please ! Entered Valid postive integer.")
+    } else {
+      let factorial = fact(num);
+      document.write("Your Enterd number is : " + num);
+      document.write("<br>Factorial : " + factorial);
+    }
+
     // Calculate factorial.
     function fact(num) {
       if (num == 1 || num == 0) {
         return 1;
       }
       return num * fact(num - 1);
-    }
-    // Initlisation 
-    let num = parseInt(prompt("Enter Number :"));
-    if (isNaN(num) || num < 0) {
-      document.write("Please ! Entered Valid non-zero integer.")
-    } else {
-      let factorial = fact(num);
-      document.write("Your Enterd number is : " + num);
-      document.write("<br>Factorial : " + factorial);
     }
   </script>
 </body>
