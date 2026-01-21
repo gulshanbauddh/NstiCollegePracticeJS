@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <h1>I am in Head Tag</h1>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GulshanG</title>
-  </head>
-  <body>
-    <h1>I am in Head Body Tag</h1>
-  </body>
+
+<head>
+  <title>Factorial of a Number using Recursion :</title>
+</head>
+
+<body>
+  <h2>Factorial of a Number using Recursion :</h2>
+  <script>
+    var num, fact;
+    function factorial(num) {
+      if (num == 0 || num == 1) {
+        return 1;
+      } else {
+        return num * factorial(num - 1);
+      }
+    }
+    num = parseInt(prompt("Enter anny number."));
+    // Mistick start
+    if (isNaN(num) || num < 0) {
+      document.write("Please Enter valid positive integer.")
+    } else 
+    // Mistick
+    {
+      fact = factorial(num);
+      document.write("Your Input number is : " + num + " <br>Your Input number factorial is: " + fact)
+    }
+  </script>
+</body>
+
 </html>
