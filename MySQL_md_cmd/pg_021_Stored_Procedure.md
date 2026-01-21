@@ -1,4 +1,5 @@
 ``` sql
+-- pg_021_Stored_Procedure
 mysql> use  nsti_mumbai_sql;
 Database changed
 mysql> show tables;
@@ -9,7 +10,7 @@ mysql> show tables;
 | employee                  |
 | product                   |
 +---------------------------+
-
+       
 mysql> select * from department;
 +---------+-----------+
 | dept_id | Dept_name |
