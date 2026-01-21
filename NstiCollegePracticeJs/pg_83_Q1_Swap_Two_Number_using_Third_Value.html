@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Swap Two Number</title>
-  </head>
-  <body>
-    <h1>Swap Two Number using Third Variable:</h1>
-    <script>
-      // Declaration, Initialization & Input
-      let a = parseInt(prompt("Enter 1st number a="));
-      let b = parseInt(prompt("Enter 2st number b="));
-      document.write(`Befoer Swaping a= ${a} and b= ${b}`);
-      // Swaping
-      let temp = a;
-      a = b;
-      b = temp;
-      // Display Swaped value-
-      document.write(`<br>After Swaping a= ${a} and b= ${b}`);
-    </script>
-  </body>
+<head>
+  <title>Swap Two Number</title>
+</head>
+
+<body>
+  <h1>Swap Two Number using Third Variable:</h1>
+  <script>
+    // Declaration, Initialization & Input
+    let a = parseInt(prompt("Enter 1st number a="));
+    let b = parseInt(prompt("Enter 2st number b="));
+    document.write("Befoer Swap a= " + a + " and b= " + b + "");
+    // Swaping -
+    let c = a;
+    a = b;
+    b = c;
+    // Display Swaped value-
+    document.write("<br>After Swap a= " + a + " and b= " + b + "");
+  </script>
+</body>
+
 </html>
