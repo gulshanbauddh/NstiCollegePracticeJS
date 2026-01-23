@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pg_26_sql_Queries.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<pre class="hljs"><code><div><span class="hljs-comment">--                       Implement Join</span>
+
+mysql&gt; <span class="hljs-keyword">show</span> <span class="hljs-keyword">databases</span>;
++<span class="hljs-comment">--------------------+</span>
+| Database           |
++<span class="hljs-comment">--------------------+</span>
+| bigdb              |
+| cli_q              |
+| csa_batch          |
+| information_schema |
+| mysql              |
+| nsti_mumbai_sql    |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++<span class="hljs-comment">--------------------+</span>
+
+mysql&gt; <span class="hljs-keyword">use</span> cli_q;
+<span class="hljs-comment">-- Craete table Dept</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Dept (DeptNo <span class="hljs-built_in">int</span>, DeptName <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>), Location <span class="hljs-built_in">char</span>(<span class="hljs-number">15</span>), PRIMARY <span class="hljs-keyword">KEY</span> (DeptNo));
+
+mysql&gt; DESC Dept; <span class="hljs-comment">-- Descripe table</span>
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+| Field    | Type     | Null | Key | Default | Extra |
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+| DeptNo   | int      | NO   | PRI | NULL    |       |
+| DeptName | char(10) | YES  |     | NULL    |       |
+| Location | char(15) | YES  |     | NULL    |       |
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+
+mysql&gt;
+<span class="hljs-comment">-- Craete table Empl</span>
+<span class="hljs-comment">-- Ex: 1</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Empl (EmpNo <span class="hljs-built_in">int</span>, 
+                          fName <span class="hljs-built_in">char</span>(<span class="hljs-number">15</span>), 
+                          lName <span class="hljs-built_in">char</span>(<span class="hljs-number">15</span>), 
+                          DeptNo <span class="hljs-built_in">int</span>, 
+                          EduLevel <span class="hljs-built_in">char</span>(<span class="hljs-number">15</span>), 
+                          JobCode <span class="hljs-built_in">int</span>, 
+                          salary <span class="hljs-built_in">int</span>, 
+                          hireDate <span class="hljs-built_in">date</span>, 
+                          PRIMARY <span class="hljs-keyword">KEY</span>(empNo), <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (DeptNo) <span class="hljs-keyword">REFERENCES</span> dept(DeptNo)
+                        );
+
+mysql&gt; DESC Empl; <span class="hljs-comment">-- Descripe table</span>
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+| Field    | Type     | Null | Key | Default | Extra |
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+| EmpNo    | int      | NO   | PRI | NULL    |       |
+| fName    | char(15) | YES  |     | NULL    |       |
+| lName    | char(15) | YES  |     | NULL    |       |
+| DeptNo   | int      | YES  | MUL | NULL    |       |
+| EduLevel | char(15) | YES  |     | NULL    |       |
+| JobCode  | int      | YES  |     | NULL    |       |
+| salary   | int      | YES  |     | NULL    |       |
+| hireDate | date     | YES  |     | NULL    |       |
++<span class="hljs-comment">----------+----------+------+-----+---------+-------+</span>
+
+mysql&gt;
+mysql&gt; <span class="hljs-comment">-- Data Insertion (Dept &amp; Empl):-</span>
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Dept (Deptno, Deptname, Location) 
+                        <span class="hljs-keyword">values</span> 
+                        (<span class="hljs-number">100</span>, <span class="hljs-string">'HR'</span>, <span class="hljs-string">'Trivandrum'</span>),
+                        (<span class="hljs-number">101</span>, <span class="hljs-string">'Production'</span>, <span class="hljs-string">'Kazhakkoottam'</span>), 
+                        (<span class="hljs-number">102</span>, <span class="hljs-string">'Marketing'</span>, <span class="hljs-string">'Trivandrum'</span>),
+                        (<span class="hljs-number">103</span>, <span class="hljs-string">'Purchase'</span>, <span class="hljs-string">'Trivandrum'</span>),
+                        (<span class="hljs-number">104</span>, <span class="hljs-string">'Sales'</span>, <span class="hljs-string">'Attingal'</span>);
+
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> Dept;
++<span class="hljs-comment">--------+------------+---------------+</span>
+| DeptNo | DeptName   | Location      |
++<span class="hljs-comment">--------+------------+---------------+</span>
+|    100 | HR         | Trivandrum    |
+|    101 | Production | Kazhakkoottam |
+|    102 | Marketing  | Trivandrum    |
+|    103 | Purchase   | Trivandrum    |
+|    104 | Sales      | Attingal      |
++<span class="hljs-comment">--------+------------+---------------+</span>
+
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Empl (EmpNo, fName, lName, DeptNo, EduLevel, JobCode, salary, hireDate) 
+                        <span class="hljs-keyword">values</span> 
+                        (<span class="hljs-number">10001</span>, <span class="hljs-string">'Deepa'</span>, <span class="hljs-string">'Mathew'</span>, <span class="hljs-number">100</span>, <span class="hljs-string">'Degree'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">20000</span>, <span class="hljs-string">'2017-05-10'</span>), 
+                        (<span class="hljs-number">10002</span>, <span class="hljs-string">'Aswin'</span>, <span class="hljs-string">'Balachandran'</span>, <span class="hljs-number">100</span>, <span class="hljs-string">'PG'</span>, <span class="hljs-number">1</span>,<span class="hljs-number">22000</span>, <span class="hljs-string">'2016-01-05'</span>), 
+                        (<span class="hljs-number">10003</span>, <span class="hljs-string">'Deepak'</span>, <span class="hljs-string">'Raj'</span>, <span class="hljs-number">101</span>, <span class="hljs-string">'Diploma'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">16000</span>, <span class="hljs-string">'2019-01-04'</span>), 
+                        (<span class="hljs-number">10004</span>, <span class="hljs-string">'Divya'</span>, <span class="hljs-string">'Jayan'</span>, <span class="hljs-number">102</span>, <span class="hljs-string">'MBA'</span>, <span class="hljs-number">2</span>,<span class="hljs-number">28000</span>,<span class="hljs-string">'2017-10-10'</span>), 
+                        (<span class="hljs-number">10005</span>, <span class="hljs-string">'Karthik'</span>, <span class="hljs-string">'Satyan'</span>, <span class="hljs-number">102</span>, <span class="hljs-string">'MBA'</span>, <span class="hljs-number">4</span>,<span class="hljs-number">30000</span>,<span class="hljs-string">'2018-12-01'</span>), 
+                        (<span class="hljs-number">10006</span>, <span class="hljs-string">'Manu'</span>, <span class="hljs-string">'George'</span>, <span class="hljs-number">101</span>, <span class="hljs-string">'ITI'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">12000</span>, <span class="hljs-string">'2016-3-20'</span>), 
+                        (<span class="hljs-number">10007</span>, <span class="hljs-string">'Amal'</span>, <span class="hljs-string">'Davis'</span>, <span class="hljs-number">103</span>, <span class="hljs-string">'Degree'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">20000</span>,<span class="hljs-string">'2017-2-1'</span>), 
+                        (<span class="hljs-number">10008</span>, <span class="hljs-string">'Sanal'</span>, <span class="hljs-string">'Krishnan'</span>, <span class="hljs-number">104</span>, <span class="hljs-string">'Degree'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">21000</span>,<span class="hljs-string">'2016-2-21'</span>), 
+                        (<span class="hljs-number">10009</span>, <span class="hljs-string">'Kiran'</span>, <span class="hljs-string">'Lal'</span>, <span class="hljs-number">104</span>, <span class="hljs-string">'Degree'</span>, <span class="hljs-number">2</span>,<span class="hljs-number">22000</span>,<span class="hljs-string">'2015-2-21'</span>), 
+                        (<span class="hljs-number">10010</span>, <span class="hljs-string">'Syam'</span>, <span class="hljs-string">'Nair'</span>, <span class="hljs-number">104</span>, <span class="hljs-string">'Degree'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">20000</span>,<span class="hljs-string">'2017-2-10'</span>);
+
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> Empl;
++<span class="hljs-comment">-------+---------+--------------+--------+----------+---------+--------+------------+</span>
+| EmpNo | fName   | lName        | DeptNo | EduLevel | JobCode | salary | hireDate   |
++<span class="hljs-comment">-------+---------+--------------+--------+----------+---------+--------+------------+</span>
+| 10001 | Deepa   | Mathew       |    100 | Degree   |       1 |  20000 | 2017-05-10 |
+| 10002 | Aswin   | Balachandran |    100 | PG       |       1 |  22000 | 2016-01-05 |
+| 10003 | Deepak  | Raj          |    101 | Diploma  |       3 |  16000 | 2019-01-04 |
+| 10004 | Divya   | Jayan        |    102 | MBA      |       2 |  28000 | 2017-10-10 |
+| 10005 | Karthik | Satyan       |    102 | MBA      |       4 |  30000 | 2018-12-01 |
+| 10006 | Manu    | George       |    101 | ITI      |       3 |  12000 | 2016-03-20 |
+| 10007 | Amal    | Davis        |    103 | Degree   |       2 |  20000 | 2017-02-01 |
+| 10008 | Sanal   | Krishnan     |    104 | Degree   |       2 |  21000 | 2016-02-21 |
+| 10009 | Kiran   | Lal          |    104 | Degree   |       2 |  22000 | 2015-02-21 |
+| 10010 | Syam    | Nair         |    104 | Degree   |       2 |  20000 | 2017-02-10 |
++<span class="hljs-comment">-------+---------+--------------+--------+----------+---------+--------+------------+</span>
+
+
+<span class="hljs-comment">-- **Joins and Subqueries:**</span>
+<span class="hljs-comment">-- 1. List employee number, name and department number for employees who are managers.</span>
+mysql&gt;  <span class="hljs-keyword">select</span> empno, Fname, lName, deptno <span class="hljs-keyword">from</span> empl <span class="hljs-keyword">where</span> jobcode =<span class="hljs-number">1</span>;
++<span class="hljs-comment">-------+-------+--------------+--------+</span>
+| empno | Fname | lName        | deptno |
++<span class="hljs-comment">-------+-------+--------------+--------+</span>
+| 10001 | Deepa | Mathew       |    100 |
+| 10002 | Aswin | Balachandran |    100 |
++<span class="hljs-comment">-------+-------+--------------+--------+</span>
+
+<span class="hljs-comment">-- 2. List employee last name, work department and salary for those in HR, Purchase and Sales department.</span>
+
+mysql&gt;  <span class="hljs-keyword">select</span> Empno, fname, lname, deptname, salary <span class="hljs-keyword">from</span> empl 
+        <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> dept <span class="hljs-keyword">on</span> empl.deptno=dept.deptno 
+        <span class="hljs-keyword">where</span> deptname <span class="hljs-keyword">in</span> (<span class="hljs-string">'HR'</span>, <span class="hljs-string">'Purchase'</span>, <span class="hljs-string">'Sales'</span>);
++<span class="hljs-comment">-------+-------+--------------+----------+--------+</span>
+| Empno | fname | lname        | deptname | salary |
++<span class="hljs-comment">-------+-------+--------------+----------+--------+</span>
+| 10001 | Deepa | Mathew       | HR       |  20000 |
+| 10002 | Aswin | Balachandran | HR       |  22000 |
+| 10007 | Amal  | Davis        | Purchase |  20000 |
+| 10008 | Sanal | Krishnan     | Sales    |  21000 |
+| 10009 | Kiran | Lal          | Sales    |  22000 |
+| 10010 | Syam  | Nair         | Sales    |  20000 |
++<span class="hljs-comment">-------+-------+--------------+----------+--------+</span>
+
+mysql&gt;
+mysql&gt; <span class="hljs-comment">-- 3. List the names of all employees who belong to the department having maximum number of employees.</span>
+mysql&gt;  <span class="hljs-keyword">select</span> fname <span class="hljs-keyword">from</span> empl 
+        <span class="hljs-keyword">where</span> deptno = (<span class="hljs-keyword">select</span> deptno <span class="hljs-keyword">from</span> empl     
+                        <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> deptno 
+                        <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">count</span>(empno) <span class="hljs-keyword">desc</span> 
+                        <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span>
+                    );
++<span class="hljs-comment">-------+</span>
+| fname |
++<span class="hljs-comment">-------+</span>
+| Sanal |
+| Kiran |
+| Syam  |
++<span class="hljs-comment">-------+</span>
+
+<span class="hljs-comment">--                      Update Cursor</span>
+
+<span class="hljs-comment">-- Ex:- Demonstrate how to retrieve and process each row from a MySQL table one-by-one using CURSOR, inside a stored procedure.</span>
+
+ <span class="hljs-comment">-- 1.</span>
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">database</span> <span class="hljs-built_in">record</span>;
+
+mysql&gt; <span class="hljs-keyword">Use</span> <span class="hljs-built_in">record</span>;
+
+<span class="hljs-comment">-- 2.</span>
+mysql&gt;  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> employee (<span class="hljs-keyword">id</span> <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span>, 
+                                <span class="hljs-keyword">name</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">100</span>), 
+                                salary <span class="hljs-built_in">DECIMAL</span>(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>) 
+                            );
+
+<span class="hljs-comment">-- 3.</span>
+mysql&gt;  <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> employee (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, salary) 
+                            <span class="hljs-keyword">VALUES</span> 
+                            (<span class="hljs-number">1</span>, <span class="hljs-string">'Sejal'</span>, <span class="hljs-number">55000.00</span>), 
+                            (<span class="hljs-number">2</span>, <span class="hljs-string">'Ravi'</span>, <span class="hljs-number">60000.00</span>), 
+                            (<span class="hljs-number">3</span>, <span class="hljs-string">'Aditi'</span>, <span class="hljs-number">58000.00</span>);
+
+<span class="hljs-comment">-- 4.</span>
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> employee;
++<span class="hljs-comment">----+-------+----------+</span>
+| id | name  | salary   |
++<span class="hljs-comment">----+-------+----------+</span>
+|  1 | Sejal | 55000.00 |
+|  2 | Ravi  | 60000.00 |
+|  3 | Aditi | 58000.00 |
++<span class="hljs-comment">----+-------+----------+</span>
+
+<span class="hljs-comment">-- 5.</span>
+mysql&gt; DELIMITER //
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">PROCEDURE</span> process_employee_rows()
+       <span class="hljs-keyword">BEGIN</span>
+           <span class="hljs-keyword">DECLARE</span> emp_id <span class="hljs-built_in">INT</span>;
+           <span class="hljs-keyword">DECLARE</span> emp_name <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">100</span>);
+           <span class="hljs-keyword">DECLARE</span> emp_salary <span class="hljs-built_in">DECIMAL</span>(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>);
+           <span class="hljs-keyword">DECLARE</span> done <span class="hljs-built_in">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">FALSE</span>;
+      
+           <span class="hljs-keyword">DECLARE</span> emp_cursor <span class="hljs-keyword">CURSOR</span> <span class="hljs-keyword">FOR</span>
+               <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, salary <span class="hljs-keyword">FROM</span> employee;
+      
+           <span class="hljs-keyword">DECLARE</span> CONTINUE <span class="hljs-keyword">HANDLER</span> <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">FOUND</span> <span class="hljs-keyword">SET</span> done = <span class="hljs-literal">TRUE</span>;
+      
+           OPEN emp_cursor;
+      
+           read_loop: LOOP
+               FETCH emp_cursor INTO emp_id, emp_name, emp_salary;
+      
+               IF done THEN
+                   LEAVE read_loop;
+               <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;
+      
+               <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CONCAT</span>(
+                   <span class="hljs-string">'Employee ID: '</span>, emp_id,
+                   <span class="hljs-string">', Name: '</span>, emp_name,
+                   <span class="hljs-string">', Salary: '</span>, emp_salary
+               ) <span class="hljs-keyword">AS</span> Employee_Details;
+           <span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;
+      
+           CLOSE emp_cursor;
+       <span class="hljs-keyword">END</span>;
+       //
+
+mysql&gt; DELIMITER ;
+
+mysql&gt; <span class="hljs-keyword">CALL</span> process_employee_rows();
++<span class="hljs-comment">-----------------------------------------------+</span>
+| Employee_Details                              |
++<span class="hljs-comment">-----------------------------------------------+</span>
+| Employee ID: 1, Name: Sejal, Salary: 55000.00 |
++<span class="hljs-comment">-----------------------------------------------+</span>
+
+
++<span class="hljs-comment">----------------------------------------------+</span>
+| Employee_Details                             |
++<span class="hljs-comment">----------------------------------------------+</span>
+| Employee ID: 2, Name: Ravi, Salary: 60000.00 |
++<span class="hljs-comment">----------------------------------------------+</span>
+
+
++<span class="hljs-comment">-----------------------------------------------+</span>
+| Employee_Details                              |
++<span class="hljs-comment">-----------------------------------------------+</span>
+| Employee ID: 3, Name: Aditi, Salary: 58000.00 |
++<span class="hljs-comment">-----------------------------------------------+</span>
+</div></code></pre>
+
+</body>
+</html>
