@@ -1,4 +1,7 @@
-use nsti_mumbai_sql;
+set SQL_SAFE_UPDATES = 0;
+drop database pg_010_Employee_Table;
+create database pg_010_Employee_Table;
+use pg_010_Employee_Table;
 -- Create Table (Employee)
 create table employee(emp_id int primary key auto_increment,
             emp_name varchar(50),
@@ -10,19 +13,19 @@ create table employee(emp_id int primary key auto_increment,
 insert into employee 
 			values
             (1,'Ravi',10,25000,'2018-06-01');
-insert into employee (emp_name, dept_id,salary,join_date) 			values
-            ('Suman',20,30000,'2019-08-15'),
-            ('Riya',10,27000,'2020-01-10'),
-            ('Karan',30,22000,'2021-03-12'),
-            ('Anu',20,28000,'2022-07-20');
+insert into employee (emp_name, dept_id,salary,join_date) 			
+            values
+                ('Suman',20,30000,'2019-08-15'),
+                ('Riya',10,27000,'2020-01-10'),
+                ('Karan',30,22000,'2021-03-12'),
+                ('Anu',20,28000,'2022-07-20');
 -- Create Table (Department)
 create table department(dept_id int,Dept_name varchar(50));
-insert into department 
-			values 
-            (10,'Sales'),
-            (20,'HR'),
-            (30,'IT'),
-            (40,'Marketing');
+insert into department values 
+                (10,'Sales'),
+                (20,'HR'),
+                (30,'IT'),
+                (40,'Marketing');
 -- Display Both Table
 select * from employee;
 select * from department;
@@ -94,5 +97,3 @@ on e.dept_id=d.dept_id
 where join_date>'2019-01-01'
 group by d.dept_name
 having sum(e.salary)>50000;
-
-
