@@ -1,31 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<head>
-  <title>Factorial of a Number using Recursion :</title>
-</head>
+<html>
+  <head>
+    <title>Armstrong numbers between two limit</title>
+  </head>
+  <body>
+    <script>
+      let limit1, limit2;
+      limit1 = parseInt(prompt("Enter limit 1"));
+      limit2 = parseInt(prompt("Enter limit 2"));
+      document.write(
+        "Armstrong numbers between " + limit1 + " and " + limit2 + " are: ",
+      );
+      for (let num = limit1; num < limit2; num++) {
+        let temp = num;
+        let sum = 0;
+        let pow = num.toString().length;
+        while (temp > 0) {
+          let digit = temp % 10;
+          sum = sum + digit ** pow;
+          temp = Math.floor(temp / 10);
+        }
 
-<body>
-  <h2>Factorial of a Number using Recursion :</h2>
-  <script>
-    var num, fact;
-    function factorial(num) {
-      if (num == 0 || num == 1) {
-        return 1;
-      } else {
-        return num * factorial(num - 1);
+        if (num == sum) document.write(num + "    ");
       }
-    }
-    num = parseInt(prompt("Enter anny number."));
-    // Mistick start
-    if (isNaN(num) || num < 0) {
-      document.write("Please Enter valid positive integer.")
-    } else 
-    // Mistick
-    {
-      fact = factorial(num);
-      document.write("Your Input number is : " + num + " <br>Your Input number factorial is: " + fact)
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
