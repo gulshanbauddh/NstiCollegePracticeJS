@@ -7,11 +7,26 @@
   },
   "editor.tabSize": 2,
   "editor.mouseWheelZoom": true,
-<<<<<<< HEAD
-  "livePreview.defaultPreviewPath": "/NstiCollegePracticeJs/pg_501_timeAndDate.html"
-=======
+  "livePreview.defaultPreviewPath": "/NstiCollegePracticeJs/pg_501_timeAndDate.html",
   "fiveServer.browser": [
     "chrome"
+  ],
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "xprotocol",
+        "enableSsl": "Disabled"
+      },
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 33060,
+      "driver": "MySQL",
+      "name": "MySQL Demo",
+      "database": "nsti_mumbai_sql",
+      "username": "root",
+      "password": "Kajal01@#",
+      "connectionTimeout": 30
+    }
   ]
->>>>>>> cd1815ef99edf375f47080fc8921ea47e9ddc214
 }
