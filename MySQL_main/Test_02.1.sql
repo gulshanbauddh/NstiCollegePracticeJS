@@ -31,10 +31,10 @@ inner join department d
 on e.DeptId=d.DeptId;
 
 -- Q3 Display total salary by department
-select d.DeptName, sum(e.Salary) from Employee e
+select d.DeptName, SUM(e.Salary) from Employee e
 inner join department d
 on e.DeptId=d.DeptId
-group by e.DeptId;
+group by d.DeptName;
 
 -- Q4 Display Ddepartment with more than 1 employee.
 select DeptName from department
