@@ -1,6 +1,6 @@
 --      			Stored Procedures
 set SQL_SAFE_UPDATES = 0;
-Drop database pg101_StoredProcedures;
+Drop database if EXISTS pg101_StoredProcedures;
 create database pg101_StoredProcedures;
 use pg101_StoredProcedures;
 -- Step 1: Create Table and Insert Data
