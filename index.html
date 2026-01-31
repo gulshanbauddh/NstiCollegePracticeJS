@@ -1,29 +1,28 @@
-<!doctype html>
-
 <html>
   <head>
-    <title>Armstrong numbers between two limit</title>
+    <title>Count Postive Negative And Zero In Array Element:</title>
   </head>
   <body>
+    <h2>Count Postive Negative And Zero In Array Element:</h2>
     <script>
-      let limit1, limit2;
-      limit1 = parseInt(prompt("Enter limit 1"));
-      limit2 = parseInt(prompt("Enter limit 2"));
-      document.write(
-        "Armstrong numbers between " + limit1 + " and " + limit2 + " are: ",
-      );
-      for (let num = limit1; num < limit2; num++) {
-        let temp = num;
-        let sum = 0;
-        let pow = num.toString().length;
-        while (temp > 0) {
-          let digit = temp % 10;
-          sum = sum + digit ** pow;
-          temp = Math.floor(temp / 10);
-        }
-
-        if (num == sum) document.write(num + "    ");
+      let arr,limit,pos = 0,neg = 0,zero = 0;
+      limit = parseInt(prompt("Enter Array Limit."));
+      arr = new Array(limit);
+      for (i = 0; i < limit; i++) {
+        arr[i] = parseInt(prompt("Enter Array Elements"));
       }
+      document.write("Array is :");
+      for (i = 0; i < limit; i++) {
+        document.write(arr[i] + "  ");
+      }
+      for (i = 0; i < limit; i++) {
+        if (arr[i] > 0) pos++;
+        else if (arr[i] < 0) neg++;
+        else zero++;
+      }
+      document.write("<br>Postive number count = " + pos);
+      document.write("<br>Negative number count = " + neg);
+      document.write("<br>Zero number count =" + zero);
     </script>
   </body>
 </html>
