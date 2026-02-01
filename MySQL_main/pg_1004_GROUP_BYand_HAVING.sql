@@ -56,3 +56,7 @@ group by product;
 Select customer_name, sum(quantity*unit_price) as Spending from orders group by customer_name having Spending>1000;
 -- Query 7: Revenue Per Product with Minimum Revenue Condition. Un products ka total revenue jahan revenue 1000 ya usse zyada hai:
 Select product, sum(quantity*unit_price) as Spending from orders group by product having Spending>1000;
+
+select customer_name,sum(quantity*unit_price) as Spending from orders
+group by customer_name
+having Spending = (select max(quantity*unit_price) from orders);
