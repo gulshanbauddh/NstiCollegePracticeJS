@@ -113,4 +113,12 @@ mysql> UPDATE EMPLOYES SET SALARY = 8000 WHERE EMP_ID = 103;
 mysql> UPDATE EMPLOYES SET SALARY = 18000 WHERE EMP_ID = 104;
 
 mysql> Select * From EMPLOYES;
++--------+----------+------+--------+
+| EMP_ID | EMP_NAME | AGE  | SALARY |
++--------+----------+------+--------+
+|    101 | JIMMY    |   35 |  72000 |
+|    102 | SHANE    |   30 |  85000 |
+|    103 | MARRY    |   28 |  72000 |
+|    104 | JACK     |   30 |  85000 |
++--------+----------+------+--------+
 ```

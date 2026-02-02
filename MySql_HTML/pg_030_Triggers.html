@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>pg_1003_Triggers.md</title>
+<title>pg_030_Triggers.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
 body {
 	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
 	font-size: var(--vscode-markdown-font-size, 14px);
@@ -359,7 +365,7 @@ code {
           : 'default'
     });
   </script>
-<pre class="hljs"><code><div><span class="hljs-comment">-- MYSQL Table Triggers (Gulshan pg-15 to pg-18)</span>
+<pre class="hljs"><code><div><span class="hljs-comment">-- MYSQL Table Triggers (pg-15 to pg-18)</span>
 
 <span class="hljs-comment">-- Aim: Creating and executing MYSQL table triggers.</span>
 <span class="hljs-comment">-- 1. BEFORE INSERT TRIGGER</span>
@@ -473,6 +479,14 @@ mysql&gt; <span class="hljs-keyword">UPDATE</span> EMPLOYES <span class="hljs-ke
 mysql&gt; <span class="hljs-keyword">UPDATE</span> EMPLOYES <span class="hljs-keyword">SET</span> SALARY = <span class="hljs-number">18000</span> <span class="hljs-keyword">WHERE</span> EMP_ID = <span class="hljs-number">104</span>;
 
 mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">From</span> EMPLOYES;
++<span class="hljs-comment">--------+----------+------+--------+</span>
+| EMP_ID | EMP_NAME | AGE  | SALARY |
++<span class="hljs-comment">--------+----------+------+--------+</span>
+|    101 | JIMMY    |   35 |  72000 |
+|    102 | SHANE    |   30 |  85000 |
+|    103 | MARRY    |   28 |  72000 |
+|    104 | JACK     |   30 |  85000 |
++<span class="hljs-comment">--------+----------+------+--------+</span>
 </div></code></pre>
 
 </body>
