@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Students Result Seat of Trainee :</title>
+  </head>
+
+  <body>
+    <h2>Students Result Seat of Trainee :</h2>
+    <script>
+      let js,net,mysql,php,python,total,per,grade,result;
+      js = parseInt(prompt("Enter Java Script Mark"));
+      net = parseInt(prompt("Enter Networking Mark"));
+      mysql = parseInt(prompt("Enter mysqlt Mark"));
+      php = parseInt(prompt("Enter PHP Mark"));
+      python = parseInt(prompt("Enter Python Mark"));
+
+      total=js+net+mysql+php+python;
+      per=total/5;
+
+      if(per>=90 && per<=100) grade="A+";
+      else if(per>=80) grade="A";
+      else if(per>=70) grade="B+";
+      else if(per>=60) grade="B";
+      else if(per>=50) grade="C+";
+      else if(per>=40) grade="C";
+      else if(per>=30) grade="D";
+      else grade="E";
+
+      result="passed";
+      if(js<30 || net<30 || mysql<30 || php<30 || python<30 ) result="Failed";
+
+      document.write("<table border='1' cellpadding='6' cellspacing='0'>");
+      document.write("<tr><th>Subject</th><th>Marks</th></tr>");
+      document.write("<tr><td>Java Script</td><td>"+js+"</td></tr>");
+      document.write("<tr><td>Networking</td><td>"+net+"</td></tr>");
+      document.write("<tr><td>MySQL</td><td>"+mysql+"</td></tr>");
+      document.write("<tr><td>PHP</td><td>"+php+"</td></tr>");
+      document.write("<tr><td>Python</td><td>"+python+"</td></tr>");
+      document.write("<tr><td>Result</td><td>"+result+"</td></tr>");
+      document.write("<tr><td>Total Marks</td><td>"+total+"</td></tr>");
+      document.write("<tr><td>Percentage</td><td>"+per.toFixed(2)+" %</td></tr>");
+      document.write("<tr><td>Grade</td><td>"+grade+"</td></tr></table>");
+    </script>
+  </body>
+</html>
