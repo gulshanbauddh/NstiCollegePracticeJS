@@ -1,14 +1,20 @@
-create table employee(Emp_ID int primary key auto_increment,Emp_name varchar(50),Dept_ID int, Salary int);
+create table employee(Emp_ID int primary key auto_increment,
+                      Emp_name varchar(50),
+                      Dept_ID int, 
+                      Salary int
+                    );
  -- drop table employee;
  
 insert into employee (Emp_name,Dept_ID, Salary)
-				values 
-					  ('Alice',10,30000),
+				          values 
+				          	  ('Alice',10,30000),
                       ('Bob',20,40000),
                       ('John',10,35000),
                       ('John',30,45000);
 select * from employee;
-Create table Department (Dept_ID int,Dept_Name varchar(25));
+Create table Department (Dept_ID int,
+                        Dept_Name varchar(25)
+                        );
 insert into Department values (10,'HR'),(20,'IT'),(30,'Finance');
 select * from Department;
 
