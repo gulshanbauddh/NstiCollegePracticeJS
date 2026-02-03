@@ -24,10 +24,10 @@
       else if(per>=40) grade="C";
       else if(per>=30) grade="D";
       else grade="E";
-      // Result Calculate-
-      let result="Passed";
-      if (js<30 || python<30 || php<30 || networking<30 || mySql<30 ) result="Falled !"
-      // document.write(percentage);
+
+      result="passed";
+      if(js<30 || net<30 || mysql<30 || php<30 || python<30 ) result="Failed";
+
       document.write("<table border='1' cellpadding='6' cellspacing='0'>");
       document.write("<tr><th>Subject</th><th>Marks</th></tr>");
       document.write("<tr><td>Java Script</td><td>"+js+"</td></tr>");
