@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime number b/w two limit:</title>
+    <title>Prime number between two limit:</title>
   </head>
   <body>
-    <h1>Prime number b/w two limit:</h1>
+    <h1>Prime number between two limit:</h1>
     <script>
-      let lim_1 = parseInt(prompt("Enter Starting Limit:"));
-      let lim_2 = parseInt(prompt("Enter Ending Limit:"));
-      lim_1 = 1;
-      lim_2 = 10;
-      while (lim_1 <= lim_2) {
-        num = lim_1;
-        let isPrimeNumber = true;
-        for (i = 2; i <= num / 2; i++) {
-          if (num % i == 0) {
-            isPrimeNumber = false;
-            break;
+      let limit1 = parseInt(prompt("Enter Start Limit:"));
+      let limit2 = parseInt(prompt("Enter End Limit:"));
+      document.write("Prime number between " + limit1 + " and " + limit2 + ":<br>");
+      
+      if (limit1 > 0 && limit1 < limit2) {
+        for (limit1; limit1 <= limit2; limit1++) {
+          num = limit1;
+          let flag = true;
+          for (i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+              flag = false;
+              break;
+            }
           }
+          if (flag) document.write(num + ", ");
         }
-        if (isPrimeNumber) {
-          document.write(num + ", ");
-        }
-        lim_1++;
       }
+      else document.write("Somthing wrong !")
     </script>
   </body>
 </html>
