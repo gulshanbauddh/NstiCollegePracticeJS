@@ -12,14 +12,14 @@
       if (limit1 > 0 && limit1 < limit2) {
         for (limit1; limit1 <= limit2; limit1++) {
           num = limit1;
-          let flag = true;
+          let isPrime = true;
           for (i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
-              flag = false;
+              isPrime = false;
               break;
             }
           }
-          if (flag) document.write(num + ", ");
+          if (isPrime) document.write(num + ", ");
         }
       }
       else document.write("Somthing wrong !")
