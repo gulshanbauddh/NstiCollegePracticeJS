@@ -75,3 +75,68 @@ Delimiter ;
 call safeInsert('Gulshan',154202,'IT');
 call safeInsert('Gulshan',-154202,'IT');
 -- drop procedure if exists safeInsert;
+
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+-- ======================================================================
+
+use stored_procedure;
+Select * from employees;
+Select * from departments;
+
+-- Q-1 Create a simple procedure to display all employees
+
+
+
+-- Q-2 Create a proceddure to display employees of a specific department (using parameters);                                                                             
+Delimiter //
+Create Procedure showEmpByDeptId(In p_deptID int)
+begin
+Select * from employees where dept_id=p_deptID;
+end //
+Delimiter ;
+
+Delimiter //
+Create Procedure ShowByDeptName(In p_DeptName varchar(20))
+    begin
+    Select e.emp_name, e.salary, d.dept_name from employees e
+    join departments d
+    on e.dept_id=d.dept_id
+    where d.dept_name=p_DeptName;
+    end //
+Delimiter ;
+-- Q-3 Create a procedure to calculate total salary of a department. (using OUT parameter).
+drop procedure if exists totSalByout;
+Delimiter //
+Create procedure totSalByout(IN p_deptName varchar(20), out p_dept_name varchar(20), out p_sumSalary int)
+Begin
+	Select d.Dept_name, sum(e.salary) into p_dept_name, p_sumSalary from employees e
+    Join departments d
+    on e.dept_id=d.dept_id
+    group by d.Dept_name
+    having d.Dept_name=p_deptName;
+end //
+Delimiter ;
+
+-- Q-4 Create a procedure to increase salary of an employees by a given amount (using IN procedure)
+
+
+
+-- Q-5 Create a procedure using INOUT parameter to Increment a salary.
+
+
+
+
+-- Q-6 Drop a stored Procedure.
+
+
+
+-- Q-7 Display employees with Salary above a certain value and inccress their salary by 5000.
+
+
+
