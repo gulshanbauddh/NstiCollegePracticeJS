@@ -5,6 +5,8 @@ Chaliye **MySQL Cursor** ko **simple + practical** tareeke se samajhte hain — 
 
 ## 🔹 MySQL me Cursor kya hota hai?
 
+ **Cursor is used to fetch and process rows one by one inside a stored procedure.**
+
 **Cursor** MySQL ka ek special object hota hai jo **SELECT query ke result ko row-by-row read** karta hai.
 
 📌 Normally:
@@ -185,16 +187,6 @@ CLOSE emp_cursor;
 
 ## 🔑 Important Exam Line (Ratne ke liye 😄)
 
-> **Cursor is used to fetch and process rows one by one inside a stored procedure.**
+>
 
 ---
-
-Agar aap chaho to main:
-
-* ✔️ **practice questions ke full solutions**
-* ✔️ **cursor ka flowchart**
-* ✔️ **cursor vs trigger clear explanation**
-* ✔️ **exam-ready short notes**
-
-bata sakta hoon 🔥
-बस बताइए next kya chahiye? 😊
