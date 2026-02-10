@@ -125,7 +125,7 @@ FETCH → HANDLER → IF → LEAVE LOOP
 ## 🔟 Cursor Memory Behavior
 
 | Phase         | Memory Usage            |
-|----------|-----------------|
+|---------------|-------------------------|
 | FETCH         | One row loaded          |
 | Next FETCH    | Old data overwritten    |
 | CLOSE cursor  | Memory released         |
@@ -154,9 +154,3 @@ CLOSE emp_cursor;
 
 > **A MySQL cursor is a row-by-row iterator where FETCH retrieves data, the handler detects the end of data, and the IF condition safely terminates the loop.**
 ---
-If you want next:
-✅ **PDF version of these notes**
-✅ **Flowchart diagram**
-✅ **Viva / MCQ questions**
-
-Just say the word 😄📚
