@@ -11,6 +11,8 @@
     let str1, str2, i, j, k, l, ch, c, flag, p;
     str1 = prompt("Enter main string :"); //I am Gulshan
     str2 = prompt("Enter search string : "); // Gulshan
+    str1="I am Gulshan Bauddh";
+    str2="I am Gulshan Bauddh hjdbcjhasdc";
     document.write("Enter the string  <b>" + str1 + "</b>")
     document.write("<br>substring to search <b>" + str2 + "</b>");
     l = str1.length;
@@ -30,12 +32,12 @@
 
       if (flag == true && j == k) {
         p = i - k + 2;
-        document.write("<br>The string <b>" + str2 + " </b>is found in <b>" + str1 + " </b>at position : " + p);
+        document.write("<br><br>The string <b>" + str2 + " </b>is found in <b>" + str1 + " </b>at position : " + p);
         break;
       }
     }
     if (i == l) {
-      document.write("<br>The string <b>" + str2 + " </b>is not found in <b>" + str1 + "</b>");
+      document.write("<br><br>The string <b>" + str2 + " </b>is not found in <b>" + str1 + "</b>");
     }
   </script>
 </body>

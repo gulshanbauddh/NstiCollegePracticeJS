@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search String in Sentance.</title>
+</head>
+<body>
+  <h1>Search String in Sentance.</h1>
+  <script>
+    let str,searchKey,l,m,match;
+    str=prompt("Enter main String."); // I am Gulshan Bauddh
+    searchKey=prompt("Enter Search Key."); // Gulshan
+    str="I am Gulshan Bauddh";
+    searchKey="Gulshan";
+    l=str.length;
+    m=searchKey.length;
+    let flag=false;
+    for(i=0; i<l-m; i++){
+      match=true;
+      for(j=0; j<m; j++){
+        if(str.charAt(i+j)!==searchKey.charAt(j)){
+          match=false;
+          break;
+        }
+      } 
+    }
+
+    document.write("<b>Enterd Sentence is : </b>"+str);
+    if(match) document.write("<br>String Found at starting index "+(i));
+    else document.write("<br>String Not Found.");
+    // document.write(j+"<br>"+m+"<br>"+i);
+
+  </script>
+</body>
+</html>
