@@ -1,23 +1,24 @@
 <html>
-<head>
-  <title>check string palindrom or not</title>
-</head>
 
-<dody>
-  <h2>Check string is palindrom or not</h2>
+  <head>
+    <title>check string palindrom or not</title>
+  </head>
+
+  <dody>
+    <h2>Check string is palindrom or not</h2>
     <script>
       var str, revStr, l, i;
       str = prompt("Enter a Word Of A String");
       l = str.length;
       revStr = "";
-      
-      for (i=l-1; i>=0; i--) {
-        revStr=revStr+str.charAt(i);
+
+      for (i = l - 1; i >= 0; i--) {
+        revStr = revStr + str.charAt(i);
       }
-      if (str.toLowerCase().trim()==revStr.toLowerCase().trim()) {
-        document.write("<b>"+str+"</b>: is a palindrom");
-      } else{
-        document.write("<b>"+str+"</b>: is not a palindrom");
+      if (str.toLowerCase() == revStr.toLowerCase()) {
+        document.write("<b>" + str + "</b>: is a palindrom");
+      } else {
+        document.write("<b>" + str + "</b>: is not a palindrom");
       }
     </script>
   </body>
