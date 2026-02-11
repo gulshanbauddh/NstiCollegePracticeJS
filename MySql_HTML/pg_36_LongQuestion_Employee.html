@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pg_36_LongQuestion_Employee.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<h1>pg_36_LongQuestion_Employee.md</h1>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<pre class="hljs"><code><div>mysql&gt; <span class="hljs-keyword">Drop</span> <span class="hljs-keyword">Database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> pg_36_LongQuestion_Employee;
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">database</span> pg_36_LongQuestion_Employee;
+mysql&gt; <span class="hljs-keyword">use</span> pg_36_LongQuestion_Employee;
+<span class="hljs-comment">-- 1. Create Tables</span>
+<span class="hljs-comment">-- Department</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Department (
+        DeptID <span class="hljs-built_in">int</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+        DeptName <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>)
+    );
+
+<span class="hljs-comment">-- Employee</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Employee (
+        EmpID <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> auto_increment,
+        EmpName <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+        DeptID <span class="hljs-built_in">INT</span>,
+        Salary <span class="hljs-built_in">INT</span>,
+        JoinDate <span class="hljs-built_in">DATE</span>,
+        <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (DeptID) <span class="hljs-keyword">REFERENCES</span> Department(DeptID)
+    );
+
+<span class="hljs-comment">-- Salary Audit</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> SalaryAudit (
+        AuditID <span class="hljs-built_in">INT</span> AUTO_INCREMENT PRIMARY <span class="hljs-keyword">KEY</span>,
+        EmpID <span class="hljs-built_in">INT</span>,
+        OldSalary <span class="hljs-built_in">INT</span>,
+        NewSalary <span class="hljs-built_in">INT</span>,
+        ChangeDate <span class="hljs-built_in">DATE</span>
+    );
+
+<span class="hljs-comment">-- Insert Into department</span>
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Department 
+                <span class="hljs-keyword">values</span> (<span class="hljs-number">10</span>,<span class="hljs-string">'Sales'</span>), 
+                       (<span class="hljs-number">20</span>,<span class="hljs-string">'HR'</span>), 
+                       (<span class="hljs-number">30</span>,<span class="hljs-string">'IT'</span>), 
+                       (<span class="hljs-number">40</span>,<span class="hljs-string">'Marketing'</span>);
+
+<span class="hljs-comment">-- Insert Into Employee</span>
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee (EmpID,empName, deptId,salary,joinDate)
+                <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">'Ravi'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">25000</span>,<span class="hljs-string">'2018-06-01'</span>),
+                      (<span class="hljs-number">2</span>,<span class="hljs-string">'Suman'</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30000</span>,<span class="hljs-string">'2019-08-15'</span>),
+                      (<span class="hljs-number">3</span>,<span class="hljs-string">'Riya'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">27000</span>,<span class="hljs-string">'2020-01-10'</span>),
+                      (<span class="hljs-number">4</span>,<span class="hljs-string">'Karan'</span>,<span class="hljs-number">30</span>,<span class="hljs-number">22000</span>,<span class="hljs-string">'2021-03-12'</span>),
+                      (<span class="hljs-number">5</span>,<span class="hljs-string">'Anu'</span>,<span class="hljs-number">20</span>,<span class="hljs-number">28000</span>,<span class="hljs-string">'2022-07-20'</span>);
+
+<span class="hljs-comment">-- Insert Into SalaryAudit</span>
+<span class="hljs-comment">-- Show All Tables</span>
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> Department;
++<span class="hljs-comment">--------+-----------+</span>
+| DeptID | DeptName  |
++<span class="hljs-comment">--------+-----------+</span>
+|     10 | Sales     |
+|     20 | HR        |
+|     30 | IT        |
+|     40 | Marketing |
++<span class="hljs-comment">--------+-----------+</span>
+
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> Employee;
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+| EmpID | EmpName | DeptID | Salary | JoinDate   |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+|     1 | Ravi    |     10 |  25000 | 2018-06-01 |
+|     2 | Suman   |     20 |  30000 | 2019-08-15 |
+|     3 | Riya    |     10 |  27000 | 2020-01-10 |
+|     4 | Karan   |     30 |  22000 | 2021-03-12 |
+|     5 | Anu     |     20 |  28000 | 2022-07-20 |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span>  SalaryAudit;
+Empty <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+<span class="hljs-comment">-- 3. Indexing</span>
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Index</span> idx_salary <span class="hljs-keyword">on</span> Employee(Salary);
+
+mysql&gt;
+<span class="hljs-comment">-- 4- Stored Procedure</span>
+<span class="hljs-comment">-- 4.1- Insert Employee using SP-</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">procedure</span> AddEmp(p_eName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>), p_dId <span class="hljs-built_in">int</span>, p_salary <span class="hljs-built_in">int</span>, p_jDate <span class="hljs-built_in">Date</span>)
+    <span class="hljs-keyword">Begin</span>
+    <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Employee (empName, deptId,salary,joinDate)
+             <span class="hljs-keyword">values</span>
+                (p_eName, p_dId, p_salary, p_jDate);
+    <span class="hljs-keyword">End</span> //
+
+mysql&gt; Delimiter ;
+mysql&gt;
+mysql&gt; <span class="hljs-keyword">call</span> AddEmp(<span class="hljs-string">'Gulshan'</span>,<span class="hljs-number">20</span>,<span class="hljs-number">28000</span>,<span class="hljs-string">'2022-07-20'</span>);
+
+mysql&gt; <span class="hljs-keyword">call</span> AddEmp(<span class="hljs-string">'Sandeep'</span>, <span class="hljs-number">20</span>, <span class="hljs-number">43000</span>, <span class="hljs-string">'2021-02-20'</span>);
+
+mysql&gt; <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> Employee;
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+| EmpID | EmpName | DeptID | Salary | JoinDate   |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+|     1 | Ravi    |     10 |  25000 | 2018-06-01 |
+|     2 | Suman   |     20 |  30000 | 2019-08-15 |
+|     3 | Riya    |     10 |  27000 | 2020-01-10 |
+|     4 | Karan   |     30 |  22000 | 2021-03-12 |
+|     5 | Anu     |     20 |  28000 | 2022-07-20 |
+|     6 | Gulshan |     20 |  28000 | 2022-07-20 |
+|     7 | Sandeep |     20 |  43000 | 2021-02-20 |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+
+<span class="hljs-comment">-- 4.2- Retrieve Employee with SP</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Procedure</span> GetEmpByDept(<span class="hljs-keyword">IN</span> Dept <span class="hljs-built_in">int</span>)
+    <span class="hljs-keyword">Begin</span>
+    <span class="hljs-keyword">Select</span> * <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> DeptId=Dept;
+    <span class="hljs-keyword">End</span> //
+
+mysql&gt; Delimiter ;
+mysql&gt; <span class="hljs-keyword">Call</span> GetEmpBYDept(<span class="hljs-number">30</span>);
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+| EmpID | EmpName | DeptID | Salary | JoinDate   |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+|     4 | Karan   |     30 |  22000 | 2021-03-12 |
++<span class="hljs-comment">-------+---------+--------+--------+------------+</span>
+1 row in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+
+mysql&gt;
+<span class="hljs-comment">-- 5 Trigger</span>
+<span class="hljs-comment">-- 5.1 After Update Trigger for salary Audit</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Trigger</span> AfterUpdateSalary
+    <span class="hljs-keyword">After</span> <span class="hljs-keyword">Update</span> <span class="hljs-keyword">on</span> Employee
+    <span class="hljs-keyword">for</span> <span class="hljs-keyword">Each</span> <span class="hljs-keyword">Row</span>
+    <span class="hljs-keyword">Begin</span>
+    <span class="hljs-keyword">if</span> old.salary&lt;&gt;new.salary <span class="hljs-keyword">Then</span>
+    <span class="hljs-keyword">Insert</span> <span class="hljs-keyword">into</span> SalaryAudit (EmpID, OldSalary, NewSalary, ChangeDate)
+                             <span class="hljs-keyword">values</span>
+                    (new.EmpId, Old.Salary, New.Salary, <span class="hljs-keyword">curdate</span>());
+    <span class="hljs-keyword">End</span> <span class="hljs-keyword">if</span>;
+    <span class="hljs-keyword">End</span> //
+
+mysql&gt; Delimiter ;
+<span class="hljs-comment">-- 6 Cursors</span>
+<span class="hljs-comment">-- 6.1 Calculate total salary of all employees using a cursors.</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">procedure</span> TotalSalCursor()
+        <span class="hljs-keyword">Begin</span>
+        <span class="hljs-keyword">declare</span> done <span class="hljs-built_in">Int</span> <span class="hljs-keyword">default</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">declare</span> Sal <span class="hljs-built_in">Int</span>;
+        <span class="hljs-keyword">declare</span> Total <span class="hljs-built_in">Int</span> <span class="hljs-keyword">default</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">declare</span> sal_cursor <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">for</span>
+        <span class="hljs-keyword">select</span> salary <span class="hljs-keyword">from</span> employee;
+        <span class="hljs-keyword">Declare</span> continue <span class="hljs-keyword">Handler</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">Not</span> <span class="hljs-keyword">Found</span> <span class="hljs-keyword">Set</span> done=<span class="hljs-number">1</span>;
+        open sal_cursor;
+        Read_Loop:Loop
+        Fetch sal_cursor INTO sal;
+        IF done=1 Then
+        Leave read_Loop;
+        <span class="hljs-keyword">End</span> <span class="hljs-keyword">if</span>;
+        <span class="hljs-keyword">Set</span> total=total+sal;
+        <span class="hljs-keyword">End</span> <span class="hljs-keyword">Loop</span>;
+        Close sal_cursor;
+        <span class="hljs-keyword">select</span> total <span class="hljs-keyword">as</span> TotalSalary;
+        <span class="hljs-keyword">End</span>//
+
+mysql&gt; Delimiter ;
+mysql&gt; <span class="hljs-keyword">Call</span> TotalSalCursor();
++<span class="hljs-comment">-------------+</span>
+| TotalSalary |
++<span class="hljs-comment">-------------+</span>
+|      203000 |
++<span class="hljs-comment">-------------+</span>
+1 row in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+</div></code></pre>
+
+</body>
+</html>
