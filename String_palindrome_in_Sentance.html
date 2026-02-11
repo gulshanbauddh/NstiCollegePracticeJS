@@ -16,20 +16,20 @@
     l=str.length;
     m=searchKey.length;
     let flag=false;
+
     for(i=0; i<l-m; i++){
       match=true;
       for(j=0; j<m; j++){
-        if(str.charAt(i+j)!==searchKey.charAt(j)){
+        if(str.charAt(i+j)==searchKey.charAt(j)){
           match=false;
           break;
         }
-      } 
+      }
     }
-
+    
     document.write("<b>Enterd Sentence is : </b>"+str);
-    if(match) document.write("<br>String Found at starting index "+(i));
+    if(match) document.write("<br>String Found at starting index "+(i-m+1));
     else document.write("<br>String Not Found.");
-    // document.write(j+"<br>"+m+"<br>"+i);
 
   </script>
 </body>

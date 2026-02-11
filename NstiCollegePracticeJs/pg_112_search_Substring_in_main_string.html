@@ -2,27 +2,24 @@
 <html lang="en">
 
 <head>
-  <title>search_Substring_in_main_string</title>
+  <title>search Substring in main string</title>
 </head>
 
 <body>
-  <h2>search_Substring_in_main_string :</h2>
+  <h2>search Substring in main string :</h2>
   <script>
-    let str1, str2, i, j, k, l, ch, c, flag, p;
-    str1 = prompt("Enter main string :"); //I am Gulshan
-    str2 = prompt("Enter search string : "); // Gulshan
-    str1="I am Gulshan Bauddh";
-    str2="I am Gulshan Bauddh hjdbcjhasdc";
-    document.write("Enter the string  <b>" + str1 + "</b>")
-    document.write("<br>substring to search <b>" + str2 + "</b>");
-    l = str1.length;
-    k = str2.length;
-    j = 0;
+    let str, searchStr, i, j=0, l, m, flag;
+    str = prompt("Enter main string"); // I am Gulshan ia am hero
+    searchStr = prompt("Enter search string"); // Gulshan
+    str="Gul";
+    searchStr="I am Gulshan Bauddh";
+    l = str.length;
+    m = searchStr.length;
+
     flag = true;
-    for (i = 0; i < l; i++) {
-      ch = str1.charAt(i);
-      c = str2.charAt(j)
-      if ((ch == c) && (j < k)) {
+
+    for (i=0; i<l; i++) {
+      if (str.charAt(i)===searchStr.charAt(j)&&(j<m)) {
         j++;
         flag = true;
       } else {
@@ -30,15 +27,12 @@
         j = 0;
       }
 
-      if (flag == true && j == k) {
-        p = i - k + 2;
-        document.write("<br><br>The string <b>" + str2 + " </b>is found in <b>" + str1 + " </b>at position : " + p);
+      if (flag && j==m) {
+        document.write("The string <b>" + searchStr + " </b>is found in <b>" + str + " </b>at position : " + (i-m+2));
         break;
       }
     }
-    if (i == l) {
-      document.write("<br><br>The string <b>" + str2 + " </b>is not found in <b>" + str1 + "</b>");
-    }
+    if (i == l) document.write("The string <b>" + searchStr + " </b>is not found in <b>" + str + "</b>");
   </script>
 </body>
 
