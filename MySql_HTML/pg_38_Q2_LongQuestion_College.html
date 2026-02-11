@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pg-38 Q2  College (Long Question)</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<h1>Pg-38 Q2  College (Long Question)</h1>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<pre class="hljs"><code><div><span class="hljs-comment">-- 1. Database Creation</span>
+mysql&gt; <span class="hljs-keyword">Drop</span> <span class="hljs-keyword">Database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> College;
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> College;
+mysql&gt; <span class="hljs-keyword">USE</span> College;
+
+mysql&gt;
+<span class="hljs-comment">-- 2. Table Creation</span>
+<span class="hljs-comment">-- Students Table</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> students (
+           studentId <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+           <span class="hljs-keyword">name</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+           department <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>)
+       );
+
+<span class="hljs-comment">-- Marks Table</span>
+mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> marks (
+           studentId <span class="hljs-built_in">INT</span>,
+           subject <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>),
+           mark <span class="hljs-built_in">INT</span>
+           );
+
+<span class="hljs-comment">-- 3. Data Insertion</span>
+<span class="hljs-comment">-- Insert into Students</span>
+mysql&gt; <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> students (studentId, <span class="hljs-keyword">name</span>, department) <span class="hljs-keyword">VALUES</span>
+       (<span class="hljs-number">1</span>, <span class="hljs-string">'Alice'</span>, <span class="hljs-string">'CSE'</span>),
+       (<span class="hljs-number">2</span>, <span class="hljs-string">'Bob'</span>, <span class="hljs-string">'ECE'</span>),
+       (<span class="hljs-number">3</span>, <span class="hljs-string">'Charlie'</span>, <span class="hljs-string">'CSE'</span>);
+Records: 3  Duplicates: 0  Warnings: 0
+
+<span class="hljs-comment">-- Insert into Marks</span>
+mysql&gt; <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> marks (studentId, subject, mark) <span class="hljs-keyword">VALUES</span>
+       (<span class="hljs-number">1</span>, <span class="hljs-string">'DBMS'</span>, <span class="hljs-number">95</span>),
+       (<span class="hljs-number">2</span>, <span class="hljs-string">'DBMS'</span>, <span class="hljs-number">65</span>),
+       (<span class="hljs-number">3</span>, <span class="hljs-string">'DBMS'</span>, <span class="hljs-number">40</span>);
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql&gt; <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> students;
++<span class="hljs-comment">-----------+---------+------------+</span>
+| studentId | name    | department |
++<span class="hljs-comment">-----------+---------+------------+</span>
+|         1 | Alice   | CSE        |
+|         2 | Bob     | ECE        |
+|         3 | Charlie | CSE        |
++<span class="hljs-comment">-----------+---------+------------+</span>
+3 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+mysql&gt; <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> marks;
++<span class="hljs-comment">-----------+---------+------+</span>
+| studentId | subject | mark |
++<span class="hljs-comment">-----------+---------+------+</span>
+|         1 | DBMS    |   95 |
+|         2 | DBMS    |   65 |
+|         3 | DBMS    |   40 |
++<span class="hljs-comment">-----------+---------+------+</span>
+3 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+<span class="hljs-comment">-- 4. Stored Procedure(SP)</span>
+<span class="hljs-comment">-- Display Students who Passed (marks&gt;=50)</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Procedure</span> passStu()
+       <span class="hljs-keyword">Begin</span>
+        <span class="hljs-keyword">Select</span> s.name, s.department, m.mark <span class="hljs-keyword">from</span> students s
+           <span class="hljs-keyword">join</span> marks m
+           <span class="hljs-keyword">on</span> s.studentId=m.studentId
+           <span class="hljs-keyword">having</span> m.mark&gt;<span class="hljs-number">90</span>;
+       <span class="hljs-keyword">end</span> //
+
+mysql&gt; Delimiter ;
+mysql&gt; <span class="hljs-keyword">call</span> passStu();
++<span class="hljs-comment">-------+------------+------+</span>
+| name  | department | mark |
++<span class="hljs-comment">-------+------------+------+</span>
+| Alice | CSE        |   95 |
++<span class="hljs-comment">-------+------------+------+</span>
+
+
+<span class="hljs-comment">-- 5. Trigger</span>
+<span class="hljs-comment">-- Prevent inserting marks greater than 100</span>
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Trigger</span> gratermarks
+       <span class="hljs-keyword">before</span> <span class="hljs-keyword">insert</span> <span class="hljs-keyword">on</span> marks
+       <span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> <span class="hljs-keyword">row</span>
+       <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> NEW.mark&gt;<span class="hljs-number">100</span> <span class="hljs-keyword">then</span>
+        Signal <span class="hljs-keyword">SQLState</span> <span class="hljs-string">'45000'</span>
+        <span class="hljs-keyword">set</span> message_text=<span class="hljs-string">"Marks can't exceed 100"</span>;
+           <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;
+       <span class="hljs-keyword">end</span>//
+mysql&gt; Delimiter ;
+
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> marks <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-string">'math'</span>,<span class="hljs-number">101</span>);
+ERROR 1644 (45000): Marks can't exceed 100
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> marks <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>,<span class="hljs-string">'Science'</span>,<span class="hljs-number">94</span>);
+
+mysql&gt; <span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> marks <span class="hljs-keyword">values</span>(<span class="hljs-number">6</span>,<span class="hljs-string">'Physics'</span>,<span class="hljs-number">560</span>);
+ERROR 1644 (45000): Marks can't exceed 100
+
+mysql&gt; <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> marks;
++<span class="hljs-comment">-----------+---------+------+</span>
+| studentId | subject | mark |
++<span class="hljs-comment">-----------+---------+------+</span>
+|         1 | DBMS    |   95 |
+|         2 | DBMS    |   65 |
+|         3 | DBMS    |   40 |
+|         8 | Science |   94 |
++<span class="hljs-comment">-----------+---------+------+</span>
+4 rows in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+
+<span class="hljs-comment">-- 6. Cursor</span>
+<span class="hljs-comment">-- Display All Students Name One by one.</span>
+mysql&gt; <span class="hljs-keyword">drop</span> <span class="hljs-keyword">Procedure</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> showStuOneByOne;
+
+mysql&gt; Delimiter //
+mysql&gt; <span class="hljs-keyword">Create</span> <span class="hljs-keyword">Procedure</span> showStuOneByOne()
+       <span class="hljs-keyword">Begin</span>
+        <span class="hljs-keyword">declare</span> done <span class="hljs-built_in">int</span> <span class="hljs-keyword">default</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">declare</span> sName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>);
+        <span class="hljs-keyword">declare</span> cur_Students <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">for</span>
+           <span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">from</span> students;
+           <span class="hljs-keyword">declare</span> continue <span class="hljs-keyword">handler</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">found</span> <span class="hljs-keyword">Set</span> done=<span class="hljs-number">1</span>;
+        open cur_Students;
+           read_loop:Loop
+           fetch cur_Students into sName;
+           If done=1 Then
+           leave read_loop;
+           <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;
+           <span class="hljs-keyword">select</span> sName <span class="hljs-keyword">as</span> StudentName;
+           <span class="hljs-keyword">End</span> <span class="hljs-keyword">loop</span>;
+           close cur_Students;
+       <span class="hljs-keyword">End</span>//
+
+mysql&gt; Delimiter ;
+mysql&gt; <span class="hljs-keyword">call</span> showStuOneByOne();
++<span class="hljs-comment">-------------+</span>
+| StudentName |
++<span class="hljs-comment">-------------+</span>
+| Alice       |
++<span class="hljs-comment">-------------+</span>
+1 row in <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
++<span class="hljs-comment">-------------+</span>
+| StudentName |
++<span class="hljs-comment">-------------+</span>
+| Bob         |
++<span class="hljs-comment">-------------+</span>
+<span class="hljs-number">1</span> <span class="hljs-keyword">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
++<span class="hljs-comment">-------------+</span>
+| StudentName |
++<span class="hljs-comment">-------------+</span>
+| Charlie     |
++<span class="hljs-comment">-------------+</span>
+<span class="hljs-number">1</span> <span class="hljs-keyword">row</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">set</span> (<span class="hljs-number">0.00</span> sec)
+</div></code></pre>
+
+</body>
+</html>
