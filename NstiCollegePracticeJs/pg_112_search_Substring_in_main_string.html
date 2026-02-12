@@ -11,13 +11,11 @@
     let str, searchStr, i, j=0, l, m, flag;
     str = prompt("Enter main string"); // I am Gulshan ia am hero
     searchStr = prompt("Enter search string"); // Gulshan
-    str="Gul";
-    searchStr="I am Gulshan Bauddh";
+    str="I am Gulshan Bauddh";
+    searchStr="Gulshan";
     l = str.length;
     m = searchStr.length;
-
     flag = true;
-
     for (i=0; i<l; i++) {
       if (str.charAt(i)===searchStr.charAt(j)&&(j<m)) {
         j++;
@@ -27,12 +25,12 @@
         j = 0;
       }
 
-      if (flag && j==m) {
+      if (flag && j===m) {
         document.write("The string <b>" + searchStr + " </b>is found in <b>" + str + " </b>at position : " + (i-m+2));
         break;
       }
     }
-    if (i == l) document.write("The string <b>" + searchStr + " </b>is not found in <b>" + str + "</b>");
+    if (i === l) document.write("The string <b>" + searchStr + " </b>is not found in <b>" + str + "</b>");
   </script>
 </body>
 
