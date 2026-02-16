@@ -18,12 +18,12 @@ CREATE TABLE marks (
     );
 -- 3. Data Insertion
 -- Insert into Students
-INSERT INTO students (studentId, name, department) VALUES 
+INSERT INTO students VALUES 
 (1, 'Alice', 'CSE'),
 (2, 'Bob', 'ECE'),
 (3, 'Charlie', 'CSE');
 -- Insert into Marks
-INSERT INTO marks (studentId, subject, mark) VALUES 
+INSERT INTO marks VALUES 
 (1, 'DBMS', 95),
 (2, 'DBMS', 65),
 (3, 'DBMS', 40);
