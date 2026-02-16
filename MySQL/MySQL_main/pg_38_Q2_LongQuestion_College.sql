@@ -38,7 +38,7 @@ Begin
 	Select s.name, s.department, m.mark from students s
     join marks m
     on s.studentId=m.studentId
-    having m.mark>90;
+    where m.mark>90;
 end //
 Delimiter ;
 call passStu();
