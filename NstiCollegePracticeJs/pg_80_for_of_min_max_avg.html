@@ -17,25 +17,29 @@
     let arr, n;
     n = parseInt(prompt("Enter array limit :"));
     arr = new Array(n);
-    for (i = 0; i < n; i++) arr[i] = parseInt(prompt("Enter Array elements :"));
+    for (i = 0; i < n; i++){
+      arr[i] = parseInt(prompt("Enter Array elements :"));
+    }
     //  Display all elements
-    document.write("Each Elements of Array:<br>[ ");
-    for (i = 0; i < n; i++) document.write(arr[i] + " ");
+    document.write("Each Elements of Array: ");
+    for (i = 0; i < n; i++){
+      document.write(arr[i] + " ");
+    }
     // Initalize value:
     let sum = 0;
     let max = arr[0];
     let min = arr[0];
     // Calculation:
-    for (let num of arr) {
-      sum += num;
-      if (num > max) max = num;
-      if (num < min) min = num;
+    for (i=0; i<n; i++) {
+      sum = sum + arr[i];
+      if (arr[i] > max) max = arr[i];
+      if (arr[i] < min) min = arr[i];
     }
     let avg = sum / arr.length;
-    document.write(" ]<br>Sum : " + sum);
+    document.write("<br>Sum: " + sum);
     document.write("<br>Max: " + max);
     document.write("<br>min: " + min);
-    document.write("<br>Avg: " + avg);
+    document.write("<br>Avg: " + avg.toFixed(2));
   </script>
 </body>
 
