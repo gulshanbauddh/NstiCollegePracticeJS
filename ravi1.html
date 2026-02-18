@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>Exception Handling 1:</title>
+</head>
+
+<body>
+  <h2>Exception Handling 1:</h2>
+  <script>
+    try {
+      var a = ["24", "34", "45", "56"];
+      document.write(a);
+      document.write(b);
+
+    } catch (e) {
+      alert("There is error which: " + e.message);
+    }
+    finally {
+      document.write("<br> The try-catch block is ended.");
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- +++++++++++++++++++++++++++++++++++++ -->
+
+<html lang="en">
+
+<head>
+  <title>Exception Handling 2:</title>
+</head>
+
+<body>
+  <h2>Exception Handling 2:</h2>
+  <script>
+    try {
+      throw new Error("01 This is throw Keyword.");
+    } catch (e) {
+      document.write("02 There is error which: " + e.message);
+    }
+  </script>
+</body>
+
+</html>
+

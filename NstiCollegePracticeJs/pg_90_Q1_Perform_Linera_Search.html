@@ -8,21 +8,27 @@
   <body>
     <h2>Perform Linear Search:</h2>
     <script>
-      let arr = [1, 5, 7, 8, 3, 4, 6, 3, 8, 9, 3, 5, 2, 8];
-      document.write("Your Array is : [ " + arr);
-      let limit = arr.length,
-        flag = 0;
+      let n, arr;
+      n=parseInt(prompt("Enter Array limit."));
+      arr=new Array(n);
+      // Read Array
+      for(let i=0; i<n; i++) arr[i]=parseInt(prompt("Enter Array elements."));
+      document.write("Array Elements are: ");
+      // Display Array
+      for(let i=0; i<n; i++) document.write(arr[i]+"  ");
+
+      let  flag = 0;
       let searchKey = parseInt(prompt("Enter your search key or searching Element:"));
-      for (i = 0; i < limit; i++) {
+      for (i = 0; i < n; i++) {
         if (arr[i] === searchKey) {
           flag = 1;
           break;
         }
       }
       if (flag)
-        document.write(" ]<br>Element found and your inser Element is : " + searchKey);
+        document.write("<br>Element found and your inser Element is : " + searchKey+ " and at index : "+ i);
       else
-        document.write(" ]<br>Element not found and your inser Element is : " + searchKey);
+        document.write("<br>Element not found and your inser Element is : " + searchKey);
     </script>
   </body>
 </html>
