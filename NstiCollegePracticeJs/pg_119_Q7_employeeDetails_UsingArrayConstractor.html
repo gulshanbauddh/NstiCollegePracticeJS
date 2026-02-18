@@ -12,18 +12,18 @@
     <h2>Q7:- Employee Details Using Array Constractor :</h2>
     <script>
       function Employee(empId, empName, basicPay, dict) {
-        this.empIdKey = empId;
-        this.empNameKey = empName;
-        this.basicPayKey = basicPay;
-        this.dictKey = dict;
-        hra = (basicPay * 0.30);
-        ta = (basicPay * 0.10);
-        da = (basicPay * 0.53);
-        this.totalKey = (basicPay + hra + ta + da).toFixed(2);
-        this.netKey = (this.totalKey - dict).toFixed(2);
+        this.empIdKey=empId;
+        this.empNameKey=empName;
+        this.basicPayKey=basicPay;
+        this.dictKey=dict;
+        hra=(basicPay*0.30);
+        ta=(basicPay*0.10);
+        da=(basicPay*0.53);
+        this.totalKey=(basicPay+hra+ta+da).toFixed(2);
+        this.netKey=(this.totalKey-dict).toFixed(2);
       };
 
-      let employee = [
+      let employee=[
         new Employee(101, "Sandeep pal", 35000, 1500),
         new Employee(102, "Bablesh Row", 45000, 10500),
         new Employee(103, "Anil Bahi", 75000, 3400),
@@ -34,8 +34,8 @@
 
       document.write("<table border='2' cellspacing='0' cellpading='10' align='center' style='text-align: center;'>");
       document.write("<tr><th>Employee Id</th><th>Employee Name</th><th>Basic Pay</th><th>deduction</th><th>Total Salary</th><th>Net Salary</th></tr>");
-      for (i = 0; i < employee.length; i++) {
-        document.write("<tr><td>" + employee[i].empIdKey + "</td><td>" + employee[i].empNameKey + "</td><td>₹ " + employee[i].basicPayKey + "</td><td>₹ " + employee[i].dictKey + "</td><td>₹ " + employee[i].totalKey + "</td><td>₹ " + employee[i].netKey);
+      for (i=0; i < employee.length; i++) {
+        document.write("<tr><td>"+employee[i].empIdKey+"</td><td>"+employee[i].empNameKey+"</td><td>₹ "+employee[i].basicPayKey+"</td><td>₹ "+employee[i].dictKey+"</td><td>₹ "+employee[i].totalKey+"</td><td>₹ "+employee[i].netKey);
       }
     </script>
   </center>
