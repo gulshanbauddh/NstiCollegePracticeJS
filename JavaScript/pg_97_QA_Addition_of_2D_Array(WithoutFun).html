@@ -6,74 +6,71 @@
     <title>(Without Function)2-D Array(Matrix):</title>
   </head>
   <body>
-    <h2>(Without Function)2-D Array(Matrix):</h2>
+    <h2>(Without Function)2-D Array(Matrix):Ravi</h2>
     <script>
       // Array 1st:
-      let a, m, n, b, p, q, c;
-      m = parseInt(prompt("Enter limit of Row of 1st Matrix :"));
-      n = parseInt(prompt("Enter limit of Column of 1st Matrix :"));
-      p = parseInt(prompt("Enter limit of Row of 2nd Matrix :"));
-      q = parseInt(prompt("Enter limit of Column of 2nd Matrix :"));
+      let mat1, m, n, mat2, p, q, mat3;
+      m = parseInt(prompt("Enter Row 1st Matrix :"));
+      n = parseInt(prompt("Enter Column 1st Matrix :"));
+      p = parseInt(prompt("Enter Row 2nd Matrix :"));
+      q = parseInt(prompt("Enter Column 2nd Matrix :"));
       if (m == p && n == q) {
-        a = new Array(m, n);
-        b = new Array(p, q);
-        c = new Array(m, n);
-        for (i = 0; i < m; i++) {
-          a[i] = new Array(n);
+        mat1 = new Array(m, n);
+        mat2 = new Array(p, q);
+        mat3 = new Array(m, n);
+        // Matrix 1st
+        for (i = 0; i < m; i++){ 
+          mat1[i] = new Array(n);
         }
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            a[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+            mat1[i][j] = parseInt(prompt("Enter Matrix 1st Elemenets :"));
           }
         }
         // Matrix 2nd:
-        b = new Array(m);
-        for (i = 0; i < m; i++) {
-          b[i] = new Array(n);
+        for (i = 0; i < p; i++) {
+          mat2[i] = new Array(q);
         }
-        for (i = 0; i < m; i++) {
-          for (j = 0; j < n; j++) {
-            b[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+        for (i = 0; i < p; i++) {
+          for (j = 0; j < q; j++) {
+            mat2[i][j] = parseInt(prompt("Enter Matrix 2nd Elemenets :"));
           }
         }
-        // Matrix 2nd:
-        c = new Array(m);
+        // Matrix 3rd:
         for (i = 0; i < m; i++) {
-          c[i] = new Array(n);
+          mat3[i] = new Array(n);
         }
         // Add Matrix
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            c[i][j] = a[i][j] + b[i][j];
+            mat3[i][j] = mat1[i][j] + mat2[i][j];
           }
         }
-        // Display of Matrix 1st:
-        document.write("Display of Matrix a:<br>");
+        // Display Matrix 1st:
+        document.write("Display Matrix 1st:<br>");
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            document.write(a[i][j] + " ");
+            document.write(mat1[i][j] + " ");
           }
           document.write("<br>");
         }
-        // Display of Matrix 2nd:
-        document.write("Display of Matrix b:<br>");
-        for (i = 0; i < m; i++) {
-          for (j = 0; j < n; j++) {
-            document.write(b[i][j] + " ");
+        // Display Matrix 2nd:
+        document.write("Display Matrix 2nd:<br>");
+        for (i = 0; i < p; i++) {
+          for (j = 0; j < q; j++) {
+            document.write(mat2[i][j] + " ");
           }
           document.write("<br>");
         }
-        // Display of Matrix 3nd:
-        document.write("Display of Matrix c:<br>");
+        // Display Matrix 3nd:
+        document.write("Display Matrix 3rd:<br>");
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            document.write(c[i][j] + " ");
+            document.write(mat3[i][j] + " ");
           }
           document.write("<br>");
         }
-      } else{
-        document.write("Addition is not possible Rank of Both Matrix must be same");
-      }
+      } else document.write("Addition is not possible.");
     </script>
   </body>
 </html>
