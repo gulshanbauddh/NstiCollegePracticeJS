@@ -8,65 +8,65 @@
   <body>
     <h2>(Without Function)2-D Array(Matrix):Ravi</h2>
     <script>
-      // Array 1st:
-      let mat1, m, n, mat2, p, q, mat3;
-      m = parseInt(prompt("Enter Row 1st Matrix :"));
-      n = parseInt(prompt("Enter Column 1st Matrix :"));
-      p = parseInt(prompt("Enter Row 2nd Matrix :"));
-      q = parseInt(prompt("Enter Column 2nd Matrix :"));
+      // Array A:
+      let matA, m, n, matB, p, q, matC;
+      m = parseInt(prompt("Enter Row A Matrix :"));
+      n = parseInt(prompt("Enter Column A Matrix :"));
+      p = parseInt(prompt("Enter Row B Matrix :"));
+      q = parseInt(prompt("Enter Column B Matrix :"));
       if (m == p && n == q) {
-        mat1 = new Array(m, n);
-        mat2 = new Array(p, q);
-        mat3 = new Array(m, n);
-        // Matrix 1st
+        matA = new Array(m, n);
+        matB = new Array(p, q);
+        matC = new Array(m, n);
+        // Matrix A
         for (i = 0; i < m; i++){ 
-          mat1[i] = new Array(n);
+          matA[i] = new Array(n);
         }
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            mat1[i][j] = parseInt(prompt("Enter Matrix 1st Elemenets :"));
+            matA[i][j] = parseInt(prompt("Enter Matrix A Elemenets :"));
           }
         }
-        // Matrix 2nd:
+        // Matrix B:
         for (i = 0; i < p; i++) {
-          mat2[i] = new Array(q);
+          matB[i] = new Array(q);
         }
         for (i = 0; i < p; i++) {
           for (j = 0; j < q; j++) {
-            mat2[i][j] = parseInt(prompt("Enter Matrix 2nd Elemenets :"));
+            matB[i][j] = parseInt(prompt("Enter Matrix B Elemenets :"));
           }
         }
-        // Matrix 3rd:
+        // Matrix C=(A+B):
         for (i = 0; i < m; i++) {
-          mat3[i] = new Array(n);
+          matC[i] = new Array(n);
         }
         // Add Matrix
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            mat3[i][j] = mat1[i][j] + mat2[i][j];
+            matC[i][j] = matA[i][j] + matB[i][j];
           }
         }
-        // Display Matrix 1st:
-        document.write("Display Matrix 1st:<br>");
+        // Display Matrix A:
+        document.write("Display Matrix A:<br>");
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            document.write(mat1[i][j] + " ");
+            document.write(matA[i][j] + " ");
           }
           document.write("<br>");
         }
-        // Display Matrix 2nd:
-        document.write("Display Matrix 2nd:<br>");
+        // Display Matrix B:
+        document.write("Display Matrix B:<br>");
         for (i = 0; i < p; i++) {
           for (j = 0; j < q; j++) {
-            document.write(mat2[i][j] + " ");
+            document.write(matB[i][j] + " ");
           }
           document.write("<br>");
         }
-        // Display Matrix 3nd:
-        document.write("Display Matrix 3rd:<br>");
+        // Display Matrix C=(A+B):
+        document.write("Display Matrix C=(A+B):<br>");
         for (i = 0; i < m; i++) {
           for (j = 0; j < n; j++) {
-            document.write(mat3[i][j] + " ");
+            document.write(matC[i][j] + " ");
           }
           document.write("<br>");
         }
