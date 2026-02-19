@@ -20,7 +20,7 @@
         ta=(basicPay*0.10);
         da=(basicPay*0.53);
         this.totalKey=(basicPay+hra+ta+da).toFixed(2);
-        this.netKey=(this.totalKey-dict).toFixed(2);
+        this.netKey=(this.totalKey-this.dictKey).toFixed(2);
       };
 
       let employee=[
@@ -35,8 +35,9 @@
       document.write("<table border='2' cellspacing='0' cellpading='10' align='center' style='text-align: center;'>");
       document.write("<tr><th>Employee Id</th><th>Employee Name</th><th>Basic Pay</th><th>deduction</th><th>Total Salary</th><th>Net Salary</th></tr>");
       for (i=0; i < employee.length; i++) {
-        document.write("<tr><td>"+employee[i].empIdKey+"</td><td>"+employee[i].empNameKey+"</td><td>₹ "+employee[i].basicPayKey+"</td><td>₹ "+employee[i].dictKey+"</td><td>₹ "+employee[i].totalKey+"</td><td>₹ "+employee[i].netKey);
+        document.write("<tr><td>"+employee[i].empIdKey+"</td><td>"+employee[i].empNameKey+"</td><td>₹ "+employee[i].basicPayKey+"</td><td>₹ "+employee[i].dictKey+"</td><td>₹ "+employee[i].totalKey+"</td><td>₹ "+employee[i].netKey+"</td><tr>");
       }
+      document.write("</table>");
     </script>
   </center>
 </body>
