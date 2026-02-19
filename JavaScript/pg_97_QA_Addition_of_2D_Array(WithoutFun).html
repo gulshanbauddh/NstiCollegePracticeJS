@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,62 +9,70 @@
     <h2>2-D Array(Matrix):</h2>
     <script>
       // Array 1st:
-      let a, m, n, c, b;
+      let a, m, n, b, p, q, c;
       m = parseInt(prompt("Enter limit of Row of 1st Matrix :"));
       n = parseInt(prompt("Enter limit of Column of 1st Matrix :"));
-      a = new Array(m);
-      for (i = 0; i < m; i++) {
-        a[i] = new Array(n);
-      }
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          a[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+      p = parseInt(prompt("Enter limit of Row of 2nd Matrix :"));
+      q = parseInt(prompt("Enter limit of Column of 2nd Matrix :"));
+      if (m == p && n == q) {
+        a = new Array(m, n);
+        b = new Array(p, q);
+        c = new Array(m, n);
+        for (i = 0; i < m; i++) {
+          a[i] = new Array(n);
         }
-      }
-      // Matrix 2nd:
-      b = new Array(m);
-      for (i = 0; i < m; i++) {
-        b[i] = new Array(n);
-      }
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          b[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            a[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+          }
         }
-      }
-      // Matrix 2nd:
-      c = new Array(m);
-      for (i = 0; i < m; i++) {
-        c[i] = new Array(n);
-      }
-      // Add Matrix
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          c[i][j] = a[i][j] + b[i][j];
+        // Matrix 2nd:
+        b = new Array(m);
+        for (i = 0; i < m; i++) {
+          b[i] = new Array(n);
         }
-      }
-      // Display of Matrix 1st:
-      document.write("Display of Matrix a:<br>");
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          document.write(a[i][j] + " ");
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            b[i][j] = parseInt(prompt("Enter Matrix Elemenet :"));
+          }
         }
-        document.write("<br>");
-      }
-      // Display of Matrix 2nd:
-      document.write("Display of Matrix b:<br>");
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          document.write(b[i][j] + " ");
+        // Matrix 2nd:
+        c = new Array(m);
+        for (i = 0; i < m; i++) {
+          c[i] = new Array(n);
         }
-        document.write("<br>");
-      }
-      // Display of Matrix 3nd:
-      document.write("Display of Matrix c:<br>");
-      for (i = 0; i < m; i++) {
-        for (j = 0; j < n; j++) {
-          document.write(c[i][j] + " ");
+        // Add Matrix
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            c[i][j] = a[i][j] + b[i][j];
+          }
         }
-        document.write("<br>");
+        // Display of Matrix 1st:
+        document.write("Display of Matrix a:<br>");
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            document.write(a[i][j] + " ");
+          }
+          document.write("<br>");
+        }
+        // Display of Matrix 2nd:
+        document.write("Display of Matrix b:<br>");
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            document.write(b[i][j] + " ");
+          }
+          document.write("<br>");
+        }
+        // Display of Matrix 3nd:
+        document.write("Display of Matrix c:<br>");
+        for (i = 0; i < m; i++) {
+          for (j = 0; j < n; j++) {
+            document.write(c[i][j] + " ");
+          }
+          document.write("<br>");
+        }
+      } else{
+        document.write("Addition is not possible");
       }
     </script>
   </body>
