@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Salary Slip</title>
+    <title>Employeeee Salary Slip</title>
 </head>
 <body>
-    <h2>Employee Salary Input.</h2>
+    <h2>Employeeee Salary Input.</h2>
     <form method="post" action="">
-        Employee Name: <input type="text" name="empName" required><br><br>
-        Employee ID: <input type="text" name="empId" required><br><br>
+        Employeeee Name: <input type="text" name="empName" required><br><br>
+        Employeeee ID: <input type="text" name="empId" required><br><br>
         Designation: <input type="text" name="empDesignation" required><br><br>
         Basic Pay: <input type="number" name="basicPay" required><br><br>
         Deduction: <input type="number" name="dect" required><br><br>
@@ -34,13 +34,13 @@
 
         // 3. Display or Output
         echo "<h3><u>Salary Details:</u></h3>";
-        echo "<b>Employ Name:</b> " . $empName;
-        echo "<br><br><b>Employ Id:</b> " . $empId;
-        echo "<br><br><b>Employ Designation:</b> " . $empDesignation;
-        echo "<br><br><b>Employ Basic Pay:</b> ₹" . $basicPay;
-        echo "<br><br><b>Employ Deduction</b>: ₹" . $dect;
-        echo "<br><br><b>Employ Total Salary:</b> ₹" . $totalSalary;
-        echo "<br><br><b>Employ Net Salary:</b> ₹" . $netSalary . "</b>";
+        echo "<b>Employee Name:</b> " . $empName;
+        echo "<br><br><b>Employee Id:</b> " . $empId;
+        echo "<br><br><b>Employee Designation:</b> " . $empDesignation;
+        echo "<br><br><b>Employee Basic Pay:</b> ₹" . $basicPay;
+        echo "<br><br><b>Employee Deduction</b>: ₹" . $dect;
+        echo "<br><br><b>Employee Total Salary:</b> ₹" . $totalSalary;
+        echo "<br><br><b>Employee Net Salary:</b> ₹" . $netSalary . "</b>";
     }
     ?>
 </body>

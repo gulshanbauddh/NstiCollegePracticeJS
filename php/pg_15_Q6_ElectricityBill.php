@@ -39,7 +39,6 @@
         }
 
         // Display and Output
-        echo "<div class='bill-container'>";
         echo "<h3>Electricity Rate-</h3>";
         echo "-------------------------------------------";
         echo "<br>0-100 unit @ ₹ 5";
@@ -53,7 +52,6 @@
         echo "<br>Number of unit: " . $unit;
         echo "<br>Surcharge: ₹ " . number_format($sur, 2);
         echo "<br><b>Total Bill: ₹ " . number_format(($bill + $sur), 2) . "</b>";
-        echo "</div>";
     }
     ?>
 </body>
