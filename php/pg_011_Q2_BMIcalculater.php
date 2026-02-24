@@ -18,8 +18,8 @@
     $w=$_POST['weidth'];
     $bmi=round($w/(($h*$h)/10000),2);
     echo "Your height is: ".$h."cm<br><br>";
-    echo "Your weidth is: ".$w."cm<br><br>";
-    echo "BMI is: ".$bmi."cm<br><br>";
+    echo "Your weidth is: ".$w."kg<br><br>";
+    echo "BMI is: ".$bmi."<br><br>";
     if($bmi<18.5) echo 'Under weight';
     elseif ($bmi>=18 && $bmi<25) echo "Normal weight";
     elseif ($bmi<=25 && $bmi>30) echo "Over weight";
