@@ -7,9 +7,9 @@
     <h1>Electricity Bill</h1>
 
     <form method="post" action="">
-        Enter Consumer Name: <input type="text" required><br><br>
-        Enter Consumer Id: <input type="text" required><br><br>
-        Enter Units Consumed: <input type="number" required><br><br>
+        Enter Consumer Name: <input type="text" name='conName' required><br><br>
+        Enter Consumer Id: <input type="text"name='conId' required><br><br>
+        Enter Units Consumed: <input type="number" name='unit' required><br><br>
         <input type="submit" name="calculate" value="Generate Bill"> 
     </form><br>
 
