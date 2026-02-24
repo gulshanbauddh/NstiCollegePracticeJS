@@ -21,7 +21,7 @@
     echo "Your weidth is: ".$w."kg<br><br>";
     echo "BMI is: ".$bmi."<br><br>";
     if($bmi<18.5) echo 'Under weight';
-    elseif ($bmi>=18 && $bmi<25) echo "Normal weight";
+    elseif ($bmi>=18.5 && $bmi<25) echo "Normal weight";
     elseif ($bmi<=25 && $bmi>30) echo "Over weight";
     else echo "Obecity";
   }
