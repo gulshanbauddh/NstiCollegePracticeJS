@@ -70,7 +70,7 @@ Begin
 	declare cur_Students cursor for
     select name from students;
     declare continue handler for not found Set done=1;
-	open cur_Students;
+open cur_Students;
     read_loop:Loop
     fetch cur_Students into sName;
     If done=1 Then
@@ -78,7 +78,7 @@ Begin
     end if;
     select sName as StudentName;
     End loop;
-    close cur_Students;
+close cur_Students;
 End//
 Delimiter ;
 call showStuOneByOne();
