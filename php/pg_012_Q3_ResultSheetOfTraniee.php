@@ -25,8 +25,8 @@
     $mysql =$_POST['mysql'];
     $php =$_POST['php'];
     $python =$_POST['python'];
-    $pass='Pass';
-    if($net>30 || $js>30 ||  $mysql>30 ||  $php>30 ||  $python>30 )  $pass='Faild';
+    $pass='Passed';
+    if($net<30 || $js<30 ||  $mysql<30 ||  $php<30 ||  $python<30 )  $pass='Failed';
     $total=$net+$js+$mysql+$php+$python;
     $per=round(($total/5), 2);
     $grade;
