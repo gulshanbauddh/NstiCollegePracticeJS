@@ -13,10 +13,10 @@
   </form>
   <?php
       if($_POST['num']>0){
-      echo $_POST['num']." is number is Positive.";
+      echo $_POST['num']." is Positive number.";
       } elseif ($_POST['num']<0){
-        echo $_POST['num']." is number is Negative";
-      } else echo $_POST['num']." is number is Zero";
+        echo $_POST['num']." is Negative number.";
+      } else echo $_POST['num']." is Zero.";
   ?>
 </body>
 </html>
