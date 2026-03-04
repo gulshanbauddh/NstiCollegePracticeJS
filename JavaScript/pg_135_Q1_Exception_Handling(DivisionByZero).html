@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Exception Handling (Division by zero):</title>
+  </head>
+
+  <body>
+    <h2>Exception Handling (Division by zero)</h2>
+    <script>
+      try {
+        var a = 5;
+        var b = 0;
+
+        if (b == 0) {
+          throw new Error("Division by zero is not possible.");
+        }
+
+        var result = a/b;
+        document.write("Result: " + result);
+      } catch (e) {
+        alert("There is error which: " + e.message);
+      } finally {
+        document.write("<br>The try-catch block is ended.");
+      }
+    </script>
+  </body>
+</html>
