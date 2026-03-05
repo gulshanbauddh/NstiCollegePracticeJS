@@ -4,15 +4,15 @@
 <body>
   <script>
     function sendFormData() {
-      var zhttp = new XMLHttpRequest();
-      const mFormEle = document.querySelector("#mForm")
+      let zhttp = new XMLHttpRequest();
+      const mFormEle = document.getElementById("mForm")
       const myForm = new FormData(mFormEle);
 
       zhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 201) {
           document.getElementById("example").innerHTML = this.responseText;
-          console.log("Form Data Posted Successfully")
-        }
+          console.log("Form Data Posted Successfully<br>");
+       }
       };
 
       zhttp.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
