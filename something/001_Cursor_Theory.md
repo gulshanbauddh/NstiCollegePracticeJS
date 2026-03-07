@@ -150,7 +150,5 @@ CLOSE emp_cursor;
 * FETCH failure does **not crash** the procedure
 * `SUM()` is faster than cursor-based processing
 ---
-## 🏁 Final One-Line Definition
-
 > **A MySQL cursor is a row-by-row iterator where FETCH retrieves data, the handler detects the end of data, and the IF condition safely terminates the loop.**
 ---
