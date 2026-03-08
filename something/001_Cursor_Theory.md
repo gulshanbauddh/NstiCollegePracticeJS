@@ -1,3 +1,4 @@
+
 # 📘 MySQL Cursor, FETCH & Handler — Summary Notes
 ---
 ## 1️⃣ What is a Cursor?
