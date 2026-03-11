@@ -9,6 +9,13 @@
 
 <body>
   <h1>GET Method</h1>
+  <form action="getMethod.php" method="get">
+    <label for="name">Name : </label>
+    <input type="text" name="name" id="name"> <br><br>  
+    <label for="name">Age : </label>
+    <input type="number" name="age" id="age"> <br><br>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 
 </html>
