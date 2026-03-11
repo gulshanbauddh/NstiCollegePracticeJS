@@ -8,10 +8,10 @@
 <body>
   <h1>PHP GET Working</h1>
   <?php
-    // echo "Gulshan";
-    // $a=$_GET['name'];
-    // echo "Name : ".$a;
-    // echo "<br>Age : ".$_GET['age'];
+    echo "Gulshan";
+    $a=$_GET['name'];
+    echo "Name : ".$a;
+    echo "<br>Age : ".$_GET['age'];
     echo "<pre>";
     print_r($_GET);
   ?>
