@@ -10,7 +10,7 @@
 <body>
   <h1>GET Method</h1>
   <h2>Form submit using GET Method :</h2>
-  <form action="getMethod.php" method="get">
+  <form action="001_getMethod.php" method="get">
     <label for="name">Name : </label>
     <input type="text" name="name" id="name"> <br><br>
     <label for="name">Age : </label>
