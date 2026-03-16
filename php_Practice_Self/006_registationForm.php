@@ -73,14 +73,14 @@
   <!-- Nav Bar End -->
   <!-- Form Start -->
   <div class="container mt-3">
-    <form method="post" action="006_registationForm.php" class="row g-3 p-4 m-3 bg-dark-subtle rounded">
+    <form method="post" action="006_afterSuccesReg.php" class="row g-3 p-4 m-3 bg-dark-subtle rounded">
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Name</label>
         <input
           type="text"
           class="form-control"
           id="inputPassword4"
-          name="name" />
+          name="name" required />
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Father Name</label>
@@ -88,7 +88,7 @@
           type="text"
           class="form-control"
           id="inputPassword4"
-          name="fName" />
+          name="fName" required />
       </div>
       <div class="col-md-6">
         <label for="inputPassword4" class="form-label">Mother Name</label>
@@ -96,7 +96,7 @@
           type="text"
           class="form-control"
           id="inputPassword4"
-          name="mName" />
+          name="mName" required />
       </div>
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
@@ -104,7 +104,7 @@
           type="email"
           class="form-control"
           id="inputEmail4"
-          name="email" />
+          name="email" required />
       </div>
       <div class="col-12">
         <label for="inputAddress" class="form-label">Address</label>
@@ -112,24 +112,23 @@
           type="text"
           class="form-control"
           id="inputAddress"
-          placeholder="NSTI mumbai, mumbai, Maharastra " name="address" />
+          placeholder="NSTI mumbai, mumbai, Maharastra " name="address" required />
       </div>
       <div class="col-md-6">
         <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity" name="city" />
+        <input type="text" class="form-control" id="inputCity" name="city" required />
       </div>
       <div class="col-md-4">
         <label for="inputState" class="form-label">State</label>
-        <input id="inputState" class="form-control" name="state">
-        </input>
+        <input id="inputState" class="form-control" name="state" required />
       </div>
       <div class="col-md-2">
         <label for="inputPin" class="form-label">Pin</label>
-        <input type="text" class="form-control" id="inputPin" name="pinCode" />
+        <input type="number" class="form-control" id="inputPin" name="pinCode" required />
       </div>
       <!-- <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck" name="check" />
+          <input class="form-check-input" type="checkbox" id="gridCheck" name="check" required/>
           <label class="form-check-label" for="gridCheck">
             I am not robot
           </label>
@@ -140,29 +139,6 @@
       </div>
     </form>
   </div>
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Variable
-    $name = $_POST['name'];
-    $fName = $_POST['fName'];
-    $mName = $_POST['mName'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $pinCode = $_POST['pinCode'];
-    // Connection
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'school';
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    if ($conn) {
-      $insQuert = "INSERT INTO `student`( `NAME`, `fName`, `mName`, `email`, `adds`, `city`, `state`, `pinCode` ) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
-      mysqli_query($conn, $insQuert);
-    }
-  }
-  ?>
   <!-- Form End -->
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
