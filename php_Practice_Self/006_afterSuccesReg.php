@@ -28,12 +28,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $database = 'school';
   $conn = mysqli_connect($servername, $username, $password, $database);
   if ($conn) {
-    $insQuert = "INSERT INTO `student`( `NAME`, `fName`, `mName`, `email`, `adds`, `city`, `state`, `pinCode` ) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
+    $insQuert = "INSERT INTO `student`(`NAME`,`fName`,`mName`,`email`,`adds`,`city`,`state`,`pinCode`) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
     mysqli_query($conn, $insQuert);
   }
 
   echo "Name: " . $name . "<br>Father name: " . $fName . "<br>Mother name: " . $mName . "<bvr>Email: " . $email;
 }
+/*
+ "CREATE TABLE `student` (
+                          `id` INT(11) NOT NULL AUTO_INCREMENT,
+                          `NAME` VARCHAR(100) NOT NULL,
+                          `fName` VARCHAR(100) NOT NULL,
+                          `mName` VARCHAR(100) NOT NULL,
+                          `email` VARCHAR(100) NOT NULL,
+                          `adds` TEXT NOT NULL,
+                          `city` VARCHAR(50) NOT NULL,
+                          `state` VARCHAR(50) NOT NULL,
+                          `pinCode` VARCHAR(10) NOT NULL,
+                          `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+                          PRIMARY KEY (`id`)
+                        );"
+*/
 ?>
 </body>
 
