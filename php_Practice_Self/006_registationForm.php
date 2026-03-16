@@ -94,7 +94,7 @@
   </div>
   <div class="container d-flex justify-content-center align-items-center mt-3">
     <div class="form-container-main">
-      <form method="post" action="006_afterSuccesReg.php" class="row g-3">
+      <form method="post" action="006_registationForm.php" class="row g-3">
         <div class="text-center mb-3">
           <h2 class="fw-bold text-dark">Registration Form</h2>
           <p class="text-muted">Enter Student Details</p>
@@ -144,6 +144,47 @@
       </form>
     </div>
   </div>
+  <?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Variable
+  $name = $_POST['name'];
+  $fName = $_POST['fName'];
+  $mName = $_POST['mName'];
+  $email = $_POST['email'];
+  $address = $_POST['address'];
+  $city = $_POST['city'];
+  $state = $_POST['state'];
+  $pinCode = $_POST['pinCode'];
+  // Connection
+  $servername = 'localhost';
+  $username = 'root';
+  $password = '';
+  $database = 'school';
+  $conn = mysqli_connect($servername, $username, $password, $database);
+  if ($conn) {
+    $insQuert = "INSERT INTO `student`(`NAME`,`fName`,`mName`,`email`,`adds`,`city`,`state`,`pinCode`) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
+    mysqli_query($conn, $insQuert);
+  }
+
+  echo "<div class='text-center text-white'> Name: " . $name . "<br>Father name: " . $fName . "<br>Mother name: " . $mName . "<br>Email: " . $email."</div>";
+}
+/*
+ "CREATE TABLE `student` (
+                          `id` INT(11) NOT NULL AUTO_INCREMENT,
+                          `NAME` VARCHAR(100) NOT NULL,
+                          `fName` VARCHAR(100) NOT NULL,
+                          `mName` VARCHAR(100) NOT NULL,
+                          `email` VARCHAR(100) NOT NULL,
+                          `adds` TEXT NOT NULL,
+                          `city` VARCHAR(50) NOT NULL,
+                          `state` VARCHAR(50) NOT NULL,
+                          `pinCode` VARCHAR(10) NOT NULL,
+                          `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+                          PRIMARY KEY (`id`)
+                        );"
+*/
+?>
+
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
