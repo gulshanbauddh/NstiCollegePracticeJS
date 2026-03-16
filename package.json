@@ -3,6 +3,7 @@
     "@prettier/plugin-php": "^0.24.0"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "express": "^5.2.1"
   }
 }

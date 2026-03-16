@@ -8,7 +8,7 @@ $password = '';
 
 // Create a Connection 
 $conn = mysqli_connect($servername, $username, $password);
-$sql = 'CREATE DATABASE gulshan1;';
+$sql = 'CREATE DATABASE gulshan;';
 
 // Connection Check
 if (!$conn) {
