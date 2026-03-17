@@ -52,9 +52,11 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .searchInput {
-        width: 100% !important; /* Mobile par search bar full width */
+        width: 100% !important;
+        /* Mobile par search bar full width */
         margin-bottom: 10px;
       }
+
       .form-container-main {
         padding: 1.5rem;
       }
@@ -63,6 +65,7 @@
 </head>
 
 <body>
+  <!-- Start NavBar -->
   <div class="container mt-3">
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 cusNav1 shadow-sm">
       <div class="container-fluid">
@@ -72,8 +75,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Forms</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold active" href="#">Forms</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
               <ul class="dropdown-menu">
@@ -92,6 +95,9 @@
       </div>
     </nav>
   </div>
+  <!-- Start NavBar -->
+
+  <!-- Form Start -->
   <div class="container d-flex justify-content-center align-items-center mt-3">
     <div class="form-container-main">
       <form method="post" action="006_registationForm.php" class="row g-3">
@@ -135,7 +141,7 @@
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck" required />
-            <label class="form-check-label" for="gridCheck">I am not robot</label>
+            <label class="form-check-label" for="gridCheck">Accepting Terms and Conditions.</label>
           </div>
         </div>
         <div class="col-12">
@@ -144,31 +150,33 @@
       </form>
     </div>
   </div>
-  <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Variable
-  $name = $_POST['name'];
-  $fName = $_POST['fName'];
-  $mName = $_POST['mName'];
-  $email = $_POST['email'];
-  $address = $_POST['address'];
-  $city = $_POST['city'];
-  $state = $_POST['state'];
-  $pinCode = $_POST['pinCode'];
-  // Connection
-  $servername = 'localhost';
-  $username = 'root';
-  $password = '';
-  $database = 'school';
-  $conn = mysqli_connect($servername, $username, $password, $database);
-  if ($conn) {
-    $insQuert = "INSERT INTO `student`(`NAME`,`fName`,`mName`,`email`,`adds`,`city`,`state`,`pinCode`) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
-    mysqli_query($conn, $insQuert);
-  }
+  <!-- Form Start -->
 
-  echo "<div class='text-center text-white'> Name: " . $name . "<br>Father name: " . $fName . "<br>Mother name: " . $mName . "<br>Email: " . $email."</div>";
-}
-/*
+  <?php
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Variable
+    $name = $_POST['name'];
+    $fName = $_POST['fName'];
+    $mName = $_POST['mName'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $pinCode = $_POST['pinCode'];
+    // Connection
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $database = 'school';
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    if ($conn) {
+      $insQuert = "INSERT INTO `student`(`NAME`,`fName`,`mName`,`email`,`adds`,`city`,`state`,`pinCode`) VALUES( '$name', '$fName', '$mName', '$email', '$address', '$city', '$state','$pinCode');";
+      mysqli_query($conn, $insQuert);
+    }
+
+    echo "<div class='text-center text-white'> Name: " . $name . "<br>Father name: " . $fName . "<br>Mother name: " . $mName . "<br>Email: " . $email . "</div>";
+  }
+  /*
  "CREATE TABLE `student` (
                           `id` INT(11) NOT NULL AUTO_INCREMENT,
                           `NAME` VARCHAR(100) NOT NULL,
@@ -183,8 +191,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           PRIMARY KEY (`id`)
                         );"
 */
-?>
-
+  ?>
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
