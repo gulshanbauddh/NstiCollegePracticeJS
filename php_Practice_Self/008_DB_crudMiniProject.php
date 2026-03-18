@@ -45,8 +45,8 @@
   <!-- Alert Add Note Start -->
   <?php
   $insState = '';
-  $noteTitle='';
-  $noteDescription='';
+  $noteTitle = '';
+  $noteDescription = '';
   // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $servername = 'localhost';
   $username = 'root';
@@ -112,7 +112,7 @@
       </thead>
       <tbody>
         <?php
-        $fullTableQuert = "SELECT * FROM `inote`";
+        $fullTableQuert = "SELECT * FROM `inote` Where `title`!='' AND `description`!='';";
         $fullTable = mysqli_query($conn, $fullTableQuert);
         $rows = mysqli_num_rows($fullTable);
         $sno = 1;
@@ -122,7 +122,8 @@
           <th scope='row'>" . $sno++ . "</th>
           <td>" . $insResult['title'] . "</td>
           <td>" . $insResult['description'] . "</td>
-          <td>Edit Delet</td>
+          <td><button type='button' class='btn btn-primary btn-sm btnEdit'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
+          </td>
         </tr>";
           $rows--;
         }
@@ -132,8 +133,15 @@
   </div>
   <!-- Table end -->
 
-
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btnDelete = document.querySelectorAll(".btnDelete");
+    btnDelete.forEach((btn) => {
+      btn.addEventListener('click', function(e) {
+        console.log("clicked "+ e);
+      });
+    });
+  </script>
 
 </body>
 
