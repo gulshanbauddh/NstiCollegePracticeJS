@@ -47,6 +47,7 @@
   $insState = '';
   $noteTitle = '';
   $noteDescription = '';
+  $delCon = false;
   // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $servername = 'localhost';
   $username = 'root';
@@ -73,7 +74,23 @@
       die("Database not connected.");
     }
   }
+  ?>
+  <?php
 
+  // Delete
+  if (isset($_GET['delete'])) {
+    $snD = $_GET['delete'];
+    $delQuery = "DELETE FROM `inote` WHERE `sNo` = $snD";
+    $delCon = mysqli_query($conn, $delQuery);
+    $delCon = true;
+  }
+  if ($delCon) {
+    echo "<div class='successAddNote'>
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+      <strong>Succes!</strong> Note deleted Succesfull.
+      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div></div>";
+  }
   ?>
   <!-- Alert Add Note End -->
 
@@ -112,37 +129,85 @@
       </thead>
       <tbody>
         <?php
-        $fullTableQuert = "SELECT * FROM `inote` Where `title`!='' AND `description`!='';";
+        $fullTableQuert = "SELECT * FROM `inote` Where `title`!='' OR `description`!='';";
         $fullTable = mysqli_query($conn, $fullTableQuert);
         $rows = mysqli_num_rows($fullTable);
         $sno = 1;
         while ($rows > 0) {
           $insResult = mysqli_fetch_assoc($fullTable);
           echo "<tr>
+          <td class='d-none' >" . $insResult['sNo'] . "</td>
           <th scope='row'>" . $sno++ . "</th>
           <td>" . $insResult['title'] . "</td>
           <td>" . $insResult['description'] . "</td>
-          <td><button type='button' class='btn btn-primary btn-sm btnEdit'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
+          <td><button type='button' class='btn btn-primary btn-sm btnEdit' data-bs-toggle='modal' data-bs-target='#exampleModal'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
           </td>
         </tr>";
           $rows--;
         }
         ?>
+
       </tbody>
     </table>
   </div>
   <!-- Table end -->
 
+  <!-- Modal Start -->
+  <div class='container'>
+    <!-- Button trigger modal -->
+    <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
+            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+          </div>
+          <div class='modal-body'>
+            <!-- -------------------- Start ------------------------------ -->
+            <form method="post" action="008_DB_crudMiniProject.php">
+              <div class="mb-3">
+                <label for="noteTitle" class="form-label">Note Title</label>
+                <input type="text" class="form-control" id="editNoteTitle" aria-describedby="emailHelp" name="editNoteTitle">
+              </div>
+              <div class="mb-3">
+                <label for="noteDesc" class="form-label">Note Description</label>
+                <input type="text" class="form-control" id="editNoteDesc" name="editNoteDesc">
+              </div>
+            </form>
+          </div>
+          <!-- ------------------------ End --------------------------- -->
+          <div class='modal-footer'>
+            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+            <button type='button' class='btn btn-primary'>Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal end -->
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const btnDelete = document.querySelectorAll(".btnDelete");
     btnDelete.forEach((btn) => {
-      btn.addEventListener('click', function(e) {
-        console.log("clicked "+ e);
+      btn.addEventListener('click', (el) => {
+        a = el.target.parentNode.parentNode;
+        var snoD = a.getElementsByTagName("td")[0].innerText;
+        // console.log(value);
+        if (confirm("Are you sure you want to delete this note!")) {
+          window.location = `008_DB_crudMiniProject.php?delete=${snoD}`;
+        }
       });
     });
-  </script>
 
+    // auto alart remove
+    setTimeout(function() {
+      var alert = document.querySelector('.alert');
+      if (alert) {
+        var bsAlert = new bootstrap.Alert(alert);
+        bsAlert.close();
+      }
+    }, 3000);
+  </script>
 </body>
 
 </html>
