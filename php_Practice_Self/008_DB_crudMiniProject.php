@@ -14,6 +14,37 @@
 </head>
 
 <body>
+  <!-- Modal Start  -->
+  <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
+          <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+        </div>
+        <div class='modal-body'>
+          <form method='POST' action='008_DB_crudMiniProject.php' name="editNoteSubmit">
+            <input type="hidden" name="editNoteSno" id="editNoteSno">
+            <div class="mb-3">
+              <label for="noteTitle" class="form-label">Note Title</label>
+              <input type="text" class="form-control" id="editNoteTitle" aria-describedby="emailHelp" name="editNoteTitle">
+            </div>
+            <div class="mb-3">
+              <label for="noteDesc" class="form-label">Note Description</label>
+              <input type="text" class="form-control" id="editNoteDesc" name="editNoteDesc">
+            </div>
+            <div class='modal-footer'>
+              <input type='submit' class='btn btn-primary' value="Save changes" name="editNoteSubmit">
+              <input type="button" class='btn btn-secondary' data-bs-dismiss='modal' value="Close">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
   <!-- Nav bar Start   -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -42,13 +73,17 @@
   </nav>
   <!-- Nav bar End   -->
 
+
+
+
+
   <!-- Alert Add Note Start -->
   <?php
   $insState = '';
   $noteTitle = '';
   $noteDescription = '';
   $delCon = false;
-  // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $editCon = false;
   $servername = 'localhost';
   $username = 'root';
   $password = '';
@@ -59,11 +94,12 @@
     $password,
     $database
   );
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (isset($_POST['addNote'])) {
     $noteTitle = $_POST['noteTitle'];
     $noteDescription = $_POST['noteDesc'];
     $insQuery = "INSERT INTO `inote` (`title`, `description`) VALUES ('" . $noteTitle . "', '" . $noteDescription . "');";
     $insState = mysqli_query($conn, $insQuery);
+    // Note Add
     if ($insState) {
       echo "<div class='successAddNote'>
     <div class='alert alert-success alert-dismissible fade show' role='alert'>
@@ -74,10 +110,7 @@
       die("Database not connected.");
     }
   }
-  ?>
-  <?php
-
-  // Delete
+  // Delete 
   if (isset($_GET['delete'])) {
     $snD = $_GET['delete'];
     $delQuery = "DELETE FROM `inote` WHERE `sNo` = $snD";
@@ -91,13 +124,31 @@
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
   }
+  // Edit
+  if (isset($_POST['editNoteSubmit'])) {
+    $editNote = $_POST['editNoteTitle'];
+    $editDesc = $_POST['editNoteDesc'];
+    // $editQuery = "UPDATE `inote` SET `title` = $editNote, `description` = $editDesc WHERE `inote`.`sNo` = 20;";
+    // mysqli_query($conn, $editQuery);
+
+    // if ($editCon) {
+    //   echo "<div class='successAddNote'>
+    // <div class='alert alert-success alert-dismissible fade show' role='alert'>
+    //   <strong>Succes!</strong> Note edit Succesfull.
+    //   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    // </div></div>";
+    // }
+  }
   ?>
   <!-- Alert Add Note End -->
+
+
+
 
   <!-- Input Area Start -->
   <div class="container mt-5">
     <h2>Add a Note to iNote</h2>
-    <form method="post" action="008_DB_crudMiniProject.php">
+    <form method="post" action="">
       <div class="mb-3">
         <label for="noteTitle" class="form-label">Note Title</label>
         <input type="text" class="form-control" id="noteTitle" aria-describedby="emailHelp" name="noteTitle">
@@ -107,13 +158,11 @@
         <input type="text" class="form-control" id="noteDesc" name="noteDesc">
       </div>
 
-      <button type="submit" class="btn btn-primary">Add Note</button>
+      <input type="submit" class="btn btn-primary" value="Add Note" name="addNote">
     </form>
   </div>
-  <?php
-
-  ?>
   <!-- Input Area Stop -->
+
 
 
   <!-- Table start -->
@@ -136,59 +185,25 @@
         while ($rows > 0) {
           $insResult = mysqli_fetch_assoc($fullTable);
           echo "<tr>
-          <td class='d-none' >" . $insResult['sNo'] . "</td>
-          <th scope='row'>" . $sno++ . "</th>
-          <td>" . $insResult['title'] . "</td>
-          <td>" . $insResult['description'] . "</td>
-          <td><button type='button' class='btn btn-primary btn-sm btnEdit' data-bs-toggle='modal' data-bs-target='#exampleModal'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
-          </td>
-        </tr>";
+            <td class='d-none'>" . $insResult['sNo'] . "</td>
+            <th scope='row'>" . $sno++ . "</th>
+            <td>" . $insResult['title'] . "</td>
+            <td>" . $insResult['description'] . "</td>
+            <td><button type='button' class='btn btn-primary btn-sm btnEdit' data-bs-toggle='modal_Gulshan' data-bs-target='#exampleModal' name='".$insResult['sNo']."'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
+            </td>
+          </tr>";
           $rows--;
         }
         ?>
-
       </tbody>
     </table>
   </div>
   <!-- Table end -->
 
-  <!-- Modal Start -->
-  <div class='container'>
-    <!-- Button trigger modal -->
-    <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-      <div class='modal-dialog'>
-        <div class='modal-content'>
-          <div class='modal-header'>
-            <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
-            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-          </div>
-          <!-- -------------------- Start ------------------------------ -->
-          <!-- -------------------- Start ------------------------------ -->
-          <div class='modal-body'>
-            <form method="post" action="008_DB_crudMiniProject.php">
-              <div class="mb-3">
-                <label for="noteTitle" class="form-label">Note Title</label>
-                <input type="text" class="form-control" id="editNoteTitle" aria-describedby="emailHelp" name="editNoteTitle">
-              </div>
-              <div class="mb-3">
-                <label for="noteDesc" class="form-label">Note Description</label>
-                <input type="text" class="form-control" id="editNoteDesc" name="editNoteDesc">
-              </div>
-            </form>
-          </div>
-          <!-- ------------------------ End --------------------------- -->
-          <!-- ------------------------ End --------------------------- -->
-          <div class='modal-footer'>
-            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
-            <button type='button' class='btn btn-primary'>Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal end -->
-  <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
   <script>
+    // Delete
     const btnDelete = document.querySelectorAll(".btnDelete");
     btnDelete.forEach((btn) => {
       btn.addEventListener('click', (el) => {
@@ -200,6 +215,18 @@
         }
       });
     });
+    // Edit
+    const btnEdit = document.querySelectorAll(".btnEdit");
+    btnEdit.forEach((btn) => {
+      btn.addEventListener('click', (el) => {
+        a = el.target.parentNode.parentNode;
+        var snoD = a.getElementsByTagName("td")[0].innerText;
+        c=a.getElementsByTagName("td")[0].innerText;
+        console.log(el.target);
+        console.log(el.target.id);
+      });
+      // $(`#Modal`).modal('toggle');
+    });
 
     // auto alart remove
     setTimeout(function() {
@@ -210,6 +237,7 @@
       }
     }, 3000);
   </script>
+  <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
