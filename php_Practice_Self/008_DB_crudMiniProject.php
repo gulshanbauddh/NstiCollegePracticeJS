@@ -14,37 +14,6 @@
 </head>
 
 <body>
-  <!-- Modal Start  -->
-  <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
-          <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-        </div>
-        <div class='modal-body'>
-          <form method='POST' action='008_DB_crudMiniProject.php' name="editNoteSubmit">
-            <input type="hidden" name="editNoteSno" id="editNoteSno">
-            <div class="mb-3">
-              <label for="noteTitle" class="form-label">Note Title</label>
-              <input type="text" class="form-control" id="editNoteTitle" aria-describedby="emailHelp" name="editNoteTitle">
-            </div>
-            <div class="mb-3">
-              <label for="noteDesc" class="form-label">Note Description</label>
-              <input type="text" class="form-control" id="editNoteDesc" name="editNoteDesc">
-            </div>
-            <div class='modal-footer'>
-              <input type='submit' class='btn btn-primary' value="Save changes" name="editNoteSubmit">
-              <input type="button" class='btn btn-secondary' data-bs-dismiss='modal' value="Close">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
   <!-- Nav bar Start   -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -74,7 +43,35 @@
   <!-- Nav bar End   -->
 
 
-
+<!-- Modal Start  -->
+  <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+    <div class='modal-dialog'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
+          <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+        </div>
+        <div class='modal-body'>
+          <form method='post' action='008_DB_crudMiniProject.php'>
+            <input type="hidden" name="editNoteSno" id="editNoteSno">
+            <div class="mb-3">
+              <label for="noteTitle" class="form-label">Note Title</label>
+              <input type="text" class="form-control" id="editNoteTitle" aria-describedby="emailHelp" name="editNoteTitle">
+            </div>
+            <div class="mb-3">
+              <label for="noteDesc" class="form-label">Note Description</label>
+              <input type="text" class="form-control" id="editNoteDesc" name="editNoteDesc">
+            </div>
+            <div class='modal-footer'>
+              <input type='submit' class='btn btn-primary' value="Save changes" name="editNoteSubmit">
+              <input type="button" class='btn btn-secondary' data-bs-dismiss='modal' value="Close">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
   <!-- Alert Add Note Start -->
@@ -128,16 +125,17 @@
   if (isset($_POST['editNoteSubmit'])) {
     $editNote = $_POST['editNoteTitle'];
     $editDesc = $_POST['editNoteDesc'];
-    // $editQuery = "UPDATE `inote` SET `title` = $editNote, `description` = $editDesc WHERE `inote`.`sNo` = 20;";
-    // mysqli_query($conn, $editQuery);
+    $editQuery = "UPDATE `inote` SET `title` = $editNote, `description` = $editDesc WHERE `inote`.`sNo` = 20;";
+    mysqli_query($conn, $editQuery);
 
-    // if ($editCon) {
-    //   echo "<div class='successAddNote'>
-    // <div class='alert alert-success alert-dismissible fade show' role='alert'>
-    //   <strong>Succes!</strong> Note edit Succesfull.
-    //   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-    // </div></div>";
-    // }
+    if ($editCon) {
+      echo "<div class='successAddNote'>
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+      <strong>Succes!</strong> Note edit Succesfull.
+      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div></div>";
+    }
+    echo "cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd ";
   }
   ?>
   <!-- Alert Add Note End -->
@@ -189,7 +187,9 @@
             <th scope='row'>" . $sno++ . "</th>
             <td>" . $insResult['title'] . "</td>
             <td>" . $insResult['description'] . "</td>
-            <td><button type='button' class='btn btn-primary btn-sm btnEdit' data-bs-toggle='modal_Gulshan' data-bs-target='#exampleModal' name='".$insResult['sNo']."'>Edit</button> <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
+            <td>
+            <button type='button' class='btn btn-primary btn-sm btnEdit' data-bs-toggle='modal' data-bs-target='#exampleModal' id='" . $insResult['sNo'] . "'>Edit</button> 
+            <button type='button' class='btn btn-danger btn-sm btnDelete'>Delete</button>
             </td>
           </tr>";
           $rows--;
@@ -219,13 +219,12 @@
     const btnEdit = document.querySelectorAll(".btnEdit");
     btnEdit.forEach((btn) => {
       btn.addEventListener('click', (el) => {
-        a = el.target.parentNode.parentNode;
-        var snoD = a.getElementsByTagName("td")[0].innerText;
-        c=a.getElementsByTagName("td")[0].innerText;
-        console.log(el.target);
-        console.log(el.target.id);
+        tr = el.target.parentNode.parentNode;
+        var snoD = tr.getElementsByTagName("td")[0].innerText;
+        editNoteSno.value = el.target.id;
+        console.log(editNoteSno.value);
       });
-      // $(`#Modal`).modal('toggle');
+      //$(`#Modal`).modal('toggle');
     });
 
     // auto alart remove
