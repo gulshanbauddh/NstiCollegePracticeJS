@@ -162,8 +162,9 @@
             <h1 class='modal-title fs-5' id='exampleModalLabel'>Edit iNote</h1>
             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
           </div>
+          <!-- -------------------- Start ------------------------------ -->
+          <!-- -------------------- Start ------------------------------ -->
           <div class='modal-body'>
-            <!-- -------------------- Start ------------------------------ -->
             <form method="post" action="008_DB_crudMiniProject.php">
               <div class="mb-3">
                 <label for="noteTitle" class="form-label">Note Title</label>
@@ -175,6 +176,7 @@
               </div>
             </form>
           </div>
+          <!-- ------------------------ End --------------------------- -->
           <!-- ------------------------ End --------------------------- -->
           <div class='modal-footer'>
             <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
