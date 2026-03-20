@@ -43,7 +43,7 @@
   <!-- Nav bar End   -->
 
 
-<!-- Modal Start  -->
+  <!-- Modal Start  -->
   <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
     <div class='modal-dialog'>
       <div class='modal-content'>
@@ -103,6 +103,7 @@
       <strong>Succes!</strong> Note add Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
+      header("location:008_DB_crudMiniProject.php");
     } else {
       die("Database not connected.");
     }
@@ -113,29 +114,31 @@
     $delQuery = "DELETE FROM `inote` WHERE `sNo` = $snD";
     $delCon = mysqli_query($conn, $delQuery);
     $delCon = true;
-  }
-  if ($delCon) {
-    echo "<div class='successAddNote'>
+
+    if ($delCon) {
+      echo "<div class='successAddNote'>
     <div class='alert alert-success alert-dismissible fade show' role='alert'>
       <strong>Succes!</strong> Note deleted Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
+      header("location:008_DB_crudMiniProject.php");
+    }
   }
   // Edit
   if (isset($_POST['editNoteSubmit'])) {
+    $editSno = $_POST['editNoteSno'];
     $editNote = $_POST['editNoteTitle'];
     $editDesc = $_POST['editNoteDesc'];
-    $editQuery = "UPDATE `inote` SET `title` = $editNote, `description` = $editDesc WHERE `inote`.`sNo` = 20;";
-    mysqli_query($conn, $editQuery);
-
+    $editQuery = "UPDATE `inote` SET `title` = '$editNote', `description` = '$editDesc' WHERE `inote`.`sNo` ='$editSno';";
+    $editCon = mysqli_query($conn, $editQuery);
     if ($editCon) {
       echo "<div class='successAddNote'>
     <div class='alert alert-success alert-dismissible fade show' role='alert'>
       <strong>Succes!</strong> Note edit Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
+      header("location:008_DB_crudMiniProject.php");
     }
-    echo "cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd cjdbjksdb kjsddnksdn njkddnjkdsn jksdnjksd ";
   }
   ?>
   <!-- Alert Add Note End -->
@@ -221,8 +224,11 @@
       btn.addEventListener('click', (el) => {
         tr = el.target.parentNode.parentNode;
         var snoD = tr.getElementsByTagName("td")[0].innerText;
+        var dbTitle = tr.getElementsByTagName("td")[2].innerText;
+        var dbDesc = tr.getElementsByTagName("td")[3].innerText;
         editNoteSno.value = el.target.id;
-        console.log(editNoteSno.value);
+        editNoteTitle.value = dbTitle;
+        editNoteDesc.value = dbDesc;
       });
       //$(`#Modal`).modal('toggle');
     });
