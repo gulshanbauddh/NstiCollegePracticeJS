@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Display Form DB</title>
   <link rel="stylesheet" href="/gulshan/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <style>
-    /* .successAddNote{
-      display: none;
-    } */
-  </style>
 </head>
 
 <body>
@@ -143,9 +138,6 @@
   ?>
   <!-- Alert Add Note End -->
 
-
-
-
   <!-- Input Area Start -->
   <div class="container mt-5">
     <h2>Add a Note to iNote</h2>
@@ -163,8 +155,6 @@
     </form>
   </div>
   <!-- Input Area Stop -->
-
-
 
   <!-- Table start -->
   <div class="container mt-3 ">
@@ -203,8 +193,6 @@
   </div>
   <!-- Table end -->
 
-
-
   <script>
     // Delete
     const btnDelete = document.querySelectorAll(".btnDelete");
@@ -212,7 +200,6 @@
       btn.addEventListener('click', (el) => {
         a = el.target.parentNode.parentNode;
         var snoD = a.getElementsByTagName("td")[0].innerText;
-        // console.log(value);
         if (confirm("Are you sure you want to delete this note!")) {
           window.location = `008_DB_crudMiniProject.php?delete=${snoD}`;
         }
@@ -224,13 +211,14 @@
       btn.addEventListener('click', (el) => {
         tr = el.target.parentNode.parentNode;
         var snoD = tr.getElementsByTagName("td")[0].innerText;
-        var dbTitle = tr.getElementsByTagName("td")[2].innerText;
-        var dbDesc = tr.getElementsByTagName("td")[3].innerText;
+        var dbTitle = tr.getElementsByTagName("td")[1].innerText;
+        var dbDesc = tr.getElementsByTagName("td")[2].innerText;
         editNoteSno.value = el.target.id;
         editNoteTitle.value = dbTitle;
         editNoteDesc.value = dbDesc;
+        console.log(tr.getElementsByTagName("td"));
+           
       });
-      //$(`#Modal`).modal('toggle');
     });
 
     // auto alart remove
