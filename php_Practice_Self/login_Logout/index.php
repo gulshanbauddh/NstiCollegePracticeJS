@@ -1,7 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['found']!=true) {
-  // $_SESSION['found']=false;
+if ($_SESSION['islogin']==false) {
   header("location:login.php");
 }
 ?>

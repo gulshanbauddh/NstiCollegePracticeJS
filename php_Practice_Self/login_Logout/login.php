@@ -14,7 +14,7 @@
   require 'components/_nav.php';
   global $conn;
   session_start();
-  // $_SESSION['found']=false;
+  $_SESSION['islogin']=false;
   ?>
   <!-- login -->
   <div class="container">
@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3">
           <label for="passwordLogin" class="form-label">Password</label>
-          <input type="text" class="form-control" id="passwordLogin" name="passwordLogin" required>
+          <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" required>
         </div>
 
         <input type="submit" class="btn btn-primary" value="Login" name="login">
@@ -44,11 +44,7 @@
     while ($num > 0) {
       $row = mysqli_fetch_assoc($result);
       if($usernameLogin==$row['username'] && $passwordLogin==$row['password']){
-      $_SESSION['found']=true;
-      // print($_SESSION['found']);
-      // print_r($_SESSION['found']);
-      // echo ($_SESSION['found']);
-      // printf ($_SESSION['found']);
+      $_SESSION['islogin']=true;
       header("location:index.php");
       }
       $num--;
