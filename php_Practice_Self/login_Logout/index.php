@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['found']!=true) {
+  // $_SESSION['found']=false;
+  header("location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
