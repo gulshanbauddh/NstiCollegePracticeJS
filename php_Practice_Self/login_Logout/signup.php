@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signup</title>
-  <link rel="stylesheet" href="/gulshan/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="components/style.css">
+  <link rel="stylesheet" href=" components/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -15,11 +16,23 @@
   require 'components/_nav.php';
   global $conn;
   session_start();
+  if (isset($_SESSION['ualert'])) {
+    if (!$_SESSION['ualert']) {
+      echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
+    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    <strong>Alert!</strong> You are enterd username <strong>";
+      echo $_SESSION['usernameSign'] . " </strong>is already exist.</div>";
+      $_SESSION['ualert'] = true;
+      unset($_SESSION['usernameSign']);
+    }
+  }
   if (isset($_SESSION['signStatus'])) {
     if ($_SESSION['signStatus'] == true) {
       echo "<div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-        <strong>Success!</strong> Account Created.</div>";
+        <strong>Success!</strong> Account Created please login- <a href='login.php'>Login Heare</a> and your user name is : <strong>";
+      echo $_SESSION['usernameSign'] . "</strong></div>";
+      unset($_SESSION['usernameSign']);
     } else {
       echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
@@ -36,13 +49,23 @@
     $passwordSign = $_POST['passwordSign'];
     $cpasswordSign = $_POST['cpasswordSign'];
     $address = $_POST['address'];
+    // user name exist check
+    $usql = "SELECT `username` FROM `user`where `username`='$usernameSign';";
+    $uresult = mysqli_query($conn, $usql);
+    $urow = mysqli_num_rows($uresult);
+    if ($urow > 0) {
+      $_SESSION['ualert'] = false;
+      $_SESSION['usernameSign'] = $usernameSign;
+      header("location:signup.php");
+      exit;
+    }
     if (empty($usernameSign) || empty($passwordSign) || empty($fullname) || empty($fathername) || empty($dob) || empty($mothername) || empty($address) || empty($cpasswordSign)) {
       $_SESSION['signStatus'] = false;
     } else {
       $sql = "INSERT INTO `user` (`username`, `fullname`, `fathername`, `mothername`, `dob`, `password`, `address`) VALUES ('$usernameSign', '$fullname', '$fathername', '$mothername', '$dob', '$passwordSign', '$address');";
       $_SESSION['signStatus'] = true;
       $result = mysqli_query($conn, $sql);
-
+      $_SESSION['usernameSign'] = $usernameSign;
       if (!$result) {
         die("SQL Error: " . mysqli_error($conn));
       }
@@ -87,15 +110,16 @@
             <label for="passwordSign" class="form-label fs-5">Password</label>
             <input type="password" class="form-control" id="passwordSign" name="passwordSign" required>
           </div>
-          <div class="mb-3 text-start text-sm-start">
+          <div class="mb-0 text-start text-sm-start">
             <label for="cpasswordSign" class="form-label fs-5">Confirm Password</label>
             <input type="password" class="form-control" id="cpasswordSign" name="cpasswordSign" required>
           </div>
+          <div class="mb-4 text-start text-sm-start">
+            <p class="d-inline"><br> <sup>*</sup>Password must be at least 6 characters and contain at least one numeric and one special symbol <br>Ex. Admin@1</p>
+          </div>
           <input type="submit" class="btn btn-primary col-8" id="submit" value="Signup" name="signup">
           <input type="button" class="btn btn-success col-8 mt-2" value="I already have account" name="login" id="logAccoungBtn">
-
         </form>
-
       </div>
       <p class="mt-4 text-secondary small">
       <p class="d-inline">Current Time : </p>
@@ -109,7 +133,7 @@
     const submit = document.getElementById("submit");
     const passwordInput = document.getElementById("passwordSign");
     const cpasswordInput = document.getElementById("cpasswordSign");
-    const regixPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$/;
+    const regixPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{6,}$/;
 
     submit.addEventListener('click', validate);
 
@@ -121,6 +145,7 @@
       if (password !== cpassword) {
         alert("Passwords Don't Match");
         event.preventDefault();
+        return;
       }
       // 1. Regex Validation
       if (!regixPassword.test(password)) {
@@ -128,26 +153,13 @@
         event.preventDefault();
         return;
       }
-
     };
-    // auto alart remove
-    setTimeout(function() {
-      var alert = document.querySelector('.alert');
-      if (alert) {
-        var bsAlert = new bootstrap.Alert(alert);
-        bsAlert.close();
-      }
-    }, 5000);
 
     const logAccoungBtn = document.getElementById('logAccoungBtn');
     logAccoungBtn.addEventListener('click', login);
 
     function login(event) {
-      if (!response) {
-        event.preventDefault();
-      } else {
-        window.location.href = "login.php";
-      }
+      window.location.href = "login.php";
     };
 
     // For Current live time
