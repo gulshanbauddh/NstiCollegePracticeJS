@@ -1,4 +1,4 @@
-/* body {
+ .container2 {
             font-family: 'Inter', sans-serif;
             background-color: #f4f7fe;
             color: #2d3436;
@@ -15,7 +15,7 @@
         .welcome-card {
             background: #ffffff;
             border-radius: 24px;
-            padding: 60px 40px;
+            padding: 100px 40px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             text-align: center;
             border: none;
@@ -55,4 +55,4 @@
         .btn-logout-alt:hover {
             background-color: #ff4d4f;
             color: white;
-        } */
+        }

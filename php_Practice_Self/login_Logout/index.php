@@ -11,8 +11,8 @@ if ($_SESSION['islogin'] == false) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href="components/style.css">
   <link rel="stylesheet" href="/gulshan/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="components/style.css">
 </head>
 
 <body>
@@ -21,7 +21,8 @@ if ($_SESSION['islogin'] == false) {
   require 'components/_nav.php';
   ?>
   <!-- Signup -->
-  <div class="container text-center mt-5">
+  <!-- <div class="container "> -->
+  <div class="container container2 text-center">
     <div class="main-container">
       <div class="welcome-card">
         <div class="user-avatar">JD</div>
@@ -59,6 +60,7 @@ if ($_SESSION['islogin'] == false) {
         <p class="mt-5 text-secondary small">Last login: Today at 10:45 AM from Mumbai, India</p>
       </div>
     </div>
+  </div>
   </div>
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script>
