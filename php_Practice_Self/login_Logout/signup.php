@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signup</title>
   <link rel="stylesheet" href="/gulshan/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="components/style.css">
 </head>
 
 <body>
@@ -16,11 +17,11 @@
   session_start();
   if (isset($_SESSION['signStatus'])) {
     if ($_SESSION['signStatus'] == true) {
-      echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+      echo "<div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
         <strong>Success!</strong> Account Created.</div>";
     } else {
-      echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+      echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
       <strong>Alert!</strong> Empty filed is not allows.</div>";
     }
@@ -50,74 +51,85 @@
     exit;
   }
   ?>
-  <!-- Signup -->
-  <div class="container mb-5">
-    <div class="container mt-5">
-      <h2>Create account</h2>
-      <form method="post" action="">
-        <div class="mb-3">
-          <label for="usernameSign" class="form-label">User name <sup>*Used for login must be remamber</sup> </label>
-          <input type="text" class="form-control" id="usernameSign" name="usernameSign">
-        </div>
-        <div class="mb-3">
-          <label for="fullname" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="fullname" name="fullname">
-        </div>
 
-        <div class="mb-3">
-          <label for="fathername" class="form-label">Father name</label>
-          <input type="text" class="form-control" id="fathername" name="fathername">
-        </div>
-        <div class="mb-3">
-          <label for="mothername" class="form-label">Mother name</label>
-          <input type="text" class="form-control" id="mothername" name="mothername">
-        </div>
-        <div class="mb-3 col-2">
-          <label for="dob" class="form-label">DOB</label>
-          <input type="date" class="form-control" id="dob" name="dob">
-        </div>
+  <div class="container2">
+    <div class="welcome-card welcome-cardSign">
+      <h1 class="display-6 fw-bold text-dark">Welcome , Create new account</h1>
+      <div class="container mt-3">
+        <form method="post" action="">
+          <div class="mb-3 text-start text-sm-start">
+            <label for="usernameSign" class="form-label fs-5">User name</label>
+            <input type="text" class="form-control" id="usernameSign" name="usernameSign" required>
+          </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="fullname" class="form-label fs-5">Full Name</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" required>
+          </div>
 
-        <div class="mb-3">
-          <label for="address" class="form-label">Address</label>
-          <textarea rows="4" class="form-control" id="address" name="address"></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="passwordSign" class="form-label">Password</label>
-          <input type="text" class="form-control" id="passwordSign" name="passwordSign">
-        </div>
-        <div class="mb-3">
-          <label for="cpasswordSign" class="form-label">Confirm Password</label>
-          <input type="text" class="form-control" id="cpasswordSign" name="cpasswordSign">
-        </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="fathername" class="form-label fs-5">Father name</label>
+            <input type="text" class="form-control" id="fathername" name="fathername" required>
+          </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="mothername" class="form-label fs-5">Mother name</label>
+            <input type="text" class="form-control" id="mothername" name="mothername" required>
+          </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="dob" class="form-label fs-5">DOB</label>
+            <input type="date" class="form-control" style="width: auto;" id="dob" name="dob" required>
+          </div>
 
-        <input type="submit" class="btn btn-primary" id="submit" value="Signup" name="signup">
-      </form>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="address" class="form-label fs-5">Address</label>
+            <textarea rows="4" class="form-control" id="address" name="address"></textarea>
+          </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="passwordSign" class="form-label fs-5">Password</label>
+            <input type="password" class="form-control" id="passwordSign" name="passwordSign" required>
+          </div>
+          <div class="mb-3 text-start text-sm-start">
+            <label for="cpasswordSign" class="form-label fs-5">Confirm Password</label>
+            <input type="password" class="form-control" id="cpasswordSign" name="cpasswordSign" required>
+          </div>
+          <input type="submit" class="btn btn-primary col-8" id="submit" value="Signup" name="signup">
+          <input type="button" class="btn btn-success col-8 mt-2" value="I already have account" name="login" id="logAccoungBtn">
+
+        </form>
+
+      </div>
+      <p class="mt-4 text-secondary small">
+      <p class="d-inline">Current Time : </p>
+      <p class="fw-bold d-inline" id="live-clock">00:00:00 </p>
+      <p class="d-inline"> from Mumbai, India</p>
     </div>
+  </div>
   </div>
   <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // const submit = document.getElementById("submit");
-    // const passwordInput = document.getElementById("passwordSign");
-    // const cpasswordInput = document.getElementById("cpasswordSign");
-    // const regixPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$/;
+    const submit = document.getElementById("submit");
+    const passwordInput = document.getElementById("passwordSign");
+    const cpasswordInput = document.getElementById("cpasswordSign");
+    const regixPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$/;
 
-    // submit.addEventListener('click', (event) => {
-    //   const password = passwordInput.value;
-    //   const cpassword = cpasswordInput.value;
+    submit.addEventListener('click', validate);
 
-    //   // 1. Password Matching
-    //   if (password !== cpassword) {
-    //     alert("Passwords Don't Match");
-    //     event.preventDefault();
-    //   }
-    //   // 1. Regex Validation
-    //   if (!regixPassword.test(password)) {
-    //     alert("Password must be at least 8 characters with uppercase, lowercase, number and special character.")
-    //     event.preventDefault();
-    //     return;
-    //   }
+    function validate(event) {
+      const password = passwordInput.value;
+      const cpassword = cpasswordInput.value;
 
-    // });
+      // 1. Password Matching
+      if (password !== cpassword) {
+        alert("Passwords Don't Match");
+        event.preventDefault();
+      }
+      // 1. Regex Validation
+      if (!regixPassword.test(password)) {
+        alert("Password must be at least 8 characters with uppercase, lowercase, number and special character.")
+        event.preventDefault();
+        return;
+      }
+
+    };
     // auto alart remove
     setTimeout(function() {
       var alert = document.querySelector('.alert');
@@ -126,6 +138,34 @@
         bsAlert.close();
       }
     }, 5000);
+
+    const logAccoungBtn = document.getElementById('logAccoungBtn');
+    logAccoungBtn.addEventListener('click', login);
+
+    function login(event) {
+      if (!response) {
+        event.preventDefault();
+      } else {
+        window.location.href = "login.php";
+      }
+    };
+
+    // For Current live time
+    function updateClock() {
+      const now = new Date();
+
+      let options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+
+      const timeString = now.toLocaleTimeString('en-IN', options);
+      document.getElementById('live-clock').innerText = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
   </script>
 </body>
 

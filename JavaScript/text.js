@@ -12,14 +12,14 @@ let alerts = document.getElementById("alert");
 submit.addEventListener("click", function (e) {
     if (nameCheck && phoneCheck && emailCheck) {
         alerts.innerHTML = `
-            <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <div id="alert" class="alert alert-success alert-dismissible fade show m-0" role="alert">
         <strong>Succesfully</strong> submited form
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>`
     }
     else {
         alerts.innerHTML = `
-            <div id="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div id="alert" class="alert alert-danger alert-dismissible fade show m-0" role="alert">
         <strong>Please</strong> enter valid details
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>            `

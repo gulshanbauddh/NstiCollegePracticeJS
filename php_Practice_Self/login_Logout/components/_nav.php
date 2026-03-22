@@ -1,7 +1,7 @@
 <?php
-echo "<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+echo "<nav class='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
     <div class='container-fluid'>
-      <a class='navbar-brand' href='index.php'>iNotes</a>
+      <a class='navbar-brand' href='index.php'>gLogin</a>
       <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo02' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation'>
         <span class='navbar-toggler-icon'></span>
       </button>
