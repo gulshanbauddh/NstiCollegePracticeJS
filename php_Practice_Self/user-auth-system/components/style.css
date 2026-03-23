@@ -8,6 +8,10 @@
   justify-content: center;
   padding: 20px;
 }
+.logoCustom {
+    border-radius: 20px 0px;
+    height: 3.2rem;
+}
 .main-container {
   width: 100%;
   max-width: 900px;
@@ -61,3 +65,4 @@
 .welcome-cardSign {
   padding: 50px 40px;
 }
+

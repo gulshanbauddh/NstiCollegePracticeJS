@@ -11,8 +11,10 @@ if ($_SESSION['islogin'] == false) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href=" components/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="components/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href=" components/style.css">
+  </style>
 </head>
 
 <body>
@@ -21,7 +23,6 @@ if ($_SESSION['islogin'] == false) {
   require 'components/_nav.php';
   ?>
   <!-- Signup -->
-  <!-- <div class="container "> -->
   <div class="container2">
     <div class="main-container">
       <div class="welcome-card">
