@@ -12,14 +12,13 @@
 
 <body>
   <?php //Nav bar Start
-  session_start();
   if ($_SESSION['islogin'] == true) {
     header("location:index.php");
   }
   require 'components/_connaction.php';
   require 'components/_nav.php';
   global $conn;
-  session_start();
+  // session_start();
   if (isset($_POST['login']) && !$_SESSION['islogin']) {
     echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>

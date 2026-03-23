@@ -11,8 +11,8 @@ if ($_SESSION['islogin'] == false) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
+  <link rel="stylesheet" href=" components/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="components/style.css">
 </head>
 
 <body>
@@ -53,8 +53,8 @@ if ($_SESSION['islogin'] == false) {
 
         <div class="mt-5 d-flex flex-column flex-sm-row justify-content-center gap-3">
           <button class="btn btn-primary btn-action shadow-sm">Go to Dashboard</button>
-          <button class="btn btn-light btn-action shadow-sm">Account Settings</button>
-          <button id="logout-btn2" class="btn btn-logout-alt btn-action">Sign Out</button>
+          <button class="btn btn-action shadow-sm btn-success">Account Settings</button>
+          <button id="logout-btn2" class="btn btn-logout-alt btn-action btn-danger">Sign Out</button>
         </div>
         <p class="mt-5 text-secondary small">
         <p class="d-inline">Current Time : </p>
@@ -63,7 +63,8 @@ if ($_SESSION['islogin'] == false) {
       </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  <script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
     const logoutBtn = document.getElementById('logout-btn');
     const logoutBtn2 = document.getElementById('logout-btn2');
     logoutBtn.addEventListener('click', logout);

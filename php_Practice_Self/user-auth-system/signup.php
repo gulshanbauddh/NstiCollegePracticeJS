@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signup</title>
   <link rel="stylesheet" href=" components/style.css">
-  <link rel="stylesheet" href="">
-  <script src="/gulshan/node_modules/bootstrap/dist/css/"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +15,6 @@
   require 'components/_connaction.php';
   require 'components/_nav.php';
   global $conn;
-  // session_start();
   if (isset($_SESSION['ualert'])) {
     if (!$_SESSION['ualert']) {
       echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
@@ -104,7 +103,7 @@
 
           <div class="mb-3 text-start text-sm-start">
             <label for="address" class="form-label fs-5">Address</label>
-            <textarea rows="4" class="form-control" id="address" name="address"></textarea>
+            <textarea rows="4" class="form-control" id="address" name="address" required></textarea>
           </div>
           <div class="mb-3 text-start text-sm-start">
             <label for="passwordSign" class="form-label fs-5">Password</label>
@@ -128,7 +127,7 @@
     </div>
   </div>
   </div>
-  <script src="/gulshan/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const submit = document.getElementById("submit");
     const passwordInput = document.getElementById("passwordSign");
