@@ -1,4 +1,7 @@
-CREATE DATABASE `users`
+-- Create the database
+CREATE DATABASE IF NOT EXISTS `users`;
+USE `users`;
+
 -- Create the users table
 CREATE TABLE `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -7,7 +10,7 @@ CREATE TABLE `user` (
   `father_name` VARCHAR(100) NOT NULL,
   `mother_name` VARCHAR(100) NOT NULL,
   `date_of_birth` DATE NOT NULL,
-  `password` VARCHAR(255) NOT NULL, -- Increased for password_hash()
+  `password` VARCHAR(255) NOT NULL, 
   `address` TEXT NOT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -28,6 +31,6 @@ INSERT INTO `user` (
   'Robert Doe', 
   'Mary Doe', 
   '1995-05-15', 
-  '$2y$10$hashed_password_here', -- Always use hashed passwords
+  '$2y$10$abcdefghijklmnopqrstuv', -- Use password_hash() in PHP
   '123 Main St, Mumbai, Maharashtra'
 );

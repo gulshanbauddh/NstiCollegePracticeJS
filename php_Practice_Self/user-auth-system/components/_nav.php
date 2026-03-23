@@ -1,47 +1,99 @@
 <?php
-echo "<nav class='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
-    <div class='container-fluid'>
-      <a class='navbar-brand' href='index.php'>gLogin</a>
-      <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo02' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon'></span>
-      </button>
-      <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
-      <ul class='navbar-nav me-auto mb-2 mb-lg-0'>";
-// Login Session 
-if ($_SESSION['islogin'] == true) {
-  echo  "<li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='index.php'>Home</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='users.php'>Users</a>
-          </li>";
-}
-// Logout Session 
-if ($_SESSION['islogin'] == false) {
-  echo "<li class='nav-item'>
-            <a class='nav-link active' href='login.php'>Login</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link active' href='signup.php'>Signup</a>
-          </li>";
-}
-// Login Session 
-if ($_SESSION['islogin'] == true) {
-  echo "<li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='about.php'>About</a>
-          </li>
-  <li class='nav-item'>
-            <a class='nav-link active' href='logout.php' id='logout-btn'>Logout</a>
-          </li>
-          ";
+// Session variable check karne ke liye helper variable
+$isLoggedIn = false;
+if (isset($_SESSION['islogin']) && $_SESSION['islogin'] == true) {
+    $isLoggedIn = true;
 }
 
-echo "</ul>
-        <form class='d-flex' role='search'>
-          <input class='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
-          <button class='btn btn-outline-success' type='submit'>Search</button>
+echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fs-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">gLogin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">';
+
+// Agar user login hai
+if ($isLoggedIn) {
+    echo '
+          <li class="nav-item">
+            <a class="nav-link active" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="users.php">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.php">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="logout.php">Logout</a>
+          </li>';
+} 
+// Agar user login nahi hai
+else {
+    echo '
+          <li class="nav-item">
+            <a class="nav-link active" href="login.php">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="signup.php">Signup</a>
+          </li>';
+}
+
+echo '</ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>
-  </nav>
-  ";
+  </nav>';
+
+// echo "<nav class='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
+//     <div class='container-fluid'>
+//       <a class='navbar-brand' href='index.php'>gLogin</a>
+//       <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo02' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation'>
+//         <span class='navbar-toggler-icon'></span>
+//       </button>
+//       <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+//       <ul class='navbar-nav me-auto mb-2 mb-lg-0'>";
+// // Login Session 
+// if ($_SESSION['islogin'] == true) {
+//   echo  "<li class='nav-item'>
+//             <a class='nav-link active' aria-current='page' href='index.php'>Home</a>
+//           </li>
+//           <li class='nav-item'>
+//             <a class='nav-link active' aria-current='page' href='users.php'>Users</a>
+//           </li>";
+// }
+// // Logout Session 
+// if ($_SESSION['islogin'] == false) {
+//   echo "<li class='nav-item'>
+//             <a class='nav-link active' href='login.php'>Login</a>
+//           </li>
+//           <li class='nav-item'>
+//             <a class='nav-link active' href='signup.php'>Signup</a>
+//           </li>";
+// }
+// // Login Session 
+// if ($_SESSION['islogin'] == true) {
+//   echo "<li class='nav-item'>
+//             <a class='nav-link active' aria-current='page' href='about.php'>About</a>
+//           </li>
+//   <li class='nav-item'>
+//             <a class='nav-link active' href='logout.php' id='logout-btn'>Logout</a>
+//           </li>
+//           ";
+// }
+
+// echo "</ul>
+//         <form class='d-flex' role='search'>
+//           <input class='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
+//           <button class='btn btn-outline-success' type='submit'>Search</button>
+//         </form>
+//       </div>
+//     </div>
+//   </nav>
+//   ";
+?>
