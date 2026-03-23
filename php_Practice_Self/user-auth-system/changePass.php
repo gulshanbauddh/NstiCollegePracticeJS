@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+session_start();
+if (!isset($_SESSION['findSNO'])) {
+  header('location:forget.php'); // Wapas bhej do agar session nahi hai
+  exit;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +19,14 @@
 
 <body>
   <?php //Nav bar Start
-  if ($_SESSION['islogin'] == true) {
-    header("location:index.php");
-  }
   require 'components/_connaction.php';
   require 'components/_nav.php';
   global $conn;
-  // session_start();
-  if (isset($_POST['login']) && !$_SESSION['islogin']) {
-    echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
-      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-      <strong>Alert!</strong> Wrong user id or password try again.</div>";
+  if ($_SESSION['findSNO'] == false) {
+    header("location:login.php");
+  } else {
+    // 
   }
-  $_SESSION['islogin'] = false;
   ?>
 
   <div class="container2">
@@ -35,12 +35,12 @@
       <div class="container mt-3">
         <form method="post" action="">
           <div class="mb-3 text-start text-sm-start">
-            <label for="usernameLogin" class="form-label fs-4">User name</label>
-            <input type="text" class="form-control" id="usernameLogin" aria-describedby="emailHelp" name="usernameLogin" required>
+            <label for="passwordLogin" class="form-label fs-4">New password</label>
+            <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" required>
           </div>
           <div class="mb-3 text-start text-sm-start">
-            <label for="passwordLogin" class="form-label fs-4">Password</label>
-            <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" required>
+            <label for="cpasswordLogin" class="form-label fs-4">Confirm new password</label>
+            <input type="password" class="form-control" id="cpasswordLogin" name="cpasswordLogin" required>
           </div>
           <input type="submit" class="btn btn-primary col-8" value="Login" name="login">
           <input type="clear" class="btn btn-success col-8 mt-2" value="Create new account" name="new account" id="newAccoungBtn">
@@ -64,7 +64,7 @@
     $sql = "SELECT `username`,`password`,`fullname` FROM `user`;";
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
-    while ($num > 0) {
+    while ($num > 1) {
       $row = mysqli_fetch_assoc($result);
       if ($usernameLogin == $row['username'] && $passwordLogin == $row['password']) {
         $_SESSION['islogin'] = true;

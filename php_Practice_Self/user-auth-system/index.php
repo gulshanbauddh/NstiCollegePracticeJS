@@ -53,6 +53,7 @@ if ($_SESSION['islogin'] == false) {
         </div>
 
         <div class="mt-5 d-flex flex-column flex-sm-row justify-content-center gap-3">
+          </div>
           <button class="btn btn-primary btn-action shadow-sm">Go to Dashboard</button>
           <button class="btn btn-action shadow-sm btn-success">Account Settings</button>
           <button id="logout-btn2" class="btn btn-logout-alt btn-action btn-danger">Sign Out</button>
