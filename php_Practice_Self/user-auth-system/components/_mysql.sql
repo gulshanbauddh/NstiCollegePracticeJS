@@ -1,5 +1,6 @@
+CREATE DATABASE `users`
 -- Create the users table
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(50) NOT NULL UNIQUE,
   `full_name` VARCHAR(100) NOT NULL,
@@ -13,7 +14,7 @@ CREATE TABLE `users` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- Sample Insert Statement
-INSERT INTO `users` (
+INSERT INTO `user` (
   `username`, 
   `full_name`, 
   `father_name`, 
