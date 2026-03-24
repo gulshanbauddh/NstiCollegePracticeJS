@@ -10,7 +10,7 @@ CREATE TABLE `user` (
   `fathername` VARCHAR(100) NOT NULL,
   `mothername` VARCHAR(100) NOT NULL,
   `dob` DATE NOT NULL,
-  `passwordSign` VARCHAR(255) NOT NULL, 
+  `password` VARCHAR(255) NOT NULL, 
   `address` TEXT NOT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
