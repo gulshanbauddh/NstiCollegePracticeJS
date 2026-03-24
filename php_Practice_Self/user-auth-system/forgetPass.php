@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,58 +33,46 @@
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 <strong>Alert!</strong> Blank Field is not allow.</div>";
     } else {
-// SQL Injection se bachne ke liye variables ko escape karein
-$usernameSign = mysqli_real_escape_string($conn, $usernameSign);
-$fullname     = mysqli_real_escape_string($conn, $fullname);
-$fathername   = mysqli_real_escape_string($conn, $fathername);
-$dob          = mysqli_real_escape_string($conn, $dob);
+      $usernameSign = mysqli_real_escape_string($conn, $usernameSign);
+      $fullname     = mysqli_real_escape_string($conn, $fullname);
+      $fathername   = mysqli_real_escape_string($conn, $fathername);
+      $dob          = mysqli_real_escape_string($conn, $dob);
 
-$sql = "SELECT `sno` FROM `user` WHERE `username`='$usernameSign' AND `fullname`='$fullname' AND `fathername`='$fathername' AND `dob`='$dob'";
+      $sql = "SELECT `sno` FROM `user` WHERE `username`='$usernameSign' AND `fullname`='$fullname' AND `fathername`='$fathername' AND `dob`='$dob'";
 
-$result = mysqli_query($conn, $sql);
+      $result = mysqli_query($conn, $sql);
 
-if ($result) {
-    $count = mysqli_num_rows($result);
+      if ($result) {
+        $count = mysqli_num_rows($result);
 
-    if ($count == 1) {
-        // CASE 1: Sirf ek user mila (Success)
-        session_start();
-        $_SESSION['findSNO'] = true;
-        // Aap user ka sno bhi session mein save kar sakte hain taaki password change karne mein asani ho
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['user_sno'] = $row['sno'];
-        
-        header('location:changePass.php');
-        exit;
+        if ($count == 1) {
+          session_start();
+          $_SESSION['findSNO'] = true;
+          $row = mysqli_fetch_assoc($result);
+          $_SESSION['user_sno'] = $row['sno'];
 
-    } elseif ($count > 1) {
-        // CASE 2: Ek se zyada users mil gaye
-        echo "<div class='alert alert-warning alert-dismissible fade show m-0' role='alert'>
+          header('location:changePass.php');
+          exit;
+        } elseif ($count > 1) {
+          echo "<div class='alert alert-warning alert-dismissible fade show m-0' role='alert'>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 <strong>Alert!</strong> Multiple users found with these details. Please contact admin.</div>";
-
-    } else {
-        // CASE 3: Ek bhi user nahi mila ($count == 0)
-        echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
+        } else {
+          echo "<div class='alert alert-danger alert-dismissible fade show m-0' role='alert'>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 <strong>Error!</strong> User not found. Please check your details.</div>";
-    }
-} else {
-    die("SQL Error: " . mysqli_error($conn));
-}
+        }
+      } else {
+        die("SQL Error: " . mysqli_error($conn));
+      }
     }
   }
   ?>
 
-
-
-
-  <!-- // $_SESSION['Fpassword'] = '';
-  // header("Location: " . $_GET['back']); -->
   <!-- Forget password Form -->
   <div class="container2">
     <div class="welcome-card welcome-cardSign">
-      <h1 class="display-6 fw-bold text-dark">Welcome , Find Forget Password</h1>
+      <h1 class="display-6 fw-bold text-dark">Change Forget Password</h1>
       <div class="container mt-3">
         <form method="post" action="">
           <div class="mb-3 text-start text-sm-start">
@@ -105,10 +93,10 @@ if ($result) {
             <input type="date" class="form-control" style="width: auto;" id="dob" name="dob" required>
           </div>
           <input type="submit" class="btn btn-primary col-8" id="submit" value="Submit" name="signup">
-          <input type="button" class="btn btn-success col-8 mt-2" value="I already have account" name="login" id="logAccoungBtn">
+          <input type="button" class="btn btn-success col-8 mt-2" value="Create new account" name="login" id="logAccoungBtn">
         </form>
-        <p class="m-0 mt-3"><a class="link-opacity-50-hover" href="#">Forget Username</a></p>
-        <p class="m-0 mt-2"><a class="link-opacity-50-hover" href="#">Forget Password</a></p>
+        <!-- Forget Username -->
+        <p class="m-0 mt-3"><a class="link-opacity-50-hover" href="forgetUser.php">Forget Username</a></p>
       </div>
       <p class="mt-4 text-secondary small">
       <p class="d-inline">Current Time : </p>
@@ -116,6 +104,31 @@ if ($result) {
       <p class="d-inline"> from Mumbai, India</p>
     </div>
   </div>
+  <script>
+    const logAccoungBtn = document.getElementById('logAccoungBtn');
+    logAccoungBtn.addEventListener('click', login);
+
+    function login(event) {
+      window.location.href = "login.php";
+    };
+
+    // For Current live time
+    function updateClock() {
+      const now = new Date();
+
+      let options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+
+      const timeString = now.toLocaleTimeString('en-IN', options);
+      document.getElementById('live-clock').innerText = timeString;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 </body>
 
 </html>

@@ -120,8 +120,8 @@
           <input type="submit" class="btn btn-primary col-8" id="submit" value="Signup" name="signup">
           <input type="button" class="btn btn-success col-8 mt-2" value="I already have account" name="login" id="logAccoungBtn">
         </form>
-        <p class="m-0 mt-3"><a class="link-opacity-50-hover" href="#">Forget Username</a></p>
-        <p class="m-0 mt-2"><a class="link-opacity-50-hover" href="#">Forget Password</a></p>
+        <p class="m-0 mt-3"><a class="link-opacity-50-hover" href="forgetUser.php">Forget Username</a></p>
+        <p class="m-0 mt-2"><a class="link-opacity-50-hover" href="forgetPass.php">Forget Password</a></p>
       </div>
       <p class="mt-4 text-secondary small">
       <p class="d-inline">Current Time : </p>

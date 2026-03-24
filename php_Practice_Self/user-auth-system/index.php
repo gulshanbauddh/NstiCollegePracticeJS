@@ -57,11 +57,11 @@ if ($_SESSION['islogin'] == false) {
           <button class="btn btn-primary btn-action shadow-sm">Go to Dashboard</button>
           <button class="btn btn-action shadow-sm btn-success">Account Settings</button>
           <button id="logout-btn2" class="btn btn-logout-alt btn-action btn-danger">Sign Out</button>
-        </div>
-        <p class="mt-5 text-secondary small">
-        <p class="d-inline">Current Time : </p>
-        <p class="fw-bold d-inline" id="live-clock">00:00:00 </p>
-        <p class="d-inline"> from Mumbai, India</p>
+          <p class="mt-5 text-secondary small">
+            <p class="d-inline">Current Time : </p>
+            <p class="fw-bold d-inline" id="live-clock">00:00:00 </p>
+            <p class="d-inline"> from Mumbai, India</p>
+          </div>
       </div>
     </div>
   </div>

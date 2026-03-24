@@ -31,7 +31,7 @@
 
   <div class="container2">
     <div class="welcome-card mt-5">
-      <h1 class="display-5 fw-bold text-dark">Welcome , Login!</h1>
+      <h1 class="display-5 fw-bold text-dark">Login</h1>
       <div class="container mt-3">
         <form method="post" action="">
           <div class="mb-3 text-start text-sm-start">
