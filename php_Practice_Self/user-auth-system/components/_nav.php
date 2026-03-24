@@ -16,10 +16,7 @@ echo "<nav class='navbar navbar-expand-lg navbar-dark bg-dark fs-5'>
 if ($_SESSION['islogin'] == true) {
   echo  "<li class='nav-item'>
             <a class='nav-link active' aria-current='page' href='index.php'>Home</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='users.php'>Users</a>
-          </li>";
+        </li>";
 }
 // Logout Session 
 if ($_SESSION['islogin'] == false) {
@@ -33,7 +30,7 @@ if ($_SESSION['islogin'] == false) {
 // Login Session 
 if ($_SESSION['islogin'] == true) {
   echo "<li class='nav-item'>
-            <a class='nav-link active' aria-current='page' href='about.php'>About</a>
+            <a class='nav-link active' aria-current='page' href='developer.php'>Developer</a>
           </li>
   <li class='nav-item'>
             <a class='nav-link active' href='logout.php' id='logout-btn'>Logout</a>
