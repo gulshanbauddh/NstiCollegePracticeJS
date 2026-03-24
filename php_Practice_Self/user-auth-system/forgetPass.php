@@ -72,7 +72,7 @@
   <!-- Forget password Form -->
   <div class="container2">
     <div class="welcome-card welcome-cardSign">
-      <h1 class="display-6 fw-bold text-dark">Change Forget Password</h1>
+      <h1 class="display-6 fw-bold text-dark">Change Password</h1>
       <div class="container mt-3">
         <form method="post" action="">
           <div class="mb-3 text-start text-sm-start">
@@ -95,8 +95,11 @@
           <input type="submit" class="btn btn-primary col-8" id="submit" value="Submit" name="signup">
           <input type="button" class="btn btn-success col-8 mt-2" value="Create new account" name="login" id="logAccoungBtn">
         </form>
-        <!-- Forget Username -->
-        <p class="m-0 mt-3"><a class="link-opacity-50-hover" href="forgetUser.php">Forget Username</a></p>
+        <!-- Forget Username & Password -->
+        <p class="m-0 mt-3">
+          <a class="link-opacity-50-hover" href="forgetUser.php">Forget Username</a>
+          <a class="link-opacity-50-hover ms-4" href="login.php">Login here</a>
+        </p>
       </div>
       <p class="mt-4 text-secondary small">
       <p class="d-inline">Current Time : </p>

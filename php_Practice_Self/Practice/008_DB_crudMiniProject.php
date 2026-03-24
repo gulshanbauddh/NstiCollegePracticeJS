@@ -94,7 +94,7 @@
     // Note Add
     if ($insState) {
       echo "<div class='successAddNote'>
-    <div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
+    <div class='alert alert-success alert-dismissible fade show m-0 fs-5' role='alert'>
       <strong>Succes!</strong> Note add Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
@@ -112,7 +112,7 @@
 
     if ($delCon) {
       echo "<div class='successAddNote'>
-    <div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
+    <div class='alert alert-success alert-dismissible fade show m-0 fs-5' role='alert'>
       <strong>Succes!</strong> Note deleted Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";
@@ -128,7 +128,7 @@
     $editCon = mysqli_query($conn, $editQuery);
     if ($editCon) {
       echo "<div class='successAddNote'>
-    <div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
+    <div class='alert alert-success alert-dismissible fade show m-0 fs-5' role='alert'>
       <strong>Succes!</strong> Note edit Succesfull.
       <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
     </div></div>";

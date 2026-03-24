@@ -26,7 +26,7 @@ if (!isset($_SESSION['findSNO']) || $_SESSION['findSNO'] != true) {
   global $is_verified;
   $is_done = $_SESSION['PassChangeStatus'];
   if ($_SESSION['PassChangeStatus'] == true) {
-    echo "<div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
+    echo "<div class='alert alert-success alert-dismissible fade show m-0 fs-5' role='alert'>
                 <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                 <strong>Succes! </strong> Your Password Change Succesfull.Password is- <strong>" . $_SESSION['newPass'] . "</strong></div>";
     $_SESSION['PassChangeStatus'] = false;

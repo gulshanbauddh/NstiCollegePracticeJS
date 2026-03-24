@@ -28,7 +28,7 @@
   }
   if (isset($_SESSION['signStatus'])) {
     if ($_SESSION['signStatus'] == true) {
-      echo "<div class='alert alert-success alert-dismissible fade show m-0' role='alert'>
+      echo "<div class='alert alert-success alert-dismissible fade show m-0 fs-5' role='alert'>
         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
         <strong>Success!</strong> Account Created please login- <a href='login.php'>Login Heare</a> and your user name is : <strong>";
       echo $_SESSION['usernameSign'] . "</strong></div>";
