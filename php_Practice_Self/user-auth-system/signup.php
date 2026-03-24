@@ -77,7 +77,7 @@
 
   <div class="container2">
     <div class="welcome-card welcome-cardSign">
-      <h1 class="display-6 fw-bold text-dark">Welcome , Create new account</h1>
+      <h1 class="display-6 fw-bold text-dark">Create new account</h1>
       <div class="container mt-3">
         <form method="post" action="">
           <div class="mb-3 text-start text-sm-start">
