@@ -58,7 +58,7 @@ if (!isset($_SESSION['findSNO']) || $_SESSION['findSNO'] != true) {
             <input type="password" class="form-control" id="cNewPass" name="cNewPass" <?php echo ($is_done ? 'disabled' : '') ?> required>
           </div>
           <input type="submit" class="btn btn-primary col-8" value="Change Password" name="login" id="submit" <?php echo ($is_done ? 'disabled' : '') ?>>
-          <input type="clear" class="btn btn-success col-8 mt-2" value="Create new account" name="new account" id="newAccoungBtn">
+          <input type="clear" class="btn btn-success col-8 mt-2" value="Login now" name="new account" id="newAccoungBtn">
         </form>
       </div>
       <p class="mt-4 text-secondary small">
