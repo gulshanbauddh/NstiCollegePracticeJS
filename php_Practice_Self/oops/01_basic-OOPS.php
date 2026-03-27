@@ -1,4 +1,3 @@
-<!-- // nodemon --exex php  .\01_cwh.php -->
 <?php
 
 use BcMath\Number;
