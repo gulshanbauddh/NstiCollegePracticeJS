@@ -9,36 +9,36 @@ class student
   function feeCard()
   {
     echo "
-  \nName:" . $this->name . "
-  \nClass:" . $this->class . "
-  \nRoll no:" . $this->roll . "
-  \nMonthly-Fee:" . $this->fee . "
+  \n<br>Name:" . $this->name . "
+  \n<br>Class:" . $this->class . "
+  \n<br>Roll no:" . $this->roll . "
+  \n<br>Monthly-Fee:" . $this->fee . "
   ";
   }
   // Scholarship card
   function scholar()
   {
     echo "
-  \nName:" . $this->name . "
-  \nClass:" . $this->class . "
-  \nRoll no:" . $this->roll . "
-  \nMonthly-Fee:" . $this->fee .
-      "\nScholarShip:" . $this->fee * 12 . "
+  \n<br>Name:" . $this->name . "
+  \n<br>Class:" . $this->class . "
+  \n<br>Roll no:" . $this->roll . "
+  \n<br>Monthly-Fee:" . $this->fee .
+      "\n<br>ScholarShip:" . $this->fee * 12 . "
   ";
   }
   // Marksheet
   function marksheet()
   {
     echo "
-  \nName:" . $this->name . "
-  \nClass:" . $this->class . "
-  \nRoll no:" . $this->roll . "
-  \nTotal-Mark:" . $this->mark . "
-  \nResult:" . $this->result . "
+  \n<br>Name:" . $this->name . "
+  \n<br>Class:" . $this->class . "
+  \n<br>Roll no:" . $this->roll . "
+  \n<br>Total-Mark:" . $this->mark . "
+  \n<br>Result:" . $this->result . "
   ";
   }
 }
-echo "\n";
+echo "\n<br>";
 $student1 = new student();
 
 $student1->name = 'Gulshan';
@@ -51,7 +51,8 @@ $student1->result = true;
 $student1->roll = 1234;
 $student1->class = 12;
 $student1->feeCard();
-echo "\nScholarship";
+echo "\n<br>Scholarship";
+echo "<strong><br><br>Scholar Ship</strong>";
 $student1->scholar();
 
-$student2 = new student();
+// $student2 = new student();
