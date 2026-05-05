@@ -29,6 +29,7 @@
       $no = (int)($no / 10);
     } while ($no > 0);
 
+    echo "<br>Your Entered number is = $originalNo, $rev";
     echo "<br>Your Entered number is = " . $originalNo . " and reverse = " . $rev;
 
     if ($rev == $originalNo) {
