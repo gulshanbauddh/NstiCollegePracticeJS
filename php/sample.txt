@@ -1,3 +1,0 @@
-Hello, this is file handling in PHP
-This is new append line.
-This is new append line.<br>This is new append line.
