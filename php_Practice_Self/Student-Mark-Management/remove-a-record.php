@@ -14,7 +14,6 @@
     <input type="submit" name='deleteArecord' value="Remove a record">
   </form>
   <br><br>
-  <a href="home.php">Back to Home</a>
   <?php
   if (isset($_POST['deleteArecord'])) {
     $name = $_POST['name'];
@@ -22,7 +21,7 @@
     $data = "";
     $file = fopen('student.txt', 'r');
     while (!feof($file)) {
-      $line = fgets($file);
+      $line .= fgets($file)."\n";
     }
     fclose($file);
     if ($line != false && trim($line) != "") {
@@ -32,16 +31,19 @@
         $students[1] = "";
         $students[2] = "";
       } else {
-        $data += $students[0] . "|" . $students[1] . "|" . $students[2] . "\n";
+        $data .= $students[0] . "|" . $students[1] . "|" . $students[2] . "\n";
       }
     }
 
     $file = fopen('student.txt', 'w');
-    fwrite($file,$data);
+    fwrite($file, $data);
     fclose($file);
+    echo "Record deleted.";
   }
 
   ?>
+  <br><br>
+  <a href="home.php">Back to Home</a>
 </body>
 
 </html>
