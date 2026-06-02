@@ -6,11 +6,13 @@
 </head>
 
 <body>
-  <h2>search Substring in main string :</h2>
+  <h2>Search substring in main string :</h2>
   <script>
     let str, searchStr, i, j=0, l, m, flag;
     str = prompt("Enter main string"); 
-    searchStr = prompt("Enter search string");
+    searchStr = prompt("Enter search string")    
+    // str = "Welcome to NSTI mumbai."; 
+    // searchStr = "kanpur";
 
     l = str.length;
     m = searchStr.length;
@@ -25,11 +27,11 @@
       }
 
       if (flag && j===m) {
-        document.write("String <b>' " + searchStr + " ' </b>is found in <b>' " + str + " ' </b>at position " + (i-m+2));
+        document.write("String <b>'" + searchStr + "' </b>is found in <b>' " + str + " ' </b>at position " + (i-m+2));
         break;
       }
     }
-    if (i === l) document.write("The string <b>" + searchStr + " </b>is not found in <b>" + str + "</b>");
+    if (i === l) document.write("The string <b>'" + searchStr + " '</b> is not found in <b>'" + str + "'</b>");
   </script>
 </body>
 
