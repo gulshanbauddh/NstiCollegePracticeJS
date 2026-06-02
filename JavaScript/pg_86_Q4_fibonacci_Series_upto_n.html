@@ -6,7 +6,7 @@
     <title>Fibonacci Series</title>
   </head>
   <body>
-    <h3>Fibonacci Series up to n:</h3>
+    <h3>Fibonacci Series below n:</h3>
     <script>
       // Initalision & Declaration:
       let limit = parseInt(prompt("Enter limit of Fibonacci Series:"));
@@ -14,7 +14,9 @@
       let f2 = 1;
       let f3 = 0;
       // Calculate & Display Fibonacci Series:
-      while (f3 <= limit) {
+      document.write("Limit of Fibonacci Series: "+limit+"<br>");
+      document.write("Fibonacci Series is: ");
+      while (f3 < limit) {
         f3 = f1 + f2;
         f1 = f2;
         f2 = f3;
