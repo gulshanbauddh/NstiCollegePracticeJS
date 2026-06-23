@@ -1,0 +1,5 @@
+print("Area and Perimeter of Rectangle:")
+length =int(input("Enter length="))
+width =int(input("Enter length="))
+print("Area=",length*width)
+print("Perimeter=",2*(length+width))
