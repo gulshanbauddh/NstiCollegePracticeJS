@@ -29,7 +29,7 @@
     if($net<30 || $js<30 ||  $mysql<30 ||  $php<30 ||  $python<30 )  $pass='Failed';
     $total=$net+$js+$mysql+$php+$python;
     $per=round(($total/5), 2);
-    $grade;
+    $grade="";
     if($per>=90) $grade='A+';
     elseif($per>=80) $grade='A';
     elseif($per>=70) $grade='B+';
