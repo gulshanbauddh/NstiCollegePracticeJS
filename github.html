@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Code Explorer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      .folder-row {
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .folder-row:hover {
+        background-color: rgba(128, 128, 128, 0.1);
+      }
+      a {
+        text-decoration: none;
+      }
+      /* for search bar Intractive */
+      .search-container {
+        position: relative;
+      }
+      .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+      }
+      #searchInput {
+        padding-left: 40px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-body-tertiary" data-bs-theme="light">
+    <div class="container mt-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="mainHeading">
+          <h2><i class="bi bi-github"></i> Project Explorer</h2>
+          <p class="gname"><i>Er. Gulshan Bauddh (CSE)</i></p>
+        </div>
+        <div class="form-check form-switch fs-5">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="darkModeSwitch"
+            onchange="toggleTheme()"
+          />
+          <label class="form-check-label" for="darkModeSwitch"
+            ><i class="bi bi-moon-stars-fill"></i
+          ></label>
+        </div>
+      </div>
+
+      <div class="search-container mb-3 shadow-sm">
+        <i class="bi bi-search search-icon"></i>
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control form-control-lg"
+          placeholder="Go to file..."
+          oninput="handleSearch()"
+        />
+      </div>
+
+      <div class="d-flex align-items-center mb-3" id="navigationBar">
+        <button
+          id="backBtn"
+          class="btn btn-secondary btn-sm me-3"
+          style="display: none"
+          onclick="goBack()"
+        >
+          <i class="bi bi-arrow-left"></i> Back
+        </button>
+        <nav aria-label="breadcrumb" class="mb-0">
+          <ol class="breadcrumb mb-0" id="breadcrumb"></ol>
+        </nav>
+      </div>
+
+      <div class="card shadow-sm border-0">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0" id="mainTable">
+            <thead class="table-secondary" id="tableHead">
+              <tr>
+                <th id="nameColumnHeader">Name</th>
+                <th class="text-end">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="fileList"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const repo = "gulshanbauddh/NstiCollegePractice";
+      const branch = "main";
+
+      // githubToken
+      const myGitHubToken = "";
+
+      const authHeader = myGitHubToken
+        ? { Authorization: `token ${myGitHubToken}` }
+        : {};
+
+      let pathStack = [];
+      let fullRepoTree = []; // full repository
+
+      function toggleTheme() {
+        const body = document.body;
+        if (body.getAttribute("data-bs-theme") === "light") {
+          body.setAttribute("data-bs-theme", "dark");
+        } else {
+          body.setAttribute("data-bs-theme", "light");
+        }
+      }
+
+      // 1. all progect file access
+      async function fetchFullTreeForSearch() {
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${repo}/git/trees/${branch}?recursive=1`,
+            { headers: authHeader },
+          );
+          if (res.ok) {
+            const data = await res.json();
+            fullRepoTree = data.tree.filter((item) => item.type === "blob");
+          }
+        } catch (error) {
+          console.error("Failed to fetch full tree for search", error);
+        }
+      }
+
+      window.addEventListener("hashchange", () => {
+        let path = window.location.hash.substring(1);
+
+        // If somthing in searchbar the blank
+        document.getElementById("searchInput").value = "";
+        document.getElementById("navigationBar").style.display = "flex";
+        document.getElementById("nameColumnHeader").innerText = "Name";
+
+        if (path === "") {
+          pathStack = [];
+          document.getElementById("backBtn").style.display = "none";
+        } else {
+          const parts = path.split("/");
+          pathStack = [];
+          let curr = "";
+          for (let p of parts) {
+            curr += (curr === "" ? "" : "/") + p;
+            pathStack.push(curr);
+          }
+          document.getElementById("backBtn").style.display = "inline-block";
+        }
+        fetchFiles(path);
+      });
+
+      async function fetchFiles(path = "") {
+        // 1 For check cache unique name
+        const cacheKey = `repo_cache_${path}`;
+        const cachedData = sessionStorage.getItem(cacheKey);
+
+        // 2. If data already in memory then show now.(0 Delay)
+        if (cachedData) {
+          renderFiles(JSON.parse(cachedData));
+          updateBreadcrumb(path);
+          return;
+        }
+
+        // 3. if data is not in memory the show animation
+        const fileList = document.getElementById("fileList");
+        fileList.innerHTML = `
+            <tr>
+                <td colspan="2" class="text-center text-muted py-4">
+                    <div class="spinner-border spinner-border-sm text-primary me-2" role="status"></div>
+                    Loading files...
+                </td>
+            </tr>`;
+
+        // 4. Deta fetch from API
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${repo}/contents/${path}`,
+            { headers: authHeader },
+          );
+          if (!res.ok) throw new Error("API Error");
+          const data = await res.json();
+
+          // 5. for future purpase data save in memory
+          sessionStorage.setItem(cacheKey, JSON.stringify(data));
+
+          renderFiles(data);
+          updateBreadcrumb(path);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          fileList.innerHTML = `<tr><td colspan="2" class="text-danger py-3">Error loading files. Please check your connection.</td></tr>`;
+        }
+      }
+
+      // 2. What is work when typing in search bar
+      function handleSearch() {
+        const query = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const fileList = document.getElementById("fileList");
+
+        // if search bar blank
+        if (query.trim() === "") {
+          document.getElementById("navigationBar").style.display = "flex";
+          document.getElementById("nameColumnHeader").innerText = "Name";
+          let currentPath = window.location.hash.substring(1);
+          fetchFiles(currentPath);
+          return;
+        }
+
+        // search mode active
+        document.getElementById("navigationBar").style.display = "none";
+        document.getElementById("nameColumnHeader").innerText =
+          "Search Results (Full Path)";
+        fileList.innerHTML = "";
+
+        // filter which file match to word
+        const results = fullRepoTree
+          .filter((item) => item.path.toLowerCase().includes(query))
+          .slice(0, 50); // लिमिट 50 ताकि ब्राउज़र हैंग न हो
+
+        if (results.length === 0) {
+          fileList.innerHTML = `<tr><td colspan="2" class="text-muted text-center">No matching files found.</td></tr>`;
+          return;
+        }
+
+        results.forEach((item) => {
+          const tr = document.createElement("tr");
+          const filename = item.path.split("/").pop(); // only take file name
+
+          // For making Raw URL
+          const rawUrl = `https://raw.githubusercontent.com/${repo}/${branch}/${item.path}`;
+          const isHtml = filename.toLowerCase().endsWith(".html");
+          const isMd = filename.toLowerCase().endsWith(".md");
+
+          tr.innerHTML = `
+                <td>
+                    <div class="d-flex flex-column">
+                        <strong><i class="bi bi-file-earmark-code text-primary me-2"></i> ${filename}</strong>
+                        <small class="text-muted" style="font-size: 0.8rem; margin-left: 24px;">${item.path}</small>
+                    </div>
+                </td>
+                <td class="text-end">
+                    <button class="btn btn-sm btn-outline-info me-1" onclick="viewCode('${rawUrl}', '${filename}')">
+                        <i class="bi bi-code-slash"></i> View
+                    </button>
+                    ${isHtml ? `<button class="btn btn-sm btn-success shadow-sm me-1" onclick="runCode('${rawUrl}')"><i class="bi bi-play-fill"></i></button>` : ""}
+                    ${isMd ? `<button class="btn btn-sm btn-warning shadow-sm" onclick="previewMarkdown('${rawUrl}', '${filename}')"><i class="bi bi-eye-fill"></i></button>` : ""}
+                </td>
+            `;
+          fileList.appendChild(tr);
+        });
+      }
+
+      function renderFiles(files) {
+        const fileList = document.getElementById("fileList");
+        fileList.innerHTML = "";
+
+        files.sort((a, b) => {
+          if (a.type === b.type) return a.name.localeCompare(b.name);
+          return a.type === "dir" ? -1 : 1;
+        });
+
+        files.forEach((item) => {
+          const tr = document.createElement("tr");
+
+          if (item.type === "dir") {
+            tr.className = "folder-row";
+            tr.onclick = () => openDir(item.path);
+            tr.innerHTML = `
+                    <td><i class="bi bi-folder-fill text-warning fs-5 me-2"></i> <strong>${item.name}</strong></td>
+                    <td class="text-end text-muted small">Folder</td>
+                `;
+          } else {
+            const isHtml = item.name.toLowerCase().endsWith(".html");
+            const isMd = item.name.toLowerCase().endsWith(".md");
+
+            tr.innerHTML = `
+                    <td><i class="bi bi-file-earmark-code text-primary fs-5 me-2"></i> ${item.name}</td>
+                    <td class="text-end">
+                        <button class="btn btn-sm btn-outline-info me-1" onclick="viewCode('${item.download_url}', '${item.name}')">
+                            <i class="bi bi-code-slash"></i> Code View
+                        </button>
+                        ${
+                          isHtml
+                            ? `<button class="btn btn-sm btn-success shadow-sm me-1" onclick="runCode('${item.download_url}')">
+                            <i class="bi bi-play-fill"></i> Run
+                        </button>`
+                            : ""
+                        }
+                        ${
+                          isMd
+                            ? `<button class="btn btn-sm btn-warning shadow-sm" onclick="previewMarkdown('${item.download_url}', '${item.name}')">
+                            <i class="bi bi-eye-fill"></i> Preview
+                        </button>`
+                            : ""
+                        }
+                    </td>
+                `;
+          }
+          fileList.appendChild(tr);
+        });
+      }
+
+      function openDir(path) {
+        window.location.hash = path;
+      }
+      function goBack() {
+        history.back();
+      }
+
+      function updateBreadcrumb(path) {
+        const breadcrumb = document.getElementById("breadcrumb");
+        breadcrumb.innerHTML = `<li class="breadcrumb-item"><a href="#" onclick="resetPath()">Home</a></li>`;
+        if (path === "") return;
+
+        const parts = path.split("/");
+        parts.forEach((part, index) => {
+          if (index === parts.length - 1) {
+            breadcrumb.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${part}</li>`;
+          } else {
+            breadcrumb.innerHTML += `<li class="breadcrumb-item">${part}</li>`;
+          }
+        });
+      }
+
+      function resetPath() {
+        window.location.hash = "";
+      }
+
+      function getLanguageClass(filename) {
+        const ext = filename.split(".").pop().toLowerCase();
+        switch (ext) {
+          case "js":
+            return "language-javascript";
+          case "py":
+            return "language-python";
+          case "php":
+            return "language-php";
+          case "java":
+            return "language-java";
+          case "sql":
+            return "language-sql";
+          case "css":
+            return "language-css";
+          case "json":
+            return "language-json";
+          case "html":
+            return "language-markup";
+          case "xml":
+            return "language-markup";
+          case "md":
+            return "language-markdown";
+          default:
+            return "language-none";
+        }
+      }
+
+      async function viewCode(url, filename) {
+        const res = await fetch(url);
+        const text = await res.text();
+        const langClass = getLanguageClass(filename);
+
+        const newTab = window.open();
+        newTab.document.write(`
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>${filename} - Code Viewer</title>
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+                <style>
+                    body { background: #1e1e1e; margin: 0; padding: 0; color: #d4d4d4; font-family: 'Consolas', monospace; height: 100vh; display: flex; flex-direction: column; }
+                    .header { background: #252526; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+                    .header h3 { margin: 0; font-size: 16px; color: #cccccc; font-weight: normal; }
+                    .copy-btn { background: #0e639c; color: white; border: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+                    .copy-btn:hover { background: #1177bb; }
+                    .code-container { flex-grow: 1; overflow: auto; background: #1e1e1e; }
+                    pre { margin: 0 !important; padding: 20px !important; min-height: 100%; border-radius: 0 !important; background: transparent !important; }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h3>📄 ${filename}</h3>
+                    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+                </div>
+                <div class="code-container">
+                    <pre><code id="codeBlock" class="${langClass}">${escapeHtml(text)}</code></pre>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"><\/script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"><\/script>
+                <script>
+                    function copyCode() {
+                        const code = document.getElementById('codeBlock').innerText;
+                        const textArea = document.createElement("textarea");
+                        textArea.value = code;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        try {
+                            document.execCommand("copy");
+                            const btn = document.querySelector('.copy-btn');
+                            btn.innerText = 'Copied! ✔️';
+                            btn.style.background = '#28a745'; 
+                            setTimeout(() => {
+                                btn.innerText = 'Copy Code';
+                                btn.style.background = '#0e639c'; 
+                            }, 2000);
+                        } catch (err) { alert('Failed to copy!'); }
+                        document.body.removeChild(textArea);
+                    }
+                <\/script>
+            </body>
+            </html>
+        `);
+        newTab.document.close();
+      }
+
+      async function runCode(url) {
+        const res = await fetch(url);
+        const text = await res.text();
+        const newTab = window.open();
+        newTab.document.write(text);
+        newTab.document.close();
+      }
+
+      function previewMarkdown(url, filename) {
+        const newTab = window.open();
+        newTab.document.write(`
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${filename} - Markdown Preview</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-dark.min.css">
+                <style>
+                    body { background-color: #0d1117; margin: 0; padding: 0; }
+                    .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 40px auto; padding: 45px; border-radius: 8px; border: 1px solid #30363d; background-color: #0d1117; }
+                    @media (max-width: 767px) { .markdown-body { padding: 15px; margin: 10px; } }
+                </style>
+                <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"><\/script>
+            </head>
+            <body>
+                <article class="markdown-body" id="content">
+                    <h3 style="color: #8b949e; text-align: center;">Loading Preview...</h3>
+                </article>
+                <script>
+                    fetch('${url}')
+                        .then(res => res.text())
+                        .then(text => { document.getElementById('content').innerHTML = marked.parse(text); })
+                        .catch(err => { document.getElementById('content').innerHTML = '<p style="color:red;">Error loading Markdown file.</p>'; });
+                <\/script>
+            </body>
+            </html>
+        `);
+        newTab.document.close();
+      }
+
+      function escapeHtml(text) {
+        return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      // Initialize
+      fetchFullTreeForSearch(); // Frist lode for search
+      let initialPath = window.location.hash.substring(1);
+      if (initialPath) {
+        window.dispatchEvent(new Event("hashchange"));
+      } else {
+        fetchFiles("");
+      }
+    </script>
+  </body>
+</html>
+<!-- (IKnowYouSeeToken) -->

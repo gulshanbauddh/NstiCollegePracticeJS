@@ -1,1 +1,3 @@
 node_modules
+# git reset --soft HEAD~2
+# git reset --hard HEAD~2
