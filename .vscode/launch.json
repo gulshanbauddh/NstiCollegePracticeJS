@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "P_18_merge_array",
+      "request": "launch",
+      "mainClass": "Nsti_Code.P_18_merge_array",
+      "projectName": "gulshan_8443633b"
+    },
+    {
+      "type": "java",
       "name": "P_03_odd_number_in_reverse_and_sum",
       "request": "launch",
       "mainClass": "Nsti_Code.P_03_odd_number_in_reverse_and_sum",
