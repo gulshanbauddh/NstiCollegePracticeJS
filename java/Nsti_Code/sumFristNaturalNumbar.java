@@ -14,5 +14,6 @@ public class sumFristNaturalNumbar {
     Scanner sc = new Scanner(System.in);
     int num = sc.nextInt();
     System.out.println("Sum of natural number: "+sumNum(num));
+    sc.close();
   }
 }

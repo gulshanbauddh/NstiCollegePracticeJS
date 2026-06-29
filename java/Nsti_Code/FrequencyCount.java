@@ -32,6 +32,7 @@ public class FrequencyCount {
       System.out.printf("\nYour Search Key is %d and frequency count is 0 no element found in this array.", searchKey);
     else
       System.out.printf("\nYour Search Key is %d and frequency count is %d.", searchKey, count);
+    sc.close();
   }
 }
 

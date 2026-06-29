@@ -26,5 +26,6 @@ public class PrimeBetween {
         System.out.print(i + " ");
       }
     }
+    sc.close();
   }
 }

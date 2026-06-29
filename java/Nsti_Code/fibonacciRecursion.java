@@ -15,5 +15,6 @@ public class fibonacciRecursion {
       count++;
       System.out.print(fib+" ");
     }
+    sc.close();
   }
 }

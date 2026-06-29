@@ -1,6 +1,13 @@
 {
   "configurations": [
     {
+      "type": "java",
+      "name": "P_03_odd_number_in_reverse_and_sum",
+      "request": "launch",
+      "mainClass": "Nsti_Code.P_03_odd_number_in_reverse_and_sum",
+      "projectName": "gulshan_8443633b"
+    },
+    {
       "type": "chrome",
       "name": "http://127.0.0.1:3000/NstiCollegePracticeJs/0001_index.html",
       "request": "launch",
