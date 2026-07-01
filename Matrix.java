@@ -1,15 +1,13 @@
-package Nsti_Code;
-
 import java.util.Scanner;
 
-class Matrix {
+class Matrix_Addition {
   private int[][] matA;
   private int[][] matB;
   private int[][] matC;
   Scanner sc = new Scanner(System.in);
 
   // This is constructor
-  public Matrix(int n, int m) {
+  public Matrix_Addition(int n, int m) {
     this.matA = new int[m][n];
     this.matB = new int[m][n];
     this.matC = new int[m][n];
@@ -69,7 +67,7 @@ class Matrix {
   }
 
 // This is main Class.
-public class P_04_Matrix_Addition {
+public class Matrix {
   public static void main(String[] args) {
     int m, n, p, q;
     Scanner sc = new Scanner(System.in);
@@ -83,10 +81,10 @@ public class P_04_Matrix_Addition {
     q = sc.nextInt();
     if ((m == p && n == q)) {
       System.out.println("Matrix Addition possible.");
-      Matrix matrix = new Matrix(n, m);
-      matrix.inputMat(m, n, 'A');
-      matrix.addMat(m, n);
-      matrix.displayMat(m, n);
+      Matrix_Addition matrix_Add1 = new Matrix_Addition(n, m);
+      matrix_Add1.inputMat(m, n, 'A');
+      matrix_Add1.addMat(m, n);
+      matrix_Add1.displayMat(m, n);
     } else {
       System.out.print("Matrix Addition not possible.");
     }

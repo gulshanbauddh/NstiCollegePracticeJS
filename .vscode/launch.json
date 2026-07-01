@@ -2,6 +2,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Matrix",
+      "request": "launch",
+      "mainClass": "Matrix",
+      "projectName": "gulshan_8443633b"
+    },
+    {
+      "type": "java",
+      "name": "P_04_Matrix_Addition",
+      "request": "launch",
+      "mainClass": "Nsti_Code.P_04_Matrix_Addition",
+      "projectName": "gulshan_8443633b"
+    },
+    {
+      "type": "java",
       "name": "P_18_merge_array",
       "request": "launch",
       "mainClass": "Nsti_Code.P_18_merge_array",
